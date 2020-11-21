@@ -1,0 +1,17 @@
+{
+  "name": "hellfiredominion",
+  "version": "1.0.0",
+  "description": "Discord Bot For Hellfire Dominion",
+  "main": "index.js",
+  "dependencies": {
+    "@types/node": "^11.11.6",
+    "discord.js": "^11.4.2",
+    "node.js": "^0.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rykiln",
+  "license": "ISC"
+}
