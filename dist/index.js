@@ -14,7 +14,7 @@ const client = new Discord.Client();
 let commands = [];
 loadCommands(`${__dirname}/commands`);
 client.on("ready", () => {
-    console.log(`Ready to go!`);
+    console.log(`Hellfire Dominion Bot Is Now Online!`);
     client.user.setActivity("Hellfire Dominion | .help", { type: "WATCHING" });
 });
 client.on("guildMemberAdd", (member) => __awaiter(this, void 0, void 0, function* () {
