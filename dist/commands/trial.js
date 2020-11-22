@@ -32,7 +32,7 @@ class Trial {
                 `HRC - Hel Ra Citadel`,
                 `MOL - Maw Of Lorkhaj`,
                 `SO - Sanctum Ophidia`,
-                `SS - Sunspire`
+                `SS - Sunspire`,
                 `KA - Kyne's Aegis`
             ];
             //msgObject.delete()
