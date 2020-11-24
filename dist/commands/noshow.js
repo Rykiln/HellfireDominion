@@ -52,7 +52,7 @@ class NoShow {
                     warnedby: (warnedby),
                 };
                 noshows.push(newObject);
-                fs.writeFile ("./noshow.json", JSON.stringify (noshows), err => {
+                fs.writeFile ("./noshow.json", JSON.stringify (noshows, null, 4), err => {
                     if (err) throw err;
                 });
             msgObject.delete();
