@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Discord = require("discord.js");
-const fs = require("fs");
 class Info {
     constructor() {
         this._command = "info";
@@ -21,50 +20,20 @@ class Info {
                     if(!nick){nick = usrMember.user.username};
                     let rolesArray = [`556562196629422152`,`729371837733273723`,`428231621435719682`,`714271732684292217`,`675934451892617216`,`367476580391452674`,`412335363705667585`,`749604917357838366`,`749091021308166236`]
                     let rankId = rolesArray.find(id => usrMember.roles.keyArray().includes(id))
-                        fs.readFile("./noshow.json", function(err, data){
-                            if (err) throw err;
-                        const noshows = JSON.parse(data);
-                        function getOccurence(array, value){
-                            var count = 0
-                            array.forEach((v) => (v[`ID`] === value && count++))
-                            return count;
-                        }
-                        function getEvents(array, value){
-                            var events = []
-                            array.forEach((v) => (v[`ID`] === value && events.push(v[`event`])))
-                            return events;
-                        }
-                        function getWarnedBy(array, value){
-                            var events = []
-                            array.forEach((v) => (v[`ID`] === value && events.push(v[`warnedby`])))
-                            return events;
-                        }
-                        var loggedwarnings = getOccurence(noshows, usrMember.id);
-                        var loggedevent = getEvents(noshows, usrMember.id);
-                        var warnedby = getWarnedBy(noshows, usrMember.id);
-                        if(loggedwarnings.length==0){loggedwarnings="None"};
-                        if(loggedevent.length==0){loggedevent="None"};
-                        if(warnedby.length==0){warnedby="None"};
-                        let embed = new Discord.RichEmbed()
-                            .setColor(usrMember.displayHexColor)
-                            .setTitle("Member Information")
-                            .setThumbnail(usrMember.user.displayAvatarURL)
-                            .setFooter(client.user.username, iconClient)
-                            .setTimestamp()
-                            .addField("Server Nickname", nick, true)
-                            .addField("Your Guild Rank", usrMember.roles.get(rankId), true)
-                            .addField("Account Name", usrMember.user.username, true)
-                            .addField("Discord ID", usrMember.user.tag, true)
-                            .addField("You Joined The Guild", usrMember.joinedAt)
-                            
-                            .addField("Warnings", loggedwarnings)
-                            .addField(`Events`, loggedevent, true)
-                            .addField(`Warned By`, warnedby, true);
-                        msgObject.channel.send(embed)
-                            .catch(console.error);
-                    });
-
+                    let embed = new Discord.RichEmbed()
                     
+                    .setColor(usrMember.displayHexColor)
+                    .setTitle("Member Information")
+                    .setFooter(usrMember, iconClient)
+                    .setTimestamp()
+                    .setThumbnail(usrMember.user.displayAvatarURL)
+                    .addField("Server Nickname", nick, true)
+                    .addField("Your Guild Rank", usrMember.roles.get(rankId), true)
+                    .addField("Account Name", usrMember.user.username, true)
+                    .addField("Discord ID", usrMember.user.tag, true)
+                    .addField("You Joined The Guild", usrMember.joinedAt);
+                    msgObject.channel.send(embed)
+                        .catch(console.error);
                 });
         ;
     }
