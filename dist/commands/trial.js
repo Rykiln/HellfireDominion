@@ -21,7 +21,7 @@ class Trial {
     }
     runCommand(args, msgObject, client) {
         return __awaiter(this, void 0, void 0, function* () {
-            let iconGuild = msgObject.guild.iconURL;
+            // let iconGuild = msgObject.guild.iconURL;
             let iconClient = client.user.displayAvatarURL;
             let source = (args.join()).toLowerCase() || "";
             let trials = [
@@ -66,10 +66,12 @@ class Trial {
                 let motifstyle = `Coming Soon`;
                 let cpsetupDPS = `Coming Soon`;
                 let cpsetupH = `Coming Soon`;
-                let cpsetupMT = `Coming Soon`;
-                let cpsetupOT = `Coming Soon`;
-                let thumbnail = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ab371d58-f694-4953-a2e5-c79acedd9f56/d9j5i6k-e1a85b7d-1621-4e5b-b5cc-4ddea16325db.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FiMzcxZDU4LWY2OTQtNDk1My1hMmU1LWM3OWFjZWRkOWY1NlwvZDlqNWk2ay1lMWE4NWI3ZC0xNjIxLTRlNWItYjVjYy00ZGRlYTE2MzI1ZGIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.FJwVnTTzBzntxq-t9Lqo8SsyUS0OiGpcwmI99uTul3k"
-                let dlcrequired = `NONE`;
+                let cpsetupT = `Coming Soon`;
+                // let cpsetupMT = `Coming Soon`;
+                // let cpsetupOT = `Coming Soon`;
+                let img = `https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ab371d58-f694-4953-a2e5-c79acedd9f56/d9j5i6k-e1a85b7d-1621-4e5b-b5cc-4ddea16325db.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FiMzcxZDU4LWY2OTQtNDk1My1hMmU1LWM3OWFjZWRkOWY1NlwvZDlqNWk2ay1lMWE4NWI3ZC0xNjIxLTRlNWItYjVjYy00ZGRlYTE2MzI1ZGIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.FJwVnTTzBzntxq-t9Lqo8SsyUS0OiGpcwmI99uTul3k`
+                let thumbnail = `https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ab371d58-f694-4953-a2e5-c79acedd9f56/d9j5i6k-e1a85b7d-1621-4e5b-b5cc-4ddea16325db.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FiMzcxZDU4LWY2OTQtNDk1My1hMmU1LWM3OWFjZWRkOWY1NlwvZDlqNWk2ay1lMWE4NWI3ZC0xNjIxLTRlNWItYjVjYy00ZGRlYTE2MzI1ZGIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.FJwVnTTzBzntxq-t9Lqo8SsyUS0OiGpcwmI99uTul3k`
+                let dlcrequired = ` `;
                 switch (source) {
                     case "aa":
                     case "naa":
@@ -78,19 +80,15 @@ class Trial {
                     case "aetherian":
                     case "archive":
                         trialname = `Aetherian Archive`;
-                        location = `Craglorn`;
+                        location = `Located In Craglorn`;
                         motifstyle = `Celestial`;
-                        thumbnail = `https://images.uesp.net/thumb/f/f6/ON-npc-The_Mage.jpg/200px-ON-npc-The_Mage.jpg`;
-                        gearsets = `[Defending Warrior](https://eso-sets.com/set/defending-warrior)
-                        [Healing Mage](https://eso-sets.com/set/healing-mage)
-                        [Quick Serpent](https://eso-sets.com/set/quick-serpent)
-                        [Eternal Warrior](https://eso-sets.com/set/eternal-warrior)
-                        [Infalliable Mage](https://eso-sets.com/set/infallible-mage)
-                        [Vicious Serpent](https://eso-sets.com/set/vicious-serpent)`;
-                        cpsetupDPS = `72 Ironclad, 68 Spellshield, 64 Elemental Defender, 66 Thick Skinned`;
-                        cpsetupH = `72 Ironclad, 68 Spellshield, 64 Elemental Defender, 66 Thick Skinned`;
-                        cpsetupMT = `81 Ironclad, 43 Hardy, 56 Elemental Defender, 66 Thick Skinned, 24 Heavy Armor Focus`;
-                        cpsetupOT = `81 Ironclad, 37 Medium Armor Focus, 56 Hardy, 56 Elemental Defender, 40 Thick Skinned`;
+                        img = `https://images.uesp.net/thumb/f/f6/ON-npc-The_Mage.jpg/200px-ON-npc-The_Mage.jpg`;
+                        gearsets = `[Defending Warrior](https://eso-sets.com/set/defending-warrior)\n[Healing Mage](https://eso-sets.com/set/healing-mage)\n[Quick Serpent](https://eso-sets.com/set/quick-serpent)\n[Eternal Warrior](https://eso-sets.com/set/eternal-warrior)\n[Infalliable Mage](https://eso-sets.com/set/infallible-mage)\n[Vicious Serpent](https://eso-sets.com/set/vicious-serpent)`;
+                        cpsetupDPS = `72 Ironclad\n68 Spellshield\n64 Elemental Defender\n66 Thick Skinned`;
+                        cpsetupH = `72 Ironclad\n68 Spellshield\n64 Elemental Defender\n66 Thick Skinned`;
+                        cpsetupT = `81 / 81 Ironclad\n44 / 56 Hardy\n56 / 56 Elemental Defender\n66 / 40 Thick Skinned\n24 / 0 Heavy Armor Focus\n0 / 37 Medium Armor Focus`;
+                        // cpsetupMT = `81 Ironclad\n43 Hardy\n56 Elemental Defender\n66 Thick Skinned\n24 Heavy Armor Focus`;
+                        // cpsetupOT = `81 Ironclad\n37 Medium Armor Focus\n56 Hardy\n56 Elemental Defender\n40 Thick Skinned`;
                         break;
                     case "hrc":
                     case "nhrc":
@@ -101,19 +99,15 @@ class Trial {
                     case "helra":
                     case "citadel":
                         trialname = `Hel Ra Citadel`;
-                        location = `Craglorn`;
+                        location = `Located In Craglorn`;
                         motifstyle = `Celestial`;
-                        thumbnail = `https://images.uesp.net/thumb/9/9c/ON-npc-The_Warrior.jpg/200px-ON-npc-The_Warrior.jpg`;
-                        gearsets = `[Destructive Mage](https://eso-sets.com/set/destructive-mage)
-                        [Poisonous Serpent](https://eso-sets.com/set/poisonous-serpent)
-                        [Berserking Warrior](https://eso-sets.com/set/berserking-warrior)
-                        [Eternal Warrior](https://eso-sets.com/set/eternal-warrior)
-                        [Infalliable Mage](https://eso-sets.com/set/infallible-mage)
-                        [Vicious Serpent](https://eso-sets.com/set/vicious-serpent)`;
-                        cpsetupDPS = `81 Ironclad, 16 Spellshield, 56 Hardy, 56 Elemental Defender, 61 Thick Skinned`;
-                        cpsetupH = `81 Ironclad, 16 Light Armor Focus, 56 Hardy, 56 Elemental Defender, 61 Thick Skinned`;
-                        cpsetupMT = `81 Ironclad, 64 Hardy, 43 Elemental Defender, 66 Thick Skinned, 16 Heavy Armor Focus`;
-                        cpsetupOT = `81 Ironclad, 64 Hardy, 43 Elemental Defender, 66 Thick Skinned, 16 Heavy Armor Focus`;
+                        img = `https://images.uesp.net/thumb/9/9c/ON-npc-The_Warrior.jpg/200px-ON-npc-The_Warrior.jpg`;
+                        gearsets = `[Destructive Mage](https://eso-sets.com/set/destructive-mage)\n[Poisonous Serpent](https://eso-sets.com/set/poisonous-serpent)\n[Berserking Warrior](https://eso-sets.com/set/berserking-warrior)\n[Eternal Warrior](https://eso-sets.com/set/eternal-warrior)\n[Infalliable Mage](https://eso-sets.com/set/infallible-mage)\n[Vicious Serpent](https://eso-sets.com/set/vicious-serpent)`;
+                        cpsetupDPS = `81 Ironclad\,16 Spellshield\,56 Hardy\,56 Elemental Defender\,61 Thick Skinned`;
+                        cpsetupH = `81 Ironclad\,16 Light Armor Focus\,56 Hardy\,56 Elemental Defender\,61 Thick Skinned`;
+                        cpsetupT = `81 Ironclad\n64 Hardy\n43 Elemental Defender\n66 Thick Skinned\n16 Heavy Armor Focus`;
+                        // cpsetupMT = `81 Ironclad\,64 Hardy\,43 Elemental Defender\,66 Thick Skinned\,16 Heavy Armor Focus`;
+                        // cpsetupOT = `81 Ironclad\,64 Hardy\,43 Elemental Defender\,66 Thick Skinned\,16 Heavy Armor Focus`;
                         break;
                     case "so":
                     case "nso":
@@ -124,19 +118,15 @@ class Trial {
                     case "snakes and trolls":
                     case "snake lady":
                         trialname = `Sanctum Ophidia`;
-                        location = `Craglorn`;
+                        location = `Located In Craglorn`;
                         motifstyle = `Celestial`;
-                        thumbnail = `https://images.uesp.net/thumb/0/04/ON-npc-The_Serpent.jpg/200px-ON-npc-The_Serpent.jpg`;
-                        gearsets = `[Immortal Warrior](https://eso-sets.com/set/immortal-warrior)
-                        [Twice-Fanged Serpent](https://eso-sets.com/set/twice-fanged-serpent)
-                        [Wise Mage](https://eso-sets.com/set/wise-mage)
-                        [Eternal Warrior](https://eso-sets.com/set/eternal-warrior)
-                        [Infalliable Mage](https://eso-sets.com/set/infallible-mage)
-                        [Vicious Serpent](https://eso-sets.com/set/vicious-serpent)`;
-                        cpsetupDPS = `72 Ironclad, 25 Light/Medium Armor Focus, 64 Hardy, 43 Elemental Defender, 66 Thick Skinned`;
-                        cpsetupH = `72 Ironclad, 25 Light Armor Focus, 64 Hardy, 43 Elemental Defender, 66 Thick Skinned`;
-                        cpsetupMT = `81 Ironclad, 64 Hardy, 43 Elemental Defender, 66 Thick Skinned, 16 Quick Recovery`;
-                        cpsetupOT = `81 Ironclad, 64 Hardy, 43 Elemental Defender, 66 Thick Skinned, 16 Quick Recovery`;
+                        img = `https://images.uesp.net/thumb/0/04/ON-npc-The_Serpent.jpg/200px-ON-npc-The_Serpent.jpg`;
+                        gearsets = `[Immortal Warrior](https://eso-sets.com/set/immortal-warrior)\n[Twice-Fanged Serpent](https://eso-sets.com/set/twice-fanged-serpent)\n[Wise Mage](https://eso-sets.com/set/wise-mage)\n[Eternal Warrior](https://eso-sets.com/set/eternal-warrior)\n[Infalliable Mage](https://eso-sets.com/set/infallible-mage)\n[Vicious Serpent](https://eso-sets.com/set/vicious-serpent)`;
+                        cpsetupDPS = `72 Ironclad\n25 Light/Medium Armor Focus\n64 Hardy\n43 Elemental Defender\n66 Thick Skinned`;
+                        cpsetupH = `72 Ironclad\n25 Light Armor Focus\n64 Hardy\n43 Elemental Defender\n66 Thick Skinned`;
+                        cpsetupT = `81 Ironclad\n64 Hardy\n43 Elemental Defender\n66 Thick Skinned\n16 Quick Recovery`;
+                        // cpsetupMT = `81 Ironclad\n64 Hardy\n43 Elemental Defender\n66 Thick Skinned\n16 Quick Recovery`;
+                        // cpsetupOT = `81 Ironclad\n64 Hardy\n43 Elemental Defender\n66 Thick Skinned\n16 Quick Recovery`;
                         break;
                     case "mol":
                     case "nmol":
@@ -147,18 +137,16 @@ class Trial {
                     case "big cats":
                     case "pussies":
                         trialname = `Maw Of Lorkhaj`;
-                        location = `Reaper's March`;
+                        location = `Located In Reaper's March`;
                         motifstyle = `Dro-m'Athra`;
-                        thumbnail = `https://images.uesp.net/thumb/e/e0/ON-creature-Rakkhat.jpg/200px-ON-creature-Rakkhat.jpg`;
-                        gearsets = `[Lunar Bastion](https://eso-sets.com/set/lunar-bastion)
-                        [Moondancer](https://eso-sets.com/set/moondancer)
-                        [Roar Of Alkosh](https://eso-sets.com/set/roar-of-alkosh)
-                        [Twilight Remedy](https://eso-sets.com/set/twilight-remedy)`;
-                        dlcrequired = `Thieves Guild`;
-                        cpsetupDPS = `72 Ironclad, 49 Spellshield, 19 Hardy, 64 Elemental Defender, 66 Thick Skinned`;
-                        cpsetupH = `72 Ironclad, 49 Spellshield, 19 Hardy, 64 Elemental Defender, 66 Thick Skinned`;
-                        cpsetupMT = `81 Ironclad, 3 Spellshield, 37 Hardy, 64 Elemental Defender, 66 Thick Skinned, 19 Quick Recovery`;
-                        cpsetupOT = `81 Ironclad, 16 Spellshield, 43 Hardy, 64 Elemental Defender, 66 Thick Skinned`;
+                        img = `https://images.uesp.net/thumb/e/e0/ON-creature-Rakkhat.jpg/200px-ON-creature-Rakkhat.jpg`;
+                        gearsets = `[Lunar Bastion](https://eso-sets.com/set/lunar-bastion)\n[Moondancer](https://eso-sets.com/set/moondancer)\n[Roar Of Alkosh](https://eso-sets.com/set/roar-of-alkosh)\n[Twilight Remedy](https://eso-sets.com/set/twilight-remedy)`;
+                        dlcrequired = ` (Thieves Guild DLC Required)`;
+                        cpsetupDPS = `72 Ironclad\n49 Spellshield\n19 Hardy\n64 Elemental Defender\n66 Thick Skinned`;
+                        cpsetupH = `72 Ironclad\n49 Spellshield\n19 Hardy\n64 Elemental Defender\n66 Thick Skinned`;
+                        cpsetupT = `81 Ironclad\n3 / 16 Spellshield\n37 / 43 Hardy\n64 Elemental Defender\n66 Thick Skinned\n19 / 0 Quick Recovery`;
+                        // cpsetupMT = `81 Ironclad\n3 Spellshield\n37 Hardy\n64 Elemental Defender\n66 Thick Skinned\n19 Quick Recovery`;
+                        // cpsetupOT = `81 Ironclad\n16 Spellshield\n43 Hardy\n64 Elemental Defender\n66 Thick Skinned`;
                         break;
                     case "hof":
                     case "nhof":
@@ -167,18 +155,16 @@ class Trial {
                     case "halls":
                     case "big robot":
                         trialname = `Halls Of Fabrication`;
-                        location = `Vvardenfell`;
+                        location = `Located In Vvardenfell`;
                         motifstyle = `Refabricated`;
-                        thumbnail = `https://images.uesp.net/thumb/d/d7/ON-creature-Assembly_General.jpg/200px-ON-creature-Assembly_General.jpg`;
-                        gearsets = `[Automated Defense](https://eso-sets.com/set/automated-defense)
-                        [Inventor's Guard](https://eso-sets.com/set/inventors-guard)
-                        [Master Architect](https://eso-sets.com/set/master-architect)
-                        [War Machine](https://eso-sets.com/set/war-machine)`;
-                        dlcrequired = `Morrowind`;
-                        cpsetupDPS = `81 Ironclad, 10 Light/Medium Armor Focus, 49 Hardy, 49 Elemental Defender, 81 Thick Skinned`;
-                        cpsetupH = `81 Ironclad, 10 Light Armor Focus, 49 Hardy, 49 Elemental Defender, 81 Thick Skinned`;
-                        cpsetupMT = `81 Ironclad, 56 Hardy, 56 Elemental Defender, 66 Thick Skinned, 11 Heavy Armor Focus`;
-                        cpsetupOT = `81 Ironclad, 56 Hardy, 56 Elemental Defender, 66 Thick Skinned, 11 Heavy Armor Focus`;
+                        img = `https://images.uesp.net/thumb/d/d7/ON-creature-Assembly_General.jpg/200px-ON-creature-Assembly_General.jpg`;
+                        gearsets = `[Automated Defense](https://eso-sets.com/set/automated-defense)\n[Inventor's Guard](https://eso-sets.com/set/inventors-guard)\n[Master Architect](https://eso-sets.com/set/master-architect)\n[War Machine](https://eso-sets.com/set/war-machine)`;
+                        dlcrequired = ` (Morrowind DLC Required)`;
+                        cpsetupDPS = `81 Ironclad\n10 Light/Medium Armor Focus\n49 Hardy\n49 Elemental Defender\n81 Thick Skinned`;
+                        cpsetupH = `81 Ironclad\n10 Light Armor Focus\n49 Hardy\n49 Elemental Defender\n81 Thick Skinned`;
+                        cpsetupT = `81 Ironclad\n56 Hardy\n56 Elemental Defender\n66 Thick Skinned\n11 Heavy Armor Focus`;
+                        // cpsetupMT = `81 Ironclad\n56 Hardy\n56 Elemental Defender\n66 Thick Skinned\n11 Heavy Armor Focus`;
+                        // cpsetupOT = `81 Ironclad\n56 Hardy\n56 Elemental Defender\n66 Thick Skinned\n11 Heavy Armor Focus`;
                         break;
                     case "as":
                     case "nas":
@@ -189,20 +175,16 @@ class Trial {
                     case "robot chicken":
                     case "robot dragon":
                         trialname = `Asylum Sanctorium`;
-                        location = `Clockwork City`;
+                        location = `Located In Clockwork City`;
                         motifstyle = `NONE`;
-                        thumbnail = `https://images.uesp.net/thumb/8/85/ON-creature-Saint_Olms_the_Just.jpg/200px-ON-creature-Saint_Olms_the_Just.jpg`;
-                        gearsets = `[Chaotic Whirlwind](https://eso-sets.com/set/chaotic-whirlwind)  [[Perfected]](https://eso-sets.com/set/chaotic-whirlwind-perfected-)
-                        [Concentrated Force](https://eso-sets.com/set/concentrated-force-imperfect-)  [[Perfected]](https://eso-sets.com/set/concentrated-force-perfected-)
-                        [Defensive Position](https://eso-sets.com/set/defensive-position)  [[Perfected]](https://eso-sets.com/set/defensive-position-perfected-)
-                        [Disciplined Slash](https://eso-sets.com/set/disciplined-slash)  [[Perfected]](https://eso-sets.com/set/disciplined-slash-perfected-)
-                        [Piercing Spray](https://eso-sets.com/set/piercing-spray-imperfected-)  [[Perfected]](https://eso-sets.com/set/piercing-spray-perfected-)
-                        [Timeless Blessing](https://eso-sets.com/set/timeless-blessing)  [[Perfected]](https://eso-sets.com/set/timeless-blessing-perfected-)`;
-                        dlcrequired = `Clockwork City`;
-                        cpsetupDPS = `81 Ironclad, 81 Spellshield, 64 Elemental Defender, 44 Thick Skinned`;
-                        cpsetupH = `81 Ironclad, 27 Spellshield, 37 Hardy, 64 Elemental Defender, 61 Thick Skinned`;
-                        cpsetupMT = `81 Ironclad, 56 Hardy, 56 Elemental Defender, 51 Thick Skinned, 26 Heavy Armor Focus`;
-                        cpsetupOT = `81 Ironclad, 37 Hardy, 64 Elemental Defender, 44 Thick Skinned, 1, Heavy Armor Focus, 43 Quick Recovery`;
+                        img = `https://images.uesp.net/thumb/8/85/ON-creature-Saint_Olms_the_Just.jpg/200px-ON-creature-Saint_Olms_the_Just.jpg`;
+                        gearsets = `[Chaotic Whirlwind](https://eso-sets.com/set/chaotic-whirlwind)  [[Perfected]](https://eso-sets.com/set/chaotic-whirlwind-perfected-)\n[Concentrated Force](https://eso-sets.com/set/concentrated-force-imperfect-)  [[Perfected]](https://eso-sets.com/set/concentrated-force-perfected-)\n[Defensive Position](https://eso-sets.com/set/defensive-position)  [[Perfected]](https://eso-sets.com/set/defensive-position-perfected-)\n[Disciplined Slash](https://eso-sets.com/set/disciplined-slash)  [[Perfected]](https://eso-sets.com/set/disciplined-slash-perfected-)\n[Piercing Spray](https://eso-sets.com/set/piercing-spray-imperfected-)  [[Perfected]](https://eso-sets.com/set/piercing-spray-perfected-)\n[Timeless Blessing](https://eso-sets.com/set/timeless-blessing)  [[Perfected]](https://eso-sets.com/set/timeless-blessing-perfected-)`;
+                        dlcrequired = ` (Clockwork City DLC Required)`;
+                        cpsetupDPS = `81 Ironclad\n81 Spellshield\n64 Elemental Defender\n44 Thick Skinned`;
+                        cpsetupH = `81 Ironclad\n27 Spellshield\n37 Hardy\n64 Elemental Defender\n61 Thick Skinned`;
+                        cpsetupT = `81 Ironclad\n56 / 37 Hardy\n56 / 64 Elemental Defender\n51 / 44 Thick Skinned\n26 / 1 Heavy Armor Focus\n0 / 43 Quick Recovery`;
+                        // cpsetupMT = `81 Ironclad\n56 Hardy\n56 Elemental Defender\n51 Thick Skinned\n26 Heavy Armor Focus`;
+                        // cpsetupOT = `81 Ironclad\n37 Hardy\n64 Elemental Defender\n44 Thick Skinned\n1\nHeavy Armor Focus\n43 Quick Recovery`;
                         break;
                     case "cr":
                     case "ncr":
@@ -214,18 +196,16 @@ class Trial {
                     case "sload":
                     case "slug":
                         trialname = `Cloudrest`;
-                        location = `Summerset`;
+                        location = `Located In Summerset`;
                         motifstyle = `Welkynar`;
-                        thumbnail = `https://images.uesp.net/thumb/c/c4/ON-creature-Z%27Maja.jpg/200px-ON-creature-Z%27Maja.jpg`;
-                        gearsets = `[Aegis of Galenwe](https://eso-sets.com/set/aegis-of-galenwe)  [[Perfected]](https://eso-sets.com/set/perfect-aegis-of-galenwe)
-                        [Arms of Relequen](https://eso-sets.com/set/arms-of-relequen)  [[Perfected]](https://eso-sets.com/set/perfect-arms-of-relequen)
-                        [Mantle of Siroria](https://eso-sets.com/set/mantle-of-siroria)  [[Perfected]](https://eso-sets.com/set/perfect-mantle-of-siroria)
-                        [Vestment of Olorime](https://eso-sets.com/set/vestment-of-olorime)  [[Perfected]](https://eso-sets.com/set/perfect-vestment-of-olorime)`;
-                        dlcrequired = `Summerset`;
-                        cpsetupDPS = `66 Ironclad, 51 Spellshield, 64 Elemental Defender, 66 Thick Skinned, 23 Quick Recovery`;
-                        cpsetupH = `66 Ironclad, 55 Spellshield, 64 Elemental Defender, 66 Thick Skinned, 19 Quick Recovery`;
-                        cpsetupMT = `81 Ironclad, 1 Spellshield, 64 Elemental Defender, 81 Thick Skinned, 43 Quick Recovery`;
-                        cpsetupOT = `81 Ironclad, 64 Elemental Defender, 66 Thick Skinned, 16 Heavy Armor Focus, 43 Quick Recovery`;
+                        img = `https://images.uesp.net/thumb/c/c4/ON-creature-Z%27Maja.jpg/200px-ON-creature-Z%27Maja.jpg`;
+                        gearsets = `[Aegis of Galenwe](https://eso-sets.com/set/aegis-of-galenwe)  [[Perfected]](https://eso-sets.com/set/perfect-aegis-of-galenwe)\n[Arms of Relequen](https://eso-sets.com/set/arms-of-relequen)  [[Perfected]](https://eso-sets.com/set/perfect-arms-of-relequen)\n[Mantle of Siroria](https://eso-sets.com/set/mantle-of-siroria)  [[Perfected]](https://eso-sets.com/set/perfect-mantle-of-siroria)\n[Vestment of Olorime](https://eso-sets.com/set/vestment-of-olorime)  [[Perfected]](https://eso-sets.com/set/perfect-vestment-of-olorime)`;
+                        dlcrequired = ` (Summerset DLC Required)`;
+                        cpsetupDPS = `66 Ironclad\n51 Spellshield\n64 Elemental Defender\n66 Thick Skinned\n23 Quick Recovery`;
+                        cpsetupH = `66 Ironclad\n55 Spellshield\n64 Elemental Defender\n66 Thick Skinned\n19 Quick Recovery`;
+                        cpsetupT = `81 / 81 Ironclad\n1 / 0 Spellshield\n64 Elemental Defender\n81 / 66 Thick Skinned\n43 / 43 Quick Recovery\n0 / 16 Heavy Armor Focus`;
+                        // cpsetupMT = `81 Ironclad\n1 Spellshield\n64 Elemental Defender\n81 Thick Skinned\n43 Quick Recovery`;
+                        // cpsetupOT = `81 Ironclad\n64 Elemental Defender\n66 Thick Skinned\n16 Heavy Armor Focus\n43 Quick Recovery`;
                         break;
                     case "ss":
                     case "nss":
@@ -234,18 +214,16 @@ class Trial {
                     case "sun spire":
                     case "dragons":
                         trialname = `Sunspire`;
-                        location = `Northern Elswyr`;
+                        location = `Located In Northern Elswyr`;
                         motifstyle = `Sunspire`;
-                        thumbnail = `https://images.uesp.net/thumb/b/bf/ON-creature-Nahviintaas_03.jpg/200px-ON-creature-Nahviintaas_03.jpg`;
-                        gearsets = `[Claw of Yolnahkriin](https://eso-sets.com/set/claw-of-yolnahkriin)  [[Perfected]](https://eso-sets.com/set/perfected-claw-of-yolnahkriin)
-                        [Tooth of Lokkestiiz](https://eso-sets.com/set/tooth-of-lokkestiiz)  [[Perfected]](https://eso-sets.com/set/perfected-tooth-of-lokkestiiz)
-                        [False God's Devotion](https://eso-sets.com/set/false-gods-devotion)  [[Perfected]](https://eso-sets.com/set/perfected-false-gods-devotion)
-                        [Eye of Nahviintaas](https://eso-sets.com/set/eye-of-nahviintaas)  [[Perfected]](https://eso-sets.com/set/perfected-eye-of-nahviintaas)`;
-                        dlcrequired = `Elswyr`;
-                        cpsetupDPS = `81 Ironclad, 42 Spellshield, 56 Elemental Defender, 72 Thick Skinned, 19 Quick Recovery`;
-                        cpsetupH = `81 Ironclad, 42 Spellshield, 56 Elemental Defender, 72 Thick Skinned, 19 Quick Recovery`;
-                        cpsetupMT = `81 Ironclad, 43 Hardy, 49 Elemental Defender, 81 Thick Skinned, 16 Heavy Armor Focus`;
-                        cpsetupOT = `81 Ironclad, 43 Hardy, 49 Elemental Defender, 81 Thick Skinned, 16 Heavy Armor Focus`;
+                        img = `https://images.uesp.net/thumb/b/bf/ON-creature-Nahviintaas_03.jpg/200px-ON-creature-Nahviintaas_03.jpg`;
+                        gearsets = `[Claw of Yolnahkriin](https://eso-sets.com/set/claw-of-yolnahkriin)  [[Perfected]](https://eso-sets.com/set/perfected-claw-of-yolnahkriin)\n[Tooth of Lokkestiiz](https://eso-sets.com/set/tooth-of-lokkestiiz)  [[Perfected]](https://eso-sets.com/set/perfected-tooth-of-lokkestiiz)\n[False God's Devotion](https://eso-sets.com/set/false-gods-devotion)  [[Perfected]](https://eso-sets.com/set/perfected-false-gods-devotion)\n[Eye of Nahviintaas](https://eso-sets.com/set/eye-of-nahviintaas)  [[Perfected]](https://eso-sets.com/set/perfected-eye-of-nahviintaas)`;
+                        dlcrequired = ` (Elswyr DLC Required)`;
+                        cpsetupDPS = `81 Ironclad\n42 Spellshield\n56 Elemental Defender\n72 Thick Skinned\n19 Quick Recovery`;
+                        cpsetupH = `81 Ironclad\n42 Spellshield\n56 Elemental Defender\n72 Thick Skinned\n19 Quick Recovery`;
+                        cpsetupT = `81 Ironclad\n43 Hardy\n49 Elemental Defender\n81 Thick Skinned\n16 Heavy Armor Focus`;
+                        // cpsetupMT = `81 Ironclad\n43 Hardy\n49 Elemental Defender\n81 Thick Skinned\n16 Heavy Armor Focus`;
+                        // cpsetupOT = `81 Ironclad\n43 Hardy\n49 Elemental Defender\n81 Thick Skinned\n16 Heavy Armor Focus`;
                         break;
                     case "ka":
                     case "nka":
@@ -255,18 +233,16 @@ class Trial {
                     case "giants":
                     case "vampires":
                         trialname = `Kyne's Aegis`;
-                        location = `Western Skyrim`;
+                        location = `Located In Western Skyrim`;
                         motifstyle = `Sea Giant`;
-                        thumbnail = `https://images.uesp.net/thumb/a/a5/ON-npc-Lord_Falgravn.jpg/200px-ON-npc-Lord_Falgravn.jpg`;
-                        gearsets = `[Kyne's Wind](https://eso-sets.com/set/kynes-wind)  [[Perfected]](https://eso-sets.com/set/perfect-kynes-wind)
-                        [Roaring Opportunist](https://eso-sets.com/set/roaring-opportunist)  [[Perfected]](https://eso-sets.com/set/perfect-roaring-opportunist)
-                        [Vrol's Command](https://eso-sets.com/set/vrols-command)  [[Perfected]](https://eso-sets.com/set/perfect-vrols-command)
-                        [Yandir's Might](https://eso-sets.com/set/yandirs-might)  [[Perfected]](https://eso-sets.com/set/perfect-yandirs-might)`;
-                        dlcrequired = `Greymoor`;
-                        cpsetupDPS = `73 Ironclad, 54 Spellshield, 27 Hardy, 64 Elemental Defender, 37 Thick Skinned, 15 Quick Recovery`;
-                        cpsetupH = `73 Ironclad, 54 Spellshield, 27 Hardy, 64 Elemental Defender, 37 Thick Skinned, 15 Quick Recovery`;
-                        cpsetupMT = `81 Ironclad, 64 Hardy, 37 Elemental Defender, 68 Thick Skinned, 11 Quick Recovery, 11 Heavy Armor Focus`;
-                        cpsetupOT = `81 Ironclad, 64 Hardy, 37 Elemental Defender, 68 Thick Skinned, 11 Quick Recovery, 11 Heavy Armor Focus`;
+                        img = `https://images.uesp.net/thumb/a/a5/ON-npc-Lord_Falgravn.jpg/200px-ON-npc-Lord_Falgravn.jpg`;
+                        gearsets = `[Kyne's Wind](https://eso-sets.com/set/kynes-wind)  [[Perfected]](https://eso-sets.com/set/perfect-kynes-wind)\n[Roaring Opportunist](https://eso-sets.com/set/roaring-opportunist)  [[Perfected]](https://eso-sets.com/set/perfect-roaring-opportunist)\n[Vrol's Command](https://eso-sets.com/set/vrols-command)  [[Perfected]](https://eso-sets.com/set/perfect-vrols-command)\n[Yandir's Might](https://eso-sets.com/set/yandirs-might)  [[Perfected]](https://eso-sets.com/set/perfect-yandirs-might)`;
+                        dlcrequired = ` (Greymoor DLC Required)`;
+                        cpsetupDPS = `73 Ironclad\n54 Spellshield\n27 Hardy\n64 Elemental Defender\n37 Thick Skinned\n15 Quick Recovery`;
+                        cpsetupH = `73 Ironclad\n54 Spellshield\n27 Hardy\n64 Elemental Defender\n37 Thick Skinned\n15 Quick Recovery`;
+                        cpsetupT = `81 Ironclad\n64 Hardy\n37 Elemental Defender\n68 Thick Skinned\n11 Quick Recovery\n11 Heavy Armor Focus`;
+                        // cpsetupMT = `81 Ironclad\n64 Hardy\n37 Elemental Defender\n68 Thick Skinned\n11 Quick Recovery\n11 Heavy Armor Focus`;
+                        // cpsetupOT = `81 Ironclad\n64 Hardy\n37 Elemental Defender\n68 Thick Skinned\n11 Quick Recovery\n11 Heavy Armor Focus`;
                         break;
                     default:
                         trialname = `Coming Soon`;
@@ -275,18 +251,17 @@ class Trial {
                 }
                 let embed = new Discord.RichEmbed()
                     .setTitle(`Trial: ${trialname}`)
-                    .setImage(thumbnail)
-                    //.setDescription("...")
+                    .setImage(img)
+                    .setDescription(`${location}${dlcrequired}`)
                     .setFooter(client.user.username, iconClient)
                     .setTimestamp()
-                    .addField("Location", location, true)
-                    .addField("DLC Required", dlcrequired, true)
-                    .addField("Gear Sets", gearsets)
+                    .setThumbnail(thumbnail)
                     .addField("Motif Style", motifstyle)
-                    .addField("CP Distribution For Damage Dealers", cpsetupDPS)
-                    .addField("CP Distribution For Healers", cpsetupH)
-                    .addField("CP Distribution For Main Tank", cpsetupMT)
-                    .addField("CP Distribution For Off Tank", cpsetupOT);
+                    .addField("Gear Sets", gearsets)
+                    .addField("CP Distribution For Main Tank / Off Tank", cpsetupT)
+                    .addField("CP Distribution For Healers", cpsetupH, true)
+                    .addField("CP Distribution For Damage Dealers", cpsetupDPS, true)
+                    .addField(`CP Information Source`, `[ESO-U.com/ChampionPoints](https://eso-u.com/champion-points)`);
                 msgObject.channel.send(embed)
                     .catch(console.error);
             }
