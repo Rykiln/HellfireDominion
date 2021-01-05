@@ -17,22 +17,25 @@ client.on("ready", () => {
     console.log(`Hellfire Dominion Bot Is Now Online!`);
     client.user.setActivity("Hellfire Dominion | .help", { type: "WATCHING" });
 });
-client.on("guildMemberAdd", (member) => __awaiter(this, void 0, void 0, function* () {
-    let embedWelcome = new Discord.RichEmbed ()
-        .setTitle(`Welcome ${member.user.username} to ${member.guild.name} 🎉!`)
+client.on(`guildMemberAdd`, async member => {
+    let imgName = "HDbanner.png";
+    let imgPath = `../src/images/${imgName}`;
+    let embedWelcome = new Discord.RichEmbed()
+        .setTitle(`${member.user.username}, Welcome To ${member.guild.name}!`)
         .setColor(0xFF9900)
-        .setDescription(`Please head over to [#welcome](https://discordapp.com/channels/367473969370234901/748676901492752447/748945412903403601) to learn more about us. After reading, react to accept our server rules with 🔔 or 🔕 to specify whether you want to recieve pings or not; it will give you a role that unlocks your access to our channels.
-            \nIf you're interested in joining our in-game guild, go to [#ig-guild-invite](https://discordapp.com/channels/367473969370234901/720071763832078397/749111394150121572).
-            \nLastly, don't forget to set your discord nickname to match your ESO username (not character name).`)
+        .setDescription(`Please head over to our [#welcome](https://discord.com/channels/367473969370234901/748676901492752447/748945412903403601) channel to learn more about us. After reading, react to accept our server rules with 🔔 or 🔕 to specify whether you want to recieve pings or not; it will give you a role that unlocks your access to our channels.\n\nIf you're interested in joining our in-game guild, go to [#ig-guild-invite](https://discordapp.com/channels/367473969370234901/720071763832078397/749111394150121572).\n\nLastly, don't forget to set your discord nickname to match your ESO username (not character name).`)
         .setFooter(client.user.username)
         .setTimestamp()
-    member.send(embedWelcome);
-    console.log(`(${member.user.username}) joined ${member.guild.name}.`);
-}));
-client.on("guildMemberRemove", (member) => __awaiter(this, void 0, void 0, function* () {
-    console.log(`(${member.user.username}) left ${member.guild.name}.`)
-        .catch(console.error);
-}));
+        .setThumbnail(client.user.displayAvatarURL)
+        .attachFile(imgPath)
+        .setImage(`attachment://${imgName}`);
+    member.send(embedWelcome)
+        .catch(console.log(`Error: Failed to send embed`));
+    console.log(`[${member.user.username}] has joined [${member.guild.name}].`);
+});
+client.on("guildMemberRemove", member => {
+    console.log(`[${member.user.username}] left ${member.guild.name}.`)
+});
 client.on("message", msg => {
     if (msg.author.bot) {
         return;

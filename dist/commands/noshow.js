@@ -21,6 +21,20 @@ class NoShow {
     }
     runCommand(args, msgObject, client) {
         return __awaiter(this, void 0, void 0, function* () {
+            // Require Raid Lead, Officer, or GM to use this command
+            if(!msgObject.member.hasPermissions("MANAGE_ROLES")){
+                msgObject.delete();
+                msgObject.reply(`You do not have permissions to use this command.`).then(r => r.delete(5000));
+                channelNoShow.send(`${msgObject.author} has attempted to use the .noshow command and was denied`);
+                return ;
+            }
+            // Disallow Julius from using this command
+            if(msgObject.member.id === "566817192901869568"){
+                msgObject.delete();
+                msgObject.reply(`Aww, that's cute..... The kids are playing again. If this is a real no-show, please get an adult to use this command for you`).then(r => r.delete(5000));
+                channelNoShow.send(`${msgObject.author} has attempted to use the .noshow command and was denied`);
+                return;
+            }
             let iconGuild = msgObject.guild.iconURL;
             let iconClient = client.user.displayAvatarURL;
             let mentionedMember = msgObject.mentions.users.first();
@@ -36,7 +50,8 @@ class NoShow {
                 .setFooter(client.user.username, iconClient)
                 .setTimestamp()
                 .addField(`Guild Member`, mentionedMember)
-                .addField(`Event`, eventname);
+                .addField(`Event`, eventname)
+                .addField(`Warned By`, warnedby);
             channelNoShow.send(embed)
                .catch(console.error);
             const fs = require("fs");
