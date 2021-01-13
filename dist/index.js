@@ -23,7 +23,7 @@ client.on(`guildMemberAdd`, async member => {
     let embedWelcome = new Discord.RichEmbed()
         .setTitle(`${member.user.username}, Welcome To ${member.guild.name}!`)
         .setColor(0xFF9900)
-        .setDescription(`Please head over to our [#welcome](https://discord.com/channels/367473969370234901/748676901492752447/748945412903403601) channel to learn more about us. After reading, react to accept our server rules with 🔔 or 🔕 to specify whether you want to recieve pings or not; it will give you a role that unlocks your access to our channels.\n\nIf you're interested in joining our in-game guild, go to [#ig-guild-invite](https://discordapp.com/channels/367473969370234901/720071763832078397/749111394150121572).\n\nLastly, don't forget to set your discord nickname to match your ESO username (not character name).`)
+        .setDescription(`Please head over to our [#about-us](https://discord.com/channels/367473969370234901/796024776119418890/797090620845719564) channel to learn more about us. Make sure to agree with our server rules through the Rules Screening. Check for a bar at the bottom that asks you to complete a few more steps before you can talk. \n\nIf you're interested in joining our in-game guild, go to [#ig-guild-invite](https://discord.com/channels/367473969370234901/796458637315932213/796459038480007218).\n\nLastly, don't forget to set your discord nickname to match your ESO username (not character name).`)
         .setFooter(client.user.username)
         .setTimestamp()
         .setThumbnail(client.user.displayAvatarURL)
