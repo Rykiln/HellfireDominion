@@ -263,6 +263,7 @@ class Trial {
                     .addField("CP Distribution For Damage Dealers", cpsetupDPS, true)
                     .addField(`CP Information Source`, `[ESO-U.com/ChampionPoints](https://eso-u.com/champion-points)`);
                 msgObject.channel.send(embed)
+                    .then(m => m.pin())
                     .catch(console.error);
             }
         });
