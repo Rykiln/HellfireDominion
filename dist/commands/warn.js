@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Discord = require("discord.js");
-class NoShow {
+class Warn {
     constructor() {
-        this._command = "noshow";
+        this._command = "warn";
     }
     help() {
         return "This command does absolutely nothing!";
@@ -41,18 +41,21 @@ class NoShow {
             let mentionedMemberName = mentionedMember.username;
             let mentionedMemberID = mentionedMember.id;
             let eventname = msgObject.channel.name;
-            let channelNoShow = client.channels.get(`586340669459660820`);
+            let channelStrikes = client.channels.get(`812841570524200961`);
+            let suppliedreason = args.slice(1);
+            let displayedreason = suppliedreason.join(` `);
             let warnedby = msgObject.author.username;
             let embed = new Discord.RichEmbed()
-                .setTitle(`Guild Member Added To No Show List`)
+                .setTitle(`Guild Member Warning`)
                 .setColor(0xFF0000)
                 .setThumbnail(mentionedMember.displayAvatarURL)
                 .setFooter(client.user.username, iconClient)
                 .setTimestamp()
                 .addField(`Guild Member`, mentionedMember)
                 .addField(`Event`, eventname)
+                .addField(`Reason`, displayedreason)
                 .addField(`Warned By`, warnedby);
-            channelNoShow.send(embed)
+            channelStrikes.send(embed)
                .catch(console.error);
             const fs = require("fs");
             fs.readFile("./noshow.json", function(err, data){
@@ -65,7 +68,7 @@ class NoShow {
                     ID: (mentionedMemberID),
                     event: (eventname),
                     warnedby: (warnedby),
-                    reason: (`No-Show`),
+                    reason: (displayedreason),
                     date: (Date()),
                 };
                 noshows.push(newObject);
@@ -74,17 +77,17 @@ class NoShow {
                 });
             msgObject.delete();
             
-            let embedDM = new Discord.RichEmbed()
-                .setTitle(`We Missed You Today!`)
-                .setColor(0xFF9900)
-                .setFooter(client.user.username, iconClient)
-                .setTimestamp()
-                .setDescription(`Hello ${mentionedMemberName}. You missed a guild event that you signed up for in our Discord. We hope that everything is okay. As per our guild rules, this is considered as a no-show, and three (3) no-shows can result in you being excluded from future events, or possibly even removed from the guild. Please see our [Guild Info](https://discordapp.com/channels/694306288250781699/728692333280886884/728693715794788373) channel to review the guild rules. With this said, we do understand that life happens. Just let us know when you're not going to make it. Also if you missed this because of an emergency, we're not heartless, message an officer and let one of us know, we don't need the private details, but we can remove this no-show for valid reasons.`)
-                .addField(`Event`, eventname);
-            mentionedMember.send(embedDM);
+            // let embedDM = new Discord.RichEmbed()
+            //     .setTitle(`We Missed You Today!`)
+            //     .setColor(0xFF9900)
+            //     .setFooter(client.user.username, iconClient)
+            //     .setTimestamp()
+            //     .setDescription(`Hello ${mentionedMemberName}. You missed a guild event that you signed up for in our Discord. We hope that everything is okay. As per our guild rules, this is considered as a no-show, and three (3) no-shows can result in you being excluded from future events, or possibly even removed from the guild. Please see our [Guild Info](https://discordapp.com/channels/694306288250781699/728692333280886884/728693715794788373) channel to review the guild rules. With this said, we do understand that life happens. Just let us know when you're not going to make it. Also if you missed this because of an emergency, we're not heartless, message an officer and let one of us know, we don't need the private details, but we can remove this no-show for valid reasons.`)
+            //     .addField(`Event`, eventname);
+            // mentionedMember.send(embedDM);
             })
         });
     }
 }
-exports.default = NoShow;
+exports.default = Warn;
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiel90ZW1wbGF0ZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb21tYW5kcy96X3RlbXBsYXRlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSxzQ0FBc0M7QUFHdEMsTUFBcUIsV0FBVztJQUFoQztRQUNxQixhQUFRLEdBQUcsYUFBYSxDQUFBO0lBZTdDLENBQUM7SUFiRyxJQUFJO1FBQ0EsT0FBTyx1Q0FBdUMsQ0FBQTtJQUNsRCxDQUFDO0lBRUQsYUFBYSxDQUFDLE9BQWU7UUFDekIsT0FBTyxPQUFPLEtBQUssSUFBSSxDQUFDLFFBQVEsQ0FBQztJQUNyQyxDQUFDO0lBRUssVUFBVSxDQUFDLElBQWMsRUFBRSxTQUEwQixFQUFFLE1BQXNCOztZQUMvRSxJQUFJLFNBQVMsR0FBRyxTQUFTLENBQUMsS0FBSyxDQUFDLE9BQU8sQ0FBQztZQUMzQyxJQUFJLFVBQVUsR0FBRyxNQUFNLENBQUMsSUFBSSxDQUFDLGdCQUFnQixDQUFDO1lBQzlDLElBQUksS0FBSyxHQUFHLElBQUksT0FBTyxDQUFDLFNBQVMsRUFBRSxDQUFBO1FBQ3BDLENBQUM7S0FBQTtDQUNKO0FBaEJELDhCQWdCQyJ9
