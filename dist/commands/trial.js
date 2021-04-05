@@ -258,10 +258,10 @@ class Trial {
                     .setThumbnail(thumbnail)
                     .addField("Motif Style", motifstyle)
                     .addField("Gear Sets", gearsets)
-                    .addField("CP Distribution For Main Tank / Off Tank", cpsetupT)
-                    .addField("CP Distribution For Healers", cpsetupH, true)
-                    .addField("CP Distribution For Damage Dealers", cpsetupDPS, true)
-                    .addField(`CP Information Source`, `[ESO-U.com/ChampionPoints](https://eso-u.com/champion-points)`);
+                    // .addField("CP Distribution For Main Tank / Off Tank", cpsetupT)
+                    // .addField("CP Distribution For Healers", cpsetupH, true)
+                    // .addField("CP Distribution For Damage Dealers", cpsetupDPS, true)
+                    // .addField(`CP Information Source`, `[ESO-U.com/ChampionPoints](https://eso-u.com/champion-points)`);
                 msgObject.channel.send(embed)
                     .then(m => m.pin())
                     .catch(console.error);
