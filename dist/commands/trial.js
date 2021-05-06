@@ -193,10 +193,10 @@ class Trial {
                     case "rockgrove":
                     case "rock grove":
                         trialname = `Rockgrove`;
-                        location = `Located Somewhere`;
+                        location = `Located In Blackwood`;
                         motifstyle = `#N/A`;
-                        // img = `.`;
-                        // gearsets = `.`;
+                        img = `https://www.nme.com/wp-content/uploads/2021/01/TESO-Blackwood.jpg`;
+                        gearsets = `[Saxhleel Champion](https://eso-sets.com/set/saxhleel-champion)  [[Perfected]](https://eso-sets.com/set/perfected-saxhleel-champion)\n[Sul-Xan's Torment](https://eso-sets.com/set/sul-xans-torment)  [[Perfected]](https://eso-sets.com/set/perfected-sul-xans-torment)\n[Bahsei's Mania](https://eso-sets.com/set/bahseis-mania)  [[Perfected]](https://eso-sets.com/set/perfected-bahseis-mania)\n[Stone-Talker's Oath](https://eso-sets.com/set/stone-talkers-oath)  [[Perfected]](https://eso-sets.com/set/perfected-stone-talkers-oath)`;
                         dlcrequired = ` (Blackwood DLC Required)`;
                         break;
                     default:
