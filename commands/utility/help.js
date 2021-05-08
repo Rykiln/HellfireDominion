@@ -14,7 +14,7 @@ module.exports = {
             const helpEmbed = new Discord.MessageEmbed()
                 .setColor(`0xFFFF00`)
                 .setTitle(`Help With Using ${client.user.username}`)
-                .setDescription(`Below is a list of the commands you can use with this bot.`)
+                .setDescription("Below is a list of the commands you can use with this bot.\nYou can get more detailed help for specific commands by using \`.help [command]\`\n\`example: .help roll\`")
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTimestamp()
                 .setFooter(client.user.username, client.user.displayAvatarURL())
