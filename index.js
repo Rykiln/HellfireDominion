@@ -3,7 +3,8 @@
 // Environment Variables and API Calls
 require(`dotenv`).config();
 const Discord = require("discord.js");
-const client = new Discord.Client();
+const client = new Discord.Client({ intents: new Discord.Intents(Discord.Intents.ALL) })
+
 const fs = require(`fs`);
 const BotStatusLive = true;
 if (BotStatusLive) {
@@ -17,7 +18,7 @@ if (BotStatusLive) {
 }
 client.cooldowns = new Discord.Collection();
 
-// Guild Specific Global Variables
+// Global Variables
 const Prefix = process.env.PREFIX_DEFAULT;
 
 // Client Command List From Commands Folder Recursively
@@ -32,10 +33,14 @@ for (const folder of commandFolders) {
     }
 }
 
-// Confirmation of Client Initialization
+// Confirmation Of Client Initialization
 client.once(`ready`, () => {
     console.log(`${client.user.username} Bot Is Now Online!`);
     console.log(`This bot is a Tier ${client.guilds.resolve(GuildID).premiumTier} server with ${client.guilds.resolve(GuildID).premiumSubscriptionCount} boosts!`);
+    console.log(`Twitch API Request interval is set to ${process.env.HD_TWITCH_REFRESH} seconds.`)
+    console.log(Date());
+    console.log(`========================================`);
+    console.log();
     client.user.setActivity(`${client.user.username} | .help`, { type: "PLAYING" });
 });
 
@@ -51,13 +56,39 @@ client.on(`guildMemberAdd`, member => {
         .setTimestamp()
         .setThumbnail(client.user.displayAvatarURL())
     member.send(embed);
-    // Add Default Role Separators To New Members On Joining
-    member.roles.add(`820501535922061352`); // Prerequisites Separator
-    member.roles.add(`820501266857197568`); // Ranks Separator
-    member.roles.add(`820502825913155585`); // Titles Separator
-    member.roles.add(`820502409670688838`); // Cores Separator
-    member.roles.add(`820503022982791168`); // Farm Tags Separator
-    member.roles.add(`820503194350256158`); // Misc Separator
+});
+
+// Client Guild Member Update
+client.on(`guildMemberUpdate`, (oldMember, newMember) => {
+    if(oldMember.pending === true && newMember.pending === false){
+        `++ ++ [${newMember.username} has accepted the guild rules.]`
+        // Define Default Role
+        const roleDefault = process.env.HD_ROLE_DEFAULT;
+        // Define Role Separators 
+        const roleSeparatorCores = process.env.HD_ROLE_SEPARATOR_CORES;
+        const roleSeparatorFarmTags = process.env.HD_ROLE_SEPARATOR_FARMTAGS;
+        const roleSeparatorInterests = process.env.HD_ROLE_SEPARATOR_INTERESTS;
+        const roleSeparatorMisc = process.env.HD_ROLE_SEPARATOR_MISC;
+        const roleSeparatorPrerequisites = process.env.HD_ROLE_SEPARATOR_PREREQUISITES;
+        const roleSeparatorRanks = process.env.HD_ROLE_SEPARATOR_RANKS;
+        const roleSeparatorTitles = process.env.HD_ROLE_SEPARATOR_TITLES;
+        const rolesIDArray = [roleDefault, roleSeparatorCores, roleSeparatorFarmTags, roleSeparatorInterests, roleSeparatorMisc, roleSeparatorPrerequisites, roleSeparatorRanks, roleSeparatorTitles]
+        let rolesArray = []
+        rolesIDArray.forEach(role => {
+            newMember.roles.add(role);
+            rolesArray.push(client.guilds.resolve(GuildID).roles.resolve(role).name);
+        })
+        MemberLogChannel = client.guilds.resolve(GuildID).channels.resolve(process.env.HD_CHANNEL_MEMBERLOGS)
+        const embed = new Discord.MessageEmbed()
+            .setAuthor(newMember.user.tag, newMember.user.displayAvatarURL())
+            .setColor(0x00ff00)
+            .setDescription(`${newMember} has accepted the guild rules.`)
+            .setFooter(client.user.username, client.user.displayAvatarURL())
+            .setTimestamp()
+            .addField(`Name`, `${newMember.user.tag} (${newMember.user.id}) ${newMember}`)
+            .addField(`Granted Roles`, rolesArray.join(`\n`))
+        MemberLogChannel.send(embed);
+    };
 });
 
 // Client Guild Member Leave
@@ -77,6 +108,9 @@ client.on(`message`, msgObject => {
         || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
     if (!command) return;
+    console.log(`[${msgObject.author.username}] used Command [${commandName}] in Channel [${msgObject.channel.name}]`);
+    console.log(`With Args : [${args}]`);
+    console.log();
 
     // Return Error if User does not have the correct permissions
     if (command.permissions) {
@@ -127,3 +161,4 @@ client.on(`message`, msgObject => {
 
 // Initialize Client
 client.login(Token);
+require(`./api/twitch.js`)(client, GuildID)
