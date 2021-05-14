@@ -9,7 +9,7 @@ module.exports = {
     execute(msgObject, args, client) {
         const data = [];
         const { commands } = msgObject.client;
-
+        // Display List Of All Commands And Descriptions If No Args Are Provided
         if (!args.length) {
             const helpEmbed = new Discord.MessageEmbed()
                 .setColor(`0xFFFF00`)
@@ -35,6 +35,7 @@ module.exports = {
                 });
             return
         }
+        // Display Specific Command Details If Args Are Provided
         const name = args[0].toLowerCase();
         const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 

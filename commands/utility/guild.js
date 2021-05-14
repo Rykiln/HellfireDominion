@@ -15,9 +15,9 @@ module.exports = {
         let embed = new Discord.MessageEmbed()
             .setTitle(msgObject.guild.name)
             .setDescription(`.`)
-            .setColor(0x000099)
-            .setThumbnail(msgObject.guild.displayAvatarURL())
-            .setFooter(client.user.username, msgObject.guild.displayAvatarURL())
+            .setColor(0xff9900)
+            .setThumbnail(msgObject.guild.iconURL())
+            .setFooter(client.user.username, msgObject.guild.iconURL())
             .setTimestamp()
             // .addField("Guild Members", membercount, true)
             // .addField("Discord Guests", guestcount, true)
@@ -25,6 +25,5 @@ module.exports = {
             // .addField("Raid Leads (Event Leaders)", officersJR.sort(), false)
             .addField("Created On", msgObject.guild.createdAt, true);
         msgObject.channel.send(embed)
-            .catch(console.error);
     }
 };

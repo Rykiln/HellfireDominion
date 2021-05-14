@@ -9,12 +9,34 @@ module.exports = {
 	guildOnly: true, 														// [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
 	cooldown: 5,		 													// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	execute(msgObject, args, client) {
-		
-		const memberToBan = msgObject.mentions.members.first();
-		const reasonForBan = args.slice(1).join(" ") || "";
+		// Retreive Input Of Member And Reason For Ban		
+		const banAccount = msgObject.mentions.members.first();
+		const banReason = args.slice(1).join(" ") || "";
+		let banNickname = banAccount.banNickname;
+			if (!banNickname) { banNickname = banAccount.user.username };
+
 		msgObject.delete();
-		msgObject.guild.member(memberToBan).ban({ days : 7, reason: reasonForBan})
-                .then(console.log)
-                .catch(console.error);
+
+		// BAN Member From Guild, Delete 7 Days Of Messages, And Include The Reason Provided
+		banAccount.ban({ days : 7, reason: banReason});
+		
+		// Console Log The BAN Event
+		console.log(`-- [${banAccount.user.tag} (${banAccount.user.id})] was banned from [${msgObject.guild.name}] for [${banReason}]`);
+        
+		// Send Embed To Ban Channel To Notify Discord Partners Of The Ban
+		const channelBan = msgObject.guild.channels.resolve(process.env.HD_CHANNELS_BANS);
+		const embed = new Discord.MessageEmbed()
+			.setTitle(`Member Account Banned`)
+			.setColor(0xff0000)
+			.setFooter(client.user.username, client.user.displayAvatarURL())
+			.setTimestamp()
+			.setThumbnail(banAccount.user.displayAvatarURL())
+			.addField(`Discord Tag`, banAccount.user.tag, true)
+			.addField(`Nickname`, banNickname, true)
+			.addField(`Discord ID`, banAccount.user.id, true)
+			.addField(`Joined Guild`, banAccount.joinedAt, false)
+			.addField(`Banned By`, msgObject.author, false)
+			.addField(`Reason For Ban`, banReason, false);
+		channelBan.send(embed);
 	},
 };

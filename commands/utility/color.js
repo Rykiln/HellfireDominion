@@ -8,8 +8,8 @@ module.exports = {
 
 		const hex = Math.floor(Math.random() * 16777215).toString(16);
 		String.prototype.convertToRGB = function () {
-			var aRgbHex = this.match(/.{1,2}/g);
-			var aRgb = [
+			let aRgbHex = this.match(/.{1,2}/g);
+			let aRgb = [
 				parseInt(aRgbHex[0], 16),
 				parseInt(aRgbHex[1], 16),
 				parseInt(aRgbHex[2], 16),
@@ -19,7 +19,6 @@ module.exports = {
 		let embed = new Discord.MessageEmbed()
 			.setColor(`#` + hex)
 			.setTitle(`Random Color`)
-			// .setDescription(hex);
 			.addFields(
 				{ name: `RGB`, value: `[ ${hex.convertToRGB()} ]`, inline: true },
 				{ name: `Hexidecimal`, value: `#` + hex, inline: true }
