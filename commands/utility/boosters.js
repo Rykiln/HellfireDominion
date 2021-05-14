@@ -7,10 +7,10 @@ module.exports = {
 	guildOnly: true, 																					// [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
 	cooldown: 5, 																						// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	execute(msgObject, args, client) {
-		const BoostRoleID = `586312280527077388` // GUILD SPECIFIC - Set the ID of the Server Booster Role For Each Guild.
-		let BoostColor = msgObject.guild.roles.cache.get(BoostRoleID).color;
-		let Boosters = msgObject.guild.roles.cache.get(BoostRoleID).members.map(m => m.user.tag);
-		let embed = new Discord.MessageEmbed()
+		const BoostRoleID = process.env.HD_ROLE_SERVERBOOSTER 
+		const BoostColor = msgObject.guild.roles.cache.get(BoostRoleID).color;
+		const Boosters = msgObject.guild.roles.cache.get(BoostRoleID).members.map(m => m.user.tag);
+		const embed = new Discord.MessageEmbed()
 			.setTitle(`${msgObject.guild.name} Server Boosters`)
 			.setColor(BoostColor)
 			.setFooter(client.user.username, client.user.displayAvatarURL())

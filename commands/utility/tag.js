@@ -9,7 +9,7 @@ module.exports = {
 	guildOnly: true, 												// [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
 	cooldown: 5, 													// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	execute(msgObject, args, client) {
-		const channelLogs = msgObject.guild.channels.cache.get(`725576296351924244`) // #trial-tag-results channel
+		const channelLogs = msgObject.guild.channels.cache.get(process.env.HD_CHANNEL_TRIALTAGRESULTS) // #trial-tag-results channel
 		const values = args.join(` `).split(/[,]/);
 		const requestCharacterName = values[0];
 		const requestCharacterRole = values[1];
