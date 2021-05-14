@@ -73,6 +73,26 @@ class GuildMemberRoleManager {
   }
 
   /**
+   * The premium subscriber role of the guild, if present on the member
+   * @type {?Role}
+   * @readonly
+   */
+  get premiumSubscriberRole() {
+    return this.cache.find(role => role.tags && role.tags.premiumSubscriberRole) || null;
+  }
+
+  /**
+   * The managed role this member created when joining the guild, if any
+   * <info>Only ever available on bots</info>
+   * @type {?Role}
+   * @readonly
+   */
+  get botRole() {
+    if (!this.member.user.bot) return null;
+    return this.cache.find(role => role.tags && role.tags.botID === this.member.user.id) || null;
+  }
+
+  /**
    * Adds a role (or multiple roles) to the member.
    * @param {RoleResolvable|RoleResolvable[]|Collection<Snowflake, Role>} roleOrRoles The role or roles to add
    * @param {string} [reason] Reason for adding the role(s)
@@ -80,23 +100,25 @@ class GuildMemberRoleManager {
    */
   async add(roleOrRoles, reason) {
     if (roleOrRoles instanceof Collection || Array.isArray(roleOrRoles)) {
-      roleOrRoles = roleOrRoles.map(r => this.guild.roles.resolve(r));
-      if (roleOrRoles.includes(null)) {
-        throw new TypeError('INVALID_TYPE', 'roles', 'Array or Collection of Roles or Snowflakes', true);
+      const resolvedRoles = [];
+      for (const role of roleOrRoles.values()) {
+        const resolvedRole = this.guild.roles.resolveID(role);
+        if (!resolvedRole) throw new TypeError('INVALID_ELEMENT', 'Array or Collection', 'roles', role);
+        resolvedRoles.push(resolvedRole);
       }
 
-      const newRoles = [...new Set(roleOrRoles.concat(...this._roles.values()))];
+      const newRoles = [...new Set(resolvedRoles.concat(...this._roles.values()))];
       return this.set(newRoles, reason);
     } else {
-      roleOrRoles = this.guild.roles.resolve(roleOrRoles);
+      roleOrRoles = this.guild.roles.resolveID(roleOrRoles);
       if (roleOrRoles === null) {
         throw new TypeError('INVALID_TYPE', 'roles', 'Role, Snowflake or Array or Collection of Roles or Snowflakes');
       }
 
-      await this.client.api.guilds[this.guild.id].members[this.member.id].roles[roleOrRoles.id].put({ reason });
+      await this.client.api.guilds[this.guild.id].members[this.member.id].roles[roleOrRoles].put({ reason });
 
       const clone = this.member._clone();
-      clone._roles = [...this._roles.keys(), roleOrRoles.id];
+      clone._roles = [...this._roles.keys(), roleOrRoles];
       return clone;
     }
   }
@@ -109,23 +131,25 @@ class GuildMemberRoleManager {
    */
   async remove(roleOrRoles, reason) {
     if (roleOrRoles instanceof Collection || Array.isArray(roleOrRoles)) {
-      roleOrRoles = roleOrRoles.map(r => this.guild.roles.resolve(r));
-      if (roleOrRoles.includes(null)) {
-        throw new TypeError('INVALID_TYPE', 'roles', 'Array or Collection of Roles or Snowflakes', true);
+      const resolvedRoles = [];
+      for (const role of roleOrRoles.values()) {
+        const resolvedRole = this.guild.roles.resolveID(role);
+        if (!resolvedRole) throw new TypeError('INVALID_ELEMENT', 'Array or Collection', 'roles', role);
+        resolvedRoles.push(resolvedRole);
       }
 
-      const newRoles = this._roles.filter(role => !roleOrRoles.includes(role));
+      const newRoles = this._roles.filter(role => !resolvedRoles.includes(role.id));
       return this.set(newRoles, reason);
     } else {
-      roleOrRoles = this.guild.roles.resolve(roleOrRoles);
+      roleOrRoles = this.guild.roles.resolveID(roleOrRoles);
       if (roleOrRoles === null) {
-        throw new TypeError('INVALID_TYPE', 'roles', 'Array or Collection of Roles or Snowflakes', true);
+        throw new TypeError('INVALID_TYPE', 'roles', 'Role, Snwoflake or Array or Collection of Roles or Snowflakes');
       }
 
-      await this.client.api.guilds[this.guild.id].members[this.member.id].roles[roleOrRoles.id].delete({ reason });
+      await this.client.api.guilds[this.guild.id].members[this.member.id].roles[roleOrRoles].delete({ reason });
 
       const clone = this.member._clone();
-      const newRoles = this._roles.filter(role => role.id !== roleOrRoles.id);
+      const newRoles = this._roles.filter(role => role.id !== roleOrRoles);
       clone._roles = [...newRoles.keys()];
       return clone;
     }
@@ -155,6 +179,10 @@ class GuildMemberRoleManager {
     const clone = new this.constructor(this.member);
     clone.member._roles = [...this._roles.keyArray()];
     return clone;
+  }
+
+  valueOf() {
+    return this.cache;
   }
 }
 
