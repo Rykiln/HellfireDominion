@@ -15,7 +15,7 @@ module.exports = {
         let embed = new Discord.MessageEmbed()
             .setTitle(msgObject.guild.name)
             .setDescription(`.`)
-            .setColor(0xff9900)
+            .setColor(process.env.HD_COLOR_YELLOW)
             .setThumbnail(msgObject.guild.iconURL())
             .setFooter(client.user.username, msgObject.guild.iconURL())
             .setTimestamp()

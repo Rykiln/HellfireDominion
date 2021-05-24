@@ -17,7 +17,7 @@ module.exports = {
 		const embed = new Discord.MessageEmbed()
 			.setTitle(`Trial Tag Request`)
 			.setAuthor(msgObject.author.tag, msgObject.author.displayAvatarURL())
-			.setColor(0xff9900)
+			.setColor(process.env.HD_COLOR_YELLOW)
 			.setThumbnail(`https://images.uesp.net/thumb/7/7e/ON-icon-heraldry-Deities_Akatosh.png/100px-ON-icon-heraldry-Deities_Akatosh.png`)
 			.setFooter(client.user.username, client.user.displayAvatarURL())
 			.setTimestamp()

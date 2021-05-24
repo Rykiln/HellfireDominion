@@ -18,7 +18,7 @@ module.exports = {
 
 		let embed = new Discord.MessageEmbed()
 			.setAuthor(msgObject.author.tag, msgObject.author.displayAvatarURL())
-			.setColor(`0xbaf2ef`)
+			.setColor(process.env.HD_COLOR_YELLOW)
 			.setTitle(`${msgObject.author.username} Rolled ${diceRoll.result}`)
 			.setThumbnail(`https://bestanimations.com/Games/Dice/rolling-dice-gif-3.gif`)
 			.setFooter(client.user.username, client.user.displayAvatarURL())
