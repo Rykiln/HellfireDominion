@@ -8,15 +8,15 @@ module.exports = {
 	guildOnly: true, 															// [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
 	cooldown: 5, 																// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	execute(msgObject, args, client) {
+		const firstArgument = args[0].replace(/<|#|>/g, "")
 		const channel_destination = msgObject.mentions.channels.first() || msgObject.channel;
-		switch(channel_destination){ // Parse Message When Channel Is Not Mentioned
-			case msgObject.channel:
-				var msg = args.join(" ") || "";
-				break;
-			default: // Parse Message When Channel Is Not Mentioned
-				var msg = args.slice(1).join(" ") || "";
-		}
+		if(firstArgument === channel_destination.id){ // Parse Message When Channel Is Not Mentioned
+			var msg = args.slice(1).join(" ") || "";
+			channel_destination.send(msg);
+		} else { // Parse Message When Channel Is Not Mentioned
+			var msg = args.join(" ") || "";
+			msgObject.channel.send(msg);
+		};
 		msgObject.delete();
-		channel_destination.send(msg)
 	},
 };
