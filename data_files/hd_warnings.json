@@ -144,5 +144,19 @@
         "warnedby": "Crazy Cans",
         "reason": "No-Show",
         "date": "Fri Apr 30 2021 21:07:20 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "Hiddle#0001",
+        "ID": "338654795780849665",
+        "event": "raid-lead-chat",
+        "reason": "No-Show",
+        "date": "Mon May 31 2021 23:23:22 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "Crazy Cans#4451",
+        "ID": "313560711668432897",
+        "event": "raid-lead-chat",
+        "reason": "No-Show",
+        "date": "Mon May 31 2021 23:23:51 GMT-0500 (Central Daylight Time)"
     }
 ]
