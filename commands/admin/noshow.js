@@ -4,14 +4,14 @@ module.exports = {
 	description: 'ADMIN: Notifies a member that they missed an event that they signed up for.',		// [Optional] Description of this command for the help command
 	// aliases: [``, ``], 																			// [Optional] Permits additional command names to be used for this command 
 	usage: '<@member>',																				// [Optional] Displays how to use this command in the help command.
-    permissions: `MANAGE_ROLES`,																	// [Optional] Checks for default discord.js permissions. See https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS
+    // permissions: `MANAGE_ROLES`,																	// [Optional] Checks for default discord.js permissions. See https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS
     args: true, 																					// [Optional] When True - Requires Arguments Be Provided In Message Object
 	guildOnly: true, 																				// [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
 	cooldown: 5, 																					// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	execute(msgObject, args, client) {
 		msgObject.guild.members.fetch(msgObject.mentions.users.first())
 			.then(noshowMember => {
-				const noshowMemberName = noshowMember.username;
+				const noshowMemberTag = noshowMember.user.tag;
 				const noshowMemberID = noshowMember.id;
 
 				const eventName = msgObject.channel.name;
@@ -19,23 +19,20 @@ module.exports = {
 
 				const channelNoShow = client.channels.resolve(process.env.HD_CHANNEL_WARNINGS); // Hellfire Dominion Warnings Warnings Channel
 				// const channelNoShow = client.channels.resolve(process.env.TEST_CHANNEL_WARNINGS); // Test Server Warnings Warnings Channel
-				console.log(channelNoShow.name)
 				const fs = require(`fs`);
 				fs.readFile(process.env.HD_JSON_WARNINGS, function(err, data){
 					if (err) throw err;
 
 					let warns = JSON.parse(data);
-					console.log(warns);
 					let newObject = {
-						Member: (noshowMemberName),
+						Member: (noshowMemberTag),
 						ID: (noshowMemberID),
 						event: (eventName),
-						warnedby: (warnedBy),
+						warnedby: (warnedBy.tag),
 						reason: (`No-Show`),
 						date: (Date()),
 					};
 					warns.push(newObject);
-					console.log(warns);
 					fs.writeFile(process.env.HD_JSON_WARNINGS, JSON.stringify (warns, null, 4), err => {
 						if (err) throw err;
 					});
