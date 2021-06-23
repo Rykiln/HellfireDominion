@@ -68,11 +68,9 @@ client.on(`guildMemberUpdate`, (oldMember, newMember) => {
         const roleSeparatorCores = process.env.HD_ROLE_SEPARATOR_CORES;
         const roleSeparatorFarmTags = process.env.HD_ROLE_SEPARATOR_FARMTAGS;
         const roleSeparatorInterests = process.env.HD_ROLE_SEPARATOR_INTERESTS;
-        const roleSeparatorMisc = process.env.HD_ROLE_SEPARATOR_MISC;
         const roleSeparatorPrerequisites = process.env.HD_ROLE_SEPARATOR_PREREQUISITES;
         const roleSeparatorRanks = process.env.HD_ROLE_SEPARATOR_RANKS;
-        const roleSeparatorTitles = process.env.HD_ROLE_SEPARATOR_TITLES;
-        const rolesIDArray = [roleDefault, roleSeparatorCores, roleSeparatorFarmTags, roleSeparatorInterests, roleSeparatorMisc, roleSeparatorPrerequisites, roleSeparatorRanks, roleSeparatorTitles]
+        const rolesIDArray = [roleDefault, roleSeparatorCores, roleSeparatorFarmTags, roleSeparatorInterests, roleSeparatorPrerequisites, roleSeparatorRanks]
         let rolesArray = []
         rolesIDArray.forEach(role => {
             newMember.roles.add(role);
