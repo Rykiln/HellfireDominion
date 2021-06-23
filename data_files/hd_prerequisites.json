@@ -1,9 +1,9 @@
 {
     "fine": {
         "roleID": "729372084190576663",
-        "ddID": "851173619060310096",
-        "healerID": "851173619060310096",
-        "tankID": "851173619060310096",
+        "ddID": "724452618503454902",
+        "healerID": "724452582151553025",
+        "tankID": "724451545407684611",
         "dpsMag": "55",
         "dpsStam": "60",
         "gearHealer": {
@@ -54,7 +54,7 @@
         },
         "note": "*Acceptable selfish sets, monster helms and mythic items are listed below."
     },
-    "Superior": {
+    "superior": {
         "roleID": "729372014204158012",
         "ddID": "724453064148254760",
         "healerID": "724453043785171004",
@@ -98,7 +98,7 @@
             }
         }
     },
-    "Epic": {
+    "epic": {
         "roleID": "729371972965761045",
         "ddID": "724453368592072734",
         "healerID": "724453296227483650",
@@ -134,7 +134,7 @@
             }
         }
     },
-    "Legendary": {
+    "legendary": {
         "roleID": "729371904171049021",
         "ddID": "724453787292401706",
         "healerID": "724453723866267658",
