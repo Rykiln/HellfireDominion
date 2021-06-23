@@ -1,0 +1,157 @@
+{
+    "fine": {
+        "roleID": "729372084190576663",
+        "ddID": "851173619060310096",
+        "healerID": "851173619060310096",
+        "tankID": "851173619060310096",
+        "dpsMag": "55",
+        "dpsStam": "60",
+        "gearHealer": {
+            "Spell Power Cure": {
+                "setName": "Spell Power Cure",
+                "setURL": "https://eso-sets.com/set/spell-power-cure"
+            },
+            "Worm's Raiment": {
+                "setName": "Worm's Raiment",
+                "setURL": "https://eso-sets.com/set/the-worms-raiment"
+            },
+            "Roaring Opportunist": {
+                "setName": "Roaring Opportunist",
+                "setURL": "https://eso-hub.com/en/sets/roaring-opportunist"
+            },
+            "Jorvuld's Guidance": {
+                "setName": "Jorvuld's Guidance",
+                "setURL": "https://eso-hub.com/en/sets/jorvulds-guidance"
+            },
+            "Sentinel of Rkugamz": {
+                "setName": "Sentinel of Rkugamz",
+                "setURL": "https://eso-hub.com/en/sets/sentinel-of-rkugamz"
+            },
+            "Symphony of Blades": {
+                "setName": "Symphony of Blades",
+                "setURL": "https://eso-hub.com/en/sets/symphony-of-blades"
+            }
+        },
+        "gearTank" : {
+            "Claw of Yolnahkriin": {
+                "setName": "Claw of Yolnahkriin",
+                "setURL": "https://eso-hub.com/en/sets/claw-of-yolnahkriin"
+            },
+            "Aegis of Galenwe": {
+                "setName": "Aegis of Galenwe",
+                "setURL": "https://eso-hub.com/en/sets/aegis-of-galenwe"
+            },
+            "Ebon Armory": {
+                "setName": "Ebon Armory",
+                "setURL": "https://eso-hub.com/en/sets/ebon-armory"
+            },
+            "Lord Warden": {
+                "setName": "Lord Warden",
+                "setURL": "https://eso-hub.com/en/sets/lord-warden"
+            },
+            "selfSet": "One Selfish Set*",
+            "selfSet2": "One Selfish Monster Helm or Mythic Item*"
+        },
+        "note": "*Acceptable selfish sets, monster helms and mythic items are listed below."
+    },
+    "Superior": {
+        "roleID": "729372014204158012",
+        "ddID": "724453064148254760",
+        "healerID": "724453043785171004",
+        "tankID": "724452988713828352",
+        "dpsMag": "65",
+        "dpsStam": "70",
+        "gearHealer": {
+            "Vestiment of Olorime": {
+                "setName": "Vestiment of Olorime",
+                "setURL": "https://eso-hub.com/en/sets/vestment-of-olorime"
+            },
+            "Master's Restoration Staff": {
+                "setName": "Master's Restoration Staff",
+                "setURL": "https://eso-hub.com/en/sets/grand-rejuvenation"
+            },
+            "Troll King": {
+                "setName": "Troll King",
+                "setURL": "https://eso-hub.com/en/sets/the-troll-king"
+            },
+            "Encratis Behemoth": {
+                "setName": "Encratis Behemoth",
+                "setURL": "https://eso-hub.com/en/sets/encratiss-behemoth"
+            }
+        },
+        "gearTank" : {
+            "Powerful Assault": {
+                "setName": "Powerful Assault",
+                "setURL": "https://eso-hub.com/en/sets/powerful-assault"
+            },
+            "Dragon's Defilement": {
+                "setName": "Dragon's Defilement",
+                "setURL": "https://eso-hub.com/en/sets/dragons-defilement"
+            },
+            "Thurvokun": {
+                "setName": "Thurvokun",
+                "setURL": "https://eso-hub.com/en/sets/thurvokun"
+            },
+            "Encratis's Bohemoth": {
+                "setName": "Encratis's Bohemoth",
+                "setURL": "https://eso-hub.com/en/sets/encratiss-behemoth"
+            }
+        }
+    },
+    "Epic": {
+        "roleID": "729371972965761045",
+        "ddID": "724453368592072734",
+        "healerID": "724453296227483650",
+        "tankID": "724453256360755250",
+        "dpsMag": "75",
+        "dpsStam": "80",
+        "gearHealer": {
+            "Martial Knowledge": {
+                "setName": "Martial Knowledge",
+                "setURL": "https://eso-hub.com/en/sets/way-of-martial-knowledge"
+            },
+            "Z'en's Redress": {
+                "setName": "Z'en's Redress",
+                "setURL": "https://eso-hub.com/en/sets/zens-redress"
+            },
+            "Blackrose Restoration Staff": {
+                "setName": "Blackrose Restoration Staff",
+                "setURL": "https://eso-hub.com/en/sets/menders-ward"
+            }
+        },
+        "gearTank" : {
+            "Worm's Raiment": {
+                "setName": "Worm's Raiment",
+                "setURL": "https://eso-hub.com/en/sets/the-worms-raiment"
+            },
+            "Roar of Alkosh": {
+                "setName": "Roar of Alkosh",
+                "setURL": "https://eso-hub.com/en/sets/roar-of-alkosh"
+            },
+            "Frozen Watcher": {
+                "setName": "Frozen Watcher",
+                "setURL": "https://eso-hub.com/en/sets/frozen-watcher"
+            }
+        }
+    },
+    "Legendary": {
+        "roleID": "729371904171049021",
+        "ddID": "724453787292401706",
+        "healerID": "724453723866267658",
+        "tankID": "724453684905377823",
+        "dpsMag": "85",
+        "dpsStam": "90",
+        "gearHealer": {
+            "Master Architect": {
+                "setName": "Master Architect",
+                "setURL": "https://eso-hub.com/en/sets/master-architect"
+            }
+        },
+        "gearTank" : {
+            "War Machine": {
+                "setName": "War Machine",
+                "setURL": "https://eso-hub.com/en/sets/war-machine"
+            }
+        }
+    }
+}
