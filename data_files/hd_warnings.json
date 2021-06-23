@@ -158,5 +158,82 @@
         "event": "raid-lead-chat",
         "reason": "No-Show",
         "date": "Mon May 31 2021 23:23:51 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "🌸DANI🌸#0017",
+        "ID": "416089933342703617",
+        "event": "vsshm-wed-8pm-jun-2nd",
+        "reason": "No-Show",
+        "date": "Wed Jun 02 2021 20:35:52 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "QuantumPie#0314",
+        "ID": "257261276391145472",
+        "event": "vrg-tonight-10pm",
+        "reason": "No-Show",
+        "date": "Fri Jun 04 2021 21:07:17 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "Ultra#2256",
+        "ID": "341180110810120202",
+        "event": "social",
+        "reason": "No-Show",
+        "date": "Fri Jun 04 2021 23:37:17 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "Sweggo#0001",
+        "ID": "167752598168797185",
+        "event": "sweggo-ttt-pug-chat",
+        "reason": "No-Show",
+        "date": "Mon Jun 07 2021 21:18:34 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "Crazy Cans#4451",
+        "ID": "313560711668432897",
+        "event": "sweggo-ttt-pug-chat",
+        "reason": "No-Show",
+        "date": "Mon Jun 07 2021 21:18:47 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "Sweggo#0001",
+        "ID": "167752598168797185",
+        "event": "sweggo-ttt-pug-chat",
+        "reason": "No-Show",
+        "date": "Mon Jun 07 2021 21:20:12 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "yanbclive#1674",
+        "ID": "717879888899735584",
+        "event": "vrg-fri-9pm-edt",
+        "reason": "No-Show",
+        "date": "Fri Jun 04 2021 19:00:00 GMT-500 (Central Daylight Time)"
+    },
+    {
+        "Member": "CalmZeus#3583",
+        "ID": "306201642020372481",
+        "event": "vcr0-sat-7pm-jun-19th",
+        "reason": "No-Show",
+        "date": "Sat Jun 19 2021 21:52:31 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "Leg#2987",
+        "ID": "176900601412714497",
+        "event": "x-depending-on-time-chat",
+        "reason": "No-Show",
+        "date": "Mon Jun 21 2021 17:00:15 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "Wabbajack555#0983",
+        "ID": "590608812357189672",
+        "event": "vcr3-miniprog-tuesday-8pmest",
+        "reason": "No-Show",
+        "date": "Tue Jun 22 2021 19:38:06 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "quarzite#5095",
+        "ID": "685958859147575337",
+        "event": "vcr3-miniprog-tuesday-8pmest",
+        "reason": "No-Show",
+        "date": "Tue Jun 22 2021 19:38:41 GMT-0500 (Central Daylight Time)"
     }
 ]
