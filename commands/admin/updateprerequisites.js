@@ -26,8 +26,8 @@ module.exports = {
 					const tankID = msgObject.guild.roles.resolve(subkeys.tankID);
 					const dpsMag = `${subkeys.dpsMag}K for Magicka`;
 					const dpsStam = `${subkeys.dpsStam}K for Stamina`;
-					const gearHealer = subkeys.gearHealer;
-					const gearTank = subkeys.gearTank;
+					const healerGear = Object.keys(subkeys.gearHealer).map(setName => `[${subkeys.gearHealer[setName].setName}](${subkeys.gearHealer[setName].setURL})`);
+					const tankGear = Object.keys(subkeys.gearTank).map(setName => `[${subkeys.gearTank[setName].setName}](${subkeys.gearTank[setName].setURL})`);
 					const restrictions = [
 						`No Mythic Items`,`No [Blood for Blood](https://eso-hub.com/en/skills/world/vampire/blood-for-blood)`,`No [Blood Frenzy](https://eso-hub.com/en/skills/world/vampire/blood-frenzy)`]
 					const embed = new Discord.MessageEmbed()
@@ -35,8 +35,8 @@ module.exports = {
 						.setColor(role.color)
 						.addFields(
 							{name: `DPS`, value: `${ddID}\n\n${dpsMag}\n${dpsStam}\n${restrictions.join(`\n`)}`, inline: true},
-							{name: `Healer`, value: `${healerID}`, inline: true},
-							{name: `Tank`, value: `${tankID}`, inline: true}
+							{name: `Healer`, value: `${healerID}\n\n${healerGear.join(`\n`)}`, inline: true},
+							{name: `Tank`, value: `${tankID}\n\n${tankGear.join(`\n`)}`, inline: true}
 						)
 					msgObject.channel.send(embed)
 				});

@@ -49,8 +49,12 @@
                 "setName": "Lord Warden",
                 "setURL": "https://eso-hub.com/en/sets/lord-warden"
             },
-            "selfSet": "One Selfish Set*",
-            "selfSet2": "One Selfish Monster Helm or Mythic Item*"
+            "selfSet": {
+                "setName":"One Selfish Set*"
+            },
+            "selfSet2": {
+                "setName": "One Selfish Monster Helm or Mythic Item*"
+            }
         },
         "note": "*Acceptable selfish sets, monster helms and mythic items are listed below."
     },
