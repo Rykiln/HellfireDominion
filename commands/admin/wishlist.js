@@ -30,43 +30,23 @@ module.exports = {
 
 		sendDisclaimerEmbed(msgObject, client, startDate, duration);
 
+		const fs = require(`fs`);
+		const fileRanks = process.env.HD_JSON_RANKS;
 
-		const raider = new Rank("Raider", process.env.HD_COLOR_FINE, getTrialsRaider(), "https://images.uesp.net/thumb/f/f6/ON-npc-The_Mage.jpg/200px-ON-npc-The_Mage.jpg");
-		const veteran = new Rank("Veteran", process.env.HD_COLOR_SUPERIOR, getTrialsVeteran(), "https://images.uesp.net/thumb/c/c4/ON-creature-Z%27Maja.jpg/200px-ON-creature-Z%27Maja.jpg");
-		const vanguard = new Rank("Vanguard", process.env.HD_COLOR_EPIC, getTrialsVanguard(), "https://images.uesp.net/thumb/e/e0/ON-creature-Rakkhat.jpg/200px-ON-creature-Rakkhat.jpg");
-		const champion = new Rank("Champion", process.env.HD_COLOR_LEGENDARY, getTrialsChampion(), "https://images.uesp.net/thumb/b/bf/ON-creature-Nahviintaas_03.jpg/200px-ON-creature-Nahviintaas_03.jpg");
+		fs.readFile(fileRanks, function(err, data) {
+			if (err) throw err;
+			const ranksJSON = JSON.parse(data);
 
-		sendTrainingEmbed(msgObject, client, raider);
-		sendTrainingEmbed(msgObject, client, veteran);
-		sendTrainingEmbed(msgObject, client, vanguard);
-		sendTrainingEmbed(msgObject, client, champion);
-
+			const ranks = Object.keys(ranksJSON);
+			ranks.forEach(index => {
+				const rank = ranksJSON[index];
+				createTrainingEmbed(msgObject, client, rank)
+			});
+		});
 	},
 };
 
-function sendDisclaimerEmbed(msgObject, client, startDate, duration) {
-
-	duration = parseInt(duration)
-
-	var endDate = new Date(startDate.getTime());
-	endDate.setDate(endDate.getDate() + duration - 1);
-
-	const headline = `Please react in the messages below to vote on which trials you would like to see run the following week:\n` +
-		`From **${startDate.toDateString()}** until **${endDate.toDateString()}**.\n` +
-		`\nIf you are interested in farm, score, trifecta, arena or any other type of runs post below.`;
-
-	const embed = new Discord.MessageEmbed()
-		.setTitle(`Content Wishlist Pool`)
-		.setColor(process.env.HD_COLOR_YELLOW)
-		.setThumbnail(client.user.displayAvatarURL())
-		.setFooter(client.user.username, client.user.displayAvatarURL())
-		.setTimestamp()
-		.addField(` ‎ `, `${headline}`);
-
-	msgObject.channel.send(embed);
-}
-
-function sendTrainingEmbed(msgObject, client, rank) {
+function createTrainingEmbed(msgObject, client, rank) {
 	var description = "";
 
 	rank.trials.forEach((trial, _) => {
@@ -88,72 +68,25 @@ function sendTrainingEmbed(msgObject, client, rank) {
 	});
 }
 
-function getTrialsRaider() {
-	return [
-		new Trial("Aetherian Archive", "vAA HM", "🧙‍♀️",),
-		new Trial("Hel Ra Citadel", "vHRC HM", "⚔️",),
-		new Trial("Sanctum ophidia", "vSO HM", "🐍",)
-	];
-}
 
-function getTrialsVeteran() {
-	return [
-		new Trial("Maw Of Lorkhaj", "vMOL", "🐈‍⬛"),
-		new Trial("Halls Of Fabrication", "vHOF", "🤖"),
-		new Trial("Asylum Sanctorium", "vAS", "⚙️"),
-		new Trial("Cloudrest", "vCR", "🦅"),
-		new Trial("Sunspire", "vSS", "🐲"),
-		new Trial("Kyne's Aegis", "vKA", "🧛"),
-		new Trial("Rockgrove", "vRG", "🦎")
-	];
-}
+function sendDisclaimerEmbed(msgObject, client, startDate, duration) {
 
-function getTrialsVanguard() {
-	return [
-		new Trial("Maw Of Lorkhaj", "vMOL HM", "🐈‍⬛"),
-		new Trial("Halls Of Fabrication", "vHOF HM", "🤖"),
-		new Trial("Asylum Sanctorium", "vAS+1 Llothis", "☠️"),
-		new Trial("Asylum Sanctorium", "vAS+1 Felms", "🥓"),
-		new Trial("Cloudrest", "vCR +1 (Lighting)", "⚡"),
-		new Trial("Cloudrest", "vCR +1 (Ice)", "❄️"),
-		new Trial("Cloudrest", "vCR +1 (Fire)", "🧨"),
-		new Trial("Cloudrest", "vCR +2 (Lighting + Ice)", "🌩️"),
-		new Trial("Cloudrest", "vCR +2 (Fire + Lighting)", "🌋"),
-		new Trial("Cloudrest", "vCR +2 (Fire + Ice)", "🌡️"),
-		new Trial("Sunspire", "vSS Fire", "🧊"),
-		new Trial("Sunspire", "vSS Ice", "🔥"),
-		new Trial("Kyne's Aegis", "vKA Yandir HM", "🔪"),
-		new Trial("Kyne's Aegis", "vKA Vrol HM", "🏴‍☠️"),
-		new Trial("Rockgrove", "vRG Oaxiltso HM", "🦎"),
-		// new Trial("Rockgrove", "vRG Bahsei HM", "💀")
-	];
-}
+	duration = parseInt(duration)
 
+	var endDate = new Date(startDate.getTime());
+	endDate.setDate(endDate.getDate() + duration - 1);
 
+	const headline = `Please react in the messages below to vote on which trials you would like to see run the following week:\n` +
+		`From **${startDate.toDateString()}** until **${endDate.toDateString()}**.\n` +
+		`\nIf you are interested in farm, score, trifecta, arena or any other type of runs post below.`;
 
-function getTrialsChampion() {
-	return [
-		new Trial("Asylum Sanctorium", "vAS+2", "⚙️"),
-		new Trial("Cloudrest", "vCR+3", "🦅"),
-		new Trial("Sunspire", "vSS HM", "🐲"),
-		new Trial("Kyne's Aegis", "vKA HM", "🧛"),
-		// new Trial("Rockgrove", "vRG HM", "🦎")
-	];
-}
+	const embed = new Discord.MessageEmbed()
+		.setTitle(`Content Wishlist Pool`)
+		.setColor(process.env.HD_COLOR_YELLOW)
+		.setThumbnail(client.user.displayAvatarURL())
+		.setFooter(client.user.username, client.user.displayAvatarURL())
+		.setTimestamp()
+		.addField(` ‎ `, `${headline}`);
 
-class Rank {
-	constructor(name, color, trials, image) {
-		this.name = name;
-		this.color = color;
-		this.trials = trials;
-		this.image = image;
-	}
-}
-
-class Trial {
-	constructor(name, shortName, emoji) {
-		this.name = name;
-		this.shortName = shortName;
-		this.emoji = emoji;
-	}
+	msgObject.channel.send(embed);
 }
