@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 module.exports = {
 	name: 'tag',													// Name of this command. Required for all commands.
-	description: 'Command_Description.',							// [Optional] Description of this command for the help command
+	description: 'Allow players to apply to open cores.',							// [Optional] Description of this command for the help command
 	aliases: [`farmtag`, `apply`],						 			// [Optional] Permits additional command names to be used for this command 
 	usage: '<CharacterName> <Trial Role> <URL To ESO Logs>',		// [Optional] Displays how to use this command in the help command.
     // permissions: `MANAGE_ROLES`,									// [Optional] Checks for default discord.js permissions. See https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS
