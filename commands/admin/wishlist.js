@@ -88,5 +88,6 @@ function sendDisclaimerEmbed(msgObject, client, startDate, duration) {
 		.setTimestamp()
 		.addField(` ‎ `, `${headline}`);
 
+	msgObject.delete(10000);
 	msgObject.channel.send(embed);
 }
