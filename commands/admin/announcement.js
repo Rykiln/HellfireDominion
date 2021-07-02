@@ -20,9 +20,9 @@ module.exports = {
 			.setTimestamp()
 			.setDescription(args.join(` `));
 		msgObject.delete(3000);
-		console.log(channelAnnounce.name);
-		console.log(notifyPing.name);
-		console.log(args.join(` `));
+		// console.log(channelAnnounce.name);
+		// console.log(notifyPing.name);
+		// console.log(args.join(` `));
 		channelAnnounce.send(notifyPing);
 		channelAnnounce.send(embed)
 			.then(announcement => announcement.pin());
