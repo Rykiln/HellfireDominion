@@ -263,5 +263,54 @@
         "event": "vssice-wed-june-30th-8pmest",
         "reason": "No-Show",
         "date": "Wed Jun 30 2021 20:10:56 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "thedon#0921",
+        "ID": "391995588889280533",
+        "event": "vrg-oax-hm-training-sun-10-1159pm",
+        "reason": "No-Show",
+        "date": "Sun Jul 04 2021 21:05:35 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "Hiddle#0001",
+        "ID": "338654795780849665",
+        "event": "bite-me-chat",
+        "reason": "No-Show",
+        "date": "Tue Jul 06 2021 18:46:15 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "sound.infinite#2189",
+        "ID": "322762901083652096",
+        "event": "bite-me-chat",
+        "reason": "No-Show",
+        "date": "Tue Jul 06 2021 18:51:10 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "PudgeyWudgey#5298",
+        "ID": "321337181530619904",
+        "event": "vaahm-wed-8pm",
+        "reason": "No-Show",
+        "date": "Wed Jul 07 2021 19:12:57 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "timistim#2193",
+        "ID": "390079905762770944",
+        "event": "vas2-sun-6pm-jul-11th",
+        "reason": "No-Show",
+        "date": "Sun Jul 11 2021 20:22:56 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "xRe4MasTeRx#3174",
+        "ID": "211515851323473920",
+        "event": "vas2-sun-6pm-jul-11th",
+        "reason": "No-Show",
+        "date": "Sun Jul 11 2021 20:23:19 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "Member": "Gee#0731",
+        "ID": "140897181665067008",
+        "event": "larrys-chained-men-chat",
+        "reason": "No-Show",
+        "date": "Tue Jul 13 2021 15:27:43 GMT-0500 (Central Daylight Time)"
     }
 ]
