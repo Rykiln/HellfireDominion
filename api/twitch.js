@@ -37,9 +37,10 @@ module.exports = (client, guildID) => {setInterval(() => {
             const tGame = tStream.gameName;
             // Set Destination Channel In Discord By Game
             let dChannel;
-            switch (tGame) {
-                case `The Elder Scrolls Online`:
-                case `The Elder Scrolls Online: Collection`:
+            switch (tGame.toLowerCase()) {
+                case 'the elder scrolls online':
+                case 'the elder scrolls online: collection':
+                case 'the elder scrolls online: blackwood':
                     dChannel = client.channels.cache.get(process.env.HD_CHANNEL_MEDIA);
                     break;
                 default:
