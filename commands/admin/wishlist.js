@@ -31,7 +31,7 @@ module.exports = {
 		sendDisclaimerEmbed(msgObject, client, startDate, duration);
 
 		const fs = require(`fs`);
-		const fileRanks = process.env.HD_JSON_RANKS;
+		const fileRanks = process.env.HD_JSON_CONTENT_WISHLIST;
 
 		fs.readFile(fileRanks, function(err, data) {
 			if (err) throw err;
@@ -55,7 +55,7 @@ function createTrainingEmbed(msgObject, client, rank) {
 
 	const lineFiller = `‎‎‎                                     ‎‎‎    ‎‎‎          ‎‎‎    `;
 	const embed = new Discord.MessageEmbed()
-		.setTitle(`${rank.name} Training`)
+		.setTitle(rank.name)
 		.setColor(rank.color)
 		.setThumbnail(rank.image)
 		.addField(lineFiller, description);

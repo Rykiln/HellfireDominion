@@ -6,4 +6,4 @@ HD_COLOR_EPIC=0x9f2df7
 HD_COLOR_LEGENDARY=0xeec929
 
 
-HD_JSON_RANKS=../data_files/hd_ranks.json
+HD_JSON_CONTENT_WISHLIST=./data_files/hd_content_wishlist.json
