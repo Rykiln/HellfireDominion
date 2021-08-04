@@ -1,6 +1,6 @@
 {
   "raider": {
-    "name": "Raider",
+    "name": "Raider Training",
     "color": "0x2cc50d",
     "ddID": "724479546887241728",
     "healerID": "724479493313396817",
@@ -25,12 +25,12 @@
     ]
   },
   "veteran": {
-    "name": "Veteran",
+    "name": "Veteran Training",
     "color": "0x3991ff",
     "ddID": "724481950005461002",
     "healerID": "724481894670139462",
     "tankID": "724481832715943936",
-    "image": "https://images.uesp.net/thumb/c/c4/ON-creature-Z%27Maja.jpg/200px-ON-creature-Z%27Maja.jpg",
+    "image": "https://images.uesp.net/thumb/d/d7/ON-creature-Assembly_General.jpg/200px-ON-creature-Assembly_General.jpg",
     "trials": [
       {
         "name": "Maw Of Lorkhaj",
@@ -70,7 +70,7 @@
     ]
   },
   "vanguard": {
-    "name": "Vanguard",
+    "name": "Vanguard Training",
     "color": "0x9f2df7",
     "ddID": "724482072084873261",
     "healerID": "724482002576867338",
@@ -130,7 +130,7 @@
     ]
   },
   "champion": {
-    "name": "Champion",
+    "name": "Champion Training",
     "color": "0xeec929",
     "ddID": "724482204306112562",
     "healerID": "724482168553734204",
@@ -156,6 +156,23 @@
         "name": "Kyne's Aegis",
         "shortName": "vKA HM",
         "emoji": "🧛"
+      }
+    ]
+  },
+  "farm": {
+    "name": "Farm Runs",
+    "color": "0xff6600",
+    "image": "https://images.uesp.net/thumb/c/c4/ON-creature-Z%27Maja.jpg/200px-ON-creature-Z%27Maja.jpg",
+    "trials": [
+      {
+        "name": "Cloudrest",
+        "shortName": "Barlic Boon Hours (vCR+3)",
+        "emoji": "🥩"
+      },
+      {
+        "name": "Throwing for Poly",
+        "shortName": "Throwing for Poly (vAS+2)",
+        "emoji": "🌚"
       }
     ]
   }
