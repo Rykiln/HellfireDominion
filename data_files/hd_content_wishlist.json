@@ -1,6 +1,6 @@
 {
   "raider": {
-    "name": "Raider Rank",
+    "name": "Raider Training",
     "color": "0x2cc50d",
     "ddID": "724479546887241728",
     "healerID": "724479493313396817",
@@ -25,7 +25,7 @@
     ]
   },
   "veteran": {
-    "name": "Veteran Rank",
+    "name": "Veteran Training",
     "color": "0x3991ff",
     "ddID": "724481950005461002",
     "healerID": "724481894670139462",
@@ -70,7 +70,7 @@
     ]
   },
   "vanguard": {
-    "name": "Vanguard Rank",
+    "name": "Vanguard Training",
     "color": "0x9f2df7",
     "ddID": "724482072084873261",
     "healerID": "724482002576867338",
@@ -130,7 +130,7 @@
     ]
   },
   "champion": {
-    "name": "Champion Rank",
+    "name": "Champion Training",
     "color": "0xeec929",
     "ddID": "724482204306112562",
     "healerID": "724482168553734204",
