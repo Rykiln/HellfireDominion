@@ -11,9 +11,10 @@ module.exports = {
 	execute(msgObject, args, client) {
 		const channelLogs = msgObject.guild.channels.cache.get(process.env.HD_CHANNEL_TRIALTAGRESULTS) // #trial-tag-results channel
 		const values = args.join(` `).split(/[,]/);
-		const requestCharacterName = values[0];
-		const requestCharacterRole = values[1];
-		const requestCharacterLog = values[2];
+		const requestCharacterName = values[0] || "None Provided";
+		const requestCharacterRole = values[1] || "None Provided";
+		const requestCharacterLog = values[2] || "None Provided";
+		const requestComments = values[3] || "N.A.";
 		const embed = new Discord.MessageEmbed()
 			.setTitle(`Trial Tag Request`)
 			.setAuthor(msgObject.author.tag, msgObject.author.displayAvatarURL())
@@ -24,10 +25,9 @@ module.exports = {
 			.addField(`Applicant`, msgObject.author)
 			.addField(`Character Name`, requestCharacterName)
 			.addField(`Trial Role`, requestCharacterRole)
-			.addField(`Trial Logs`, requestCharacterLog);
-		msgObject.delete();
-		msgObject.reply(`Thank you! Your request has been submitted for review`)
-			.then(msg => {msg.delete(10000)});
+			.addField(`Trial Logs`, requestCharacterLog)
+			.addField(`Comments`, requestComments);
+		msgObject.reply(`Thank you ${msgObject.author}! Your request has been submitted for review!`);
 		channelLogs.send(embed)
 			.then(e => e.react(`✅`))
 			.then(e => e.message.react(`❌`))
