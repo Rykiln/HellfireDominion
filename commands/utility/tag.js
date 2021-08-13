@@ -11,10 +11,12 @@ module.exports = {
 	execute(msgObject, args, client) {
 		const channelLogs = msgObject.guild.channels.cache.get(process.env.HD_CHANNEL_TRIALTAGRESULTS) // #trial-tag-results channel
 		const values = args.join(` `).split(/[,]/);
-		const requestCharacterName = values[0] || "None Provided";
-		const requestCharacterRole = values[1] || "None Provided";
-		const requestCharacterLog = values[2] || "None Provided";
-		const requestComments = values[3] || "N.A.";
+		
+		const displayEmptyMessage = "None Provided";
+		const requestCharacterName = values[0] || displayEmptyMessage;
+		const requestCharacterRole = values[1] || displayEmptyMessage;
+		const requestCharacterLog = values[2] || displayEmptyMessage;
+		const requestComments = values[3] || displayEmptyMessage;
 		const embed = new Discord.MessageEmbed()
 			.setTitle(`Trial Tag Request`)
 			.setAuthor(msgObject.author.tag, msgObject.author.displayAvatarURL())
