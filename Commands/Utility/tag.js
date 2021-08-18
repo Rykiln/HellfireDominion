@@ -48,17 +48,20 @@ module.exports = {
 				{ name: `Trial Logs`, value: requestCharacterLog, inline: false },
 				{ name: `Comments`, value: requestComments, inline: false }
 			)
-
-		const msg = channelLogs.send({ embeds: [embed] })
-		await msg.react(`✅`);
-		await msg.react(`❌`);
-		const threadChannel = channelLogs.threads.create({
-			name: `Log Review for ${requestCharacterName}`,
-			autoArchiveDuration: `MAX`,
-			reason: `Needed a separate thread for feedback`,
-			startMessage: e.message,
-		})
-		await threadChannel.send({content: `${roleAnalyzer}, please review this log and provide feedback.`});
+    
+		channelLogs.send({ embeds: [embed] })
+			.then(e => e.react(`✅`))
+			.then(e => {
+				e.message.react(`❌`);
+				channelLogs.threads.create({
+					name: `Log Review for ${requestCharacterName}`,
+					autoArchiveDuration: 'MAX',
+					reason: 'Needed a separate thread for food',
+					startMessage: e.message,
+				}).then(threadChannel => {
+					threadChannel.send(`<@&${process.env.HD_ROLE_ANALYZER}>, you have a new log.`);
+				});
+			});
 		msgObject.reply({ content: `Thank you ${msgObject.author}! Your request has been submitted for review!` })
 			.then(reply => {
 				setTimeout(() => {
