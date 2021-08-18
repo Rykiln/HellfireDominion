@@ -18,12 +18,12 @@ module.exports = {
 		const requestCharacterLog = values[2].trim() || displayEmptyMessage;
 		const requestComments = values[3].trim() || displayEmptyMessage;
 
-		console.log(msgObject.author.tag)
-		console.log(msgObject.author.toString())
-		console.log(requestCharacterName)
-		console.log(requestCharacterRole)
-		console.log(requestCharacterLog)
-		console.log(requestComments)
+		console.log(msgObject.author.tag);
+		console.log(msgObject.author.toString());
+		console.log(requestCharacterName);
+		console.log(requestCharacterRole);
+		console.log(requestCharacterLog);
+		console.log(requestComments);
 
 		const embed = new MessageEmbed()
 			.setTitle(`Trial Tag Request`)
@@ -34,14 +34,15 @@ module.exports = {
 			.setTimestamp()
 			.addFields(
 				{ name: `Applicant`, value: msgObject.author.toString(), inline: false },
-				{ name: `Character Name`, value: requestCharacterName, inline: false },
-				{ name: `Trial Role`, value: requestCharacterRole, inline: false },
-				{ name: `Trial Logs`, value: requestCharacterLog, inline: false },
-				{ name: `Comments`, value: requestComments, inline: false }
+				{ name: `Character Name`, value: requestCharacterName.toString(), inline: false },
+				{ name: `Trial Role`, value: requestCharacterRole.toString(), inline: false },
+				{ name: `Trial Logs`, value: requestCharacterLog.toString(), inline: false },
+				{ name: `Comments`, value: requestComments.toString(), inline: false }
 			)
-		msgObject.reply({ content: `Thank you ${msgObject.author}! Your request has been submitted for review!` });
+		
 		channelLogs.send({ embeds: [embed] })
 			.then(e => e.react(`✅`))
-			.then(e => e.message.react(`❌`))
+			.then(e => e.message.react(`❌`));
+		msgObject.reply({ content: `Thank you ${msgObject.author}! Your request has been submitted for review!` });
 	},
 };
