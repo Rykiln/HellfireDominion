@@ -13,10 +13,11 @@ module.exports = {
 		const values = args.join(` `).split(/[,]/);
 
 		const displayEmptyMessage = "None Provided";
-		const requestCharacterName = values[0] || displayEmptyMessage;
-		const requestCharacterRole = values[1] || displayEmptyMessage;
-		const requestCharacterLog = values[2] || displayEmptyMessage;
-		const requestComments = values[3] || displayEmptyMessage;
+		const requestCharacterName = values[0].trim() || displayEmptyMessage;
+		const requestCharacterRole = values[1].trim() || displayEmptyMessage;
+		const requestCharacterLog = values[2].trim() || displayEmptyMessage;
+		const requestComments = values[3].trim() || displayEmptyMessage;
+
 		const embed = new MessageEmbed()
 			.setTitle(`Trial Tag Request`)
 			.setAuthor(msgObject.author.tag, msgObject.author.displayAvatarURL())
@@ -25,11 +26,11 @@ module.exports = {
 			.setFooter(client.user.username, client.user.displayAvatarURL())
 			.setTimestamp()
 			.addFields(
-				{ name: `Applicant`, value: msgObject.author.toString() },
-				{ name: `Character Name`, value: requestCharacterName },
-				{ name: `Trial Role`, value: requestCharacterRole },
-				{ name: `Trial Logs`, value: requestCharacterLog },
-				{ name: `Comments`, value: requestComments }
+				{ name: `Applicant`, value: msgObject.author.toString(), inline: false },
+				{ name: `Character Name`, value: requestCharacterName, inline: false },
+				{ name: `Trial Role`, value: requestCharacterRole, inline: false },
+				{ name: `Trial Logs`, value: requestCharacterLog, inline: false },
+				{ name: `Comments`, value: requestComments, inline: false }
 			)
 		msgObject.reply({ content: `Thank you ${msgObject.author}! Your request has been submitted for review!` });
 		channelLogs.send({ embeds: [embed] })
