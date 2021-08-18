@@ -1,9 +1,0 @@
-
-# Hellfire Dominion : Tag Colors
-HD_COLOR_FINE=0x2cc50d
-HD_COLOR_SUPERIOR=0x3991ff
-HD_COLOR_EPIC=0x9f2df7
-HD_COLOR_LEGENDARY=0xeec929
-
-
-HD_JSON_CONTENT_WISHLIST=./data_files/hd_content_wishlist.json
