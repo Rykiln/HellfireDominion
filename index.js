@@ -20,9 +20,9 @@ if (BotStatusLive) {
 client.cooldowns = new Collection();
 
 // Event Handler: Listens For Defined Events Located In The Events Folder
-const eventFiles = fs.readdirSync(`./events`).filter(file => file.endsWith(`.js`));
+const eventFiles = fs.readdirSync(`./Events`).filter(file => file.endsWith(`.js`));
 for (const file of eventFiles) {
-  const event = require(`./events/${file}`);
+  const event = require(`./Events/${file}`);
   if (event.once) {
     client.once(event.name, (...args) => event.execute(...args, client));
   } else {
