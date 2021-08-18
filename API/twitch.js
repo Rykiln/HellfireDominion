@@ -66,10 +66,10 @@ module.exports = (client) => {
                     .setColor(twitchColor)
                     .setFooter(client.user.username, client.user.displayAvatarURL())
                     .setTimestamp()
-                    .setThumbnail(tUser.tStreamThumbnail)
+                    .setThumbnail(tStreamThumbnail)
                     .addFields(
                         { name: `Game`, value: tGame, infline: true },
-                        { name: `Current Viewers`, value: tStreamViewers, inline: true }
+                        { name: `Current Viewers`, value: tStreamViewers.toString(), inline: true }
                     )
                 dChannel.send({ embeds: [embed] })
                     .catch(console.error());
