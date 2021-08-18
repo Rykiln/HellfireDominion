@@ -18,6 +18,13 @@ module.exports = {
 		const requestCharacterLog = values[2].trim() || displayEmptyMessage;
 		const requestComments = values[3].trim() || displayEmptyMessage;
 
+		console.log(msgObject.author.tag)
+		console.log(msgObject.author.toString())
+		console.log(requestCharacterName)
+		console.log(requestCharacterRole)
+		console.log(requestCharacterLog)
+		console.log(requestComments)
+
 		const embed = new MessageEmbed()
 			.setTitle(`Trial Tag Request`)
 			.setAuthor(msgObject.author.tag, msgObject.author.displayAvatarURL())
