@@ -25,7 +25,7 @@ module.exports = {
 			.setFooter(client.user.username, client.user.displayAvatarURL())
 			.setTimestamp()
 			.addFields(
-				{ name: `Applicant`, value: msgObject.author },
+				{ name: `Applicant`, value: msgObject.author.toString() },
 				{ name: `Character Name`, value: requestCharacterName },
 				{ name: `Trial Role`, value: requestCharacterRole },
 				{ name: `Trial Logs`, value: requestCharacterLog },
