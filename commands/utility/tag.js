@@ -10,6 +10,7 @@ module.exports = {
 	cooldown: 5, 													// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	execute(msgObject, args, client) {
 		const channelLogs = msgObject.guild.channels.cache.get(process.env.HD_CHANNEL_TRIALTAGRESULTS) // #open-cores-application-feedback channel
+		// const channelLogs = msgObject.guild.channels.cache.get(`833481968318545940`)
 		const values = args.join(` `).split(/[,]/);
 
 		const displayEmptyMessage = "None Provided";
@@ -27,11 +28,11 @@ module.exports = {
 
 		const embed = new MessageEmbed()
 			.setTitle(`Trial Tag Request`)
-			.setAuthor(msgObject.author.tag, msgObject.author.displayAvatarURL())
-			.setColor(process.env.HD_COLOR_YELLOW)
+			.setAuthor(msgObject.author.tag.toString(), msgObject.author.displayAvatarURL())
+			.setColor(0xffff00)
 			.setThumbnail(`https://images.uesp.net/thumb/7/7e/ON-icon-heraldry-Deities_Akatosh.png/100px-ON-icon-heraldry-Deities_Akatosh.png`)
-			.setFooter(client.user.username, client.user.displayAvatarURL())
-			.setTimestamp()
+			// .setFooter(client.user.username, client.user.displayAvatarURL())
+			// .setTimestamp()
 			.addFields(
 				{ name: `Applicant`, value: msgObject.author.toString(), inline: false },
 				{ name: `Character Name`, value: requestCharacterName.toString(), inline: false },
