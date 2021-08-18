@@ -35,7 +35,18 @@ module.exports = {
 		
 		channelLogs.send({ embeds: [embed] })
 			.then(e => e.react(`✅`))
-			.then(e => e.message.react(`❌`));
+			.then(e => {
+				e.message.react(`❌`);
+				channelLogs.threads.create({
+					name: `Log Review for ${requestCharacterName}`,
+					autoArchiveDuration: 'MAX',
+					reason: 'Needed a separate thread for food',
+					startMessage: e.message,
+				}).then(threadChannel => {
+					threadChannel.send(`<@&${process.env.HD_ROLE_ANALYZER}>, you have a new log.`);
+				});
+			});
+		
 		msgObject.reply({ content: `Thank you ${msgObject.author}! Your request has been submitted for review!` })
 			.then(reply => {
 				setTimeout(() => {
