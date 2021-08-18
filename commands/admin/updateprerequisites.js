@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 module.exports = {
 	name: 'updateprerequisites',						// Name of this command. Required for all commands.
 	description: 'ADMIN: Post Embeded Prerequisites In Current Channel.',			// [Optional] Description of this command for the help command
@@ -12,10 +12,10 @@ module.exports = {
 		const fs = require(`fs`);
 		const filePrerequisites = process.env.HD_JSON_PREREQUISITES;
 
-		fs.readFile(filePrerequisites, function(err, data){
+		fs.readFile(filePrerequisites, function (err, data) {
 			if (err) throw err;
 			const prerequisites = JSON.parse(data);
-			function getRoleData(JSONObject, value){
+			function getRoleData(JSONObject, value) {
 				// Get Object Keys
 				const keys = Object.keys(JSONObject);
 				keys.forEach(key => {
@@ -29,21 +29,21 @@ module.exports = {
 					const healerGear = Object.keys(subkeys.gearHealer).map(setName => `[${subkeys.gearHealer[setName].setName}](${subkeys.gearHealer[setName].setURL})`);
 					const tankGear = Object.keys(subkeys.gearTank).map(setName => `[${subkeys.gearTank[setName].setName}](${subkeys.gearTank[setName].setURL})`);
 					const restrictions = [
-						`No Mythic Items`,`No [Blood for Blood](https://eso-hub.com/en/skills/world/vampire/blood-for-blood)`,`No [Blood Frenzy](https://eso-hub.com/en/skills/world/vampire/blood-frenzy)`]
-					const embed = new Discord.MessageEmbed()
+						`No Mythic Items`, `No [Blood for Blood](https://eso-hub.com/en/skills/world/vampire/blood-for-blood)`, `No [Blood Frenzy](https://eso-hub.com/en/skills/world/vampire/blood-frenzy)`]
+					const embed = new MessageEmbed()
 						.setTitle(role.name)
 						.setColor(role.color)
 						.addFields(
-							{name: `DPS`, value: `${ddID}\n\n${dpsMag}\n${dpsStam}\n${restrictions.join(`\n`)}`, inline: true},
-							{name: `Healer`, value: `${healerID}\n\n${healerGear.join(`\n`)}`, inline: true},
-							{name: `Tank`, value: `${tankID}\n\n${tankGear.join(`\n`)}`, inline: true}
+							{ name: `DPS`, value: `${ddID}\n\n${dpsMag}\n${dpsStam}\n${restrictions.join(`\n`)}`, inline: true },
+							{ name: `Healer`, value: `${healerID}\n\n${healerGear.join(`\n`)}`, inline: true },
+							{ name: `Tank`, value: `${tankID}\n\n${tankGear.join(`\n`)}`, inline: true }
 						)
-					msgObject.channel.send(embed)
+					msgObject.channel.send({ embeds: [embed] })
 				});
-				
+
 			}
 			getRoleData(prerequisites, `fine`)
 		});
-		
+
 	},
 };

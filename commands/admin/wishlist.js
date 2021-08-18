@@ -1,5 +1,4 @@
-const Discord = require("discord.js");
-const { description } = require("./announcement");
+const { MessageEmbed } = require("discord.js");
 module.exports = {
 	name: 'wishlist',													// Name of this command. Required for all commands.
 	description: 'ADMIN: Create a pool for the content wishlist.',							// [Optional] Description of this command for the help command
@@ -24,7 +23,7 @@ module.exports = {
 		}
 
 		if (duration < 1) {
-			msgObject.channel.send(`Invalid Duration! Duration must be at least 1 (one).`);
+			msgObject.channel.send({ content: `Invalid Duration! Duration must be at least 1 (one).` });
 			return
 		}
 
@@ -33,7 +32,7 @@ module.exports = {
 		const fs = require(`fs`);
 		const fileRanks = process.env.HD_JSON_CONTENT_WISHLIST;
 
-		fs.readFile(fileRanks, function(err, data) {
+		fs.readFile(fileRanks, function (err, data) {
 			if (err) throw err;
 			const ranksJSON = JSON.parse(data);
 
@@ -54,14 +53,14 @@ function createTrainingEmbed(msgObject, client, rank) {
 	});
 
 	const lineFiller = `‎‎‎                                     ‎‎‎    ‎‎‎          ‎‎‎    `;
-	const embed = new Discord.MessageEmbed()
+	const embed = new MessageEmbed()
 		.setTitle(rank.name)
 		.setColor(rank.color)
 		.setThumbnail(rank.image)
 		.addField(lineFiller, description);
 
 
-	msgObject.channel.send(embed).then(e => {
+	msgObject.channel.send({ embeds: [embed] }).then(e => {
 		rank.trials.forEach((trial, _) => {
 			e.react(trial.emoji);
 		});
@@ -80,7 +79,7 @@ function sendDisclaimerEmbed(msgObject, client, startDate, duration) {
 		`From **${startDate.toDateString()}** until **${endDate.toDateString()}**.\n` +
 		`\nIf you are interested in farm, score, trifecta, arena or any other type of runs post below.`;
 
-	const embed = new Discord.MessageEmbed()
+	const embed = new MessageEmbed()
 		.setTitle(`Content Wishlist Pool`)
 		.setColor(process.env.HD_COLOR_YELLOW)
 		.setThumbnail(client.user.displayAvatarURL())
@@ -88,6 +87,6 @@ function sendDisclaimerEmbed(msgObject, client, startDate, duration) {
 		.setTimestamp()
 		.addField(` ‎ `, `${headline}`);
 
-	msgObject.delete(10000);
+	setTimeout(() => msgObject.delete(), 10000);
 	msgObject.channel.send(embed);
 }

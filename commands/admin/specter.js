@@ -1,4 +1,3 @@
-const Discord = require("discord.js");
 module.exports = {
 	name: 'ghostping',						// Name of this command. Required for all commands.
 	description: 'ADMIN: Shhh - nobody sees this.',			// [Optional] Description of this command for the help command

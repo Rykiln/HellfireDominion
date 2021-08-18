@@ -1,4 +1,3 @@
-const Discord = require("discord.js");
 module.exports = {
 	name: 'send',																// Name of this command. Required for all commands.
 	description: 'ADMIN: Sends a message with the bot as the author.',			// [Optional] Description of this command for the help command
@@ -15,7 +14,7 @@ module.exports = {
 			channel_destination.send(msg);
 		} else { // Parse Message When Channel Is Not Mentioned
 			var msg = args.join(" ") || "";
-			msgObject.channel.send(msg);
+			msgObject.channel.send({content: msg});
 		};
 		msgObject.delete();
 	},

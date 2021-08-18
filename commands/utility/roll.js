@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 var Roll = require(`roll`);
 roll = new Roll();
 module.exports = {
@@ -12,11 +12,11 @@ module.exports = {
 	cooldown: 5, 									// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	execute(msgObject, args, client) {
 		const diceRoll = roll.roll(args[0])
-			// console.log(`${msgObject.author.username} used the roll command with: ${args}`)	
-			// console.log(diceRoll)
-			// console.log(`---------------`)
+		// console.log(`${msgObject.author.username} used the roll command with: ${args}`)	
+		// console.log(diceRoll)
+		// console.log(`---------------`)
 
-		let embed = new Discord.MessageEmbed()
+		let embed = new MessageEmbed()
 			.setAuthor(msgObject.author.tag, msgObject.author.displayAvatarURL())
 			.setColor(process.env.HD_COLOR_YELLOW)
 			.setTitle(`${msgObject.author.username} Rolled ${diceRoll.result}`)
@@ -24,6 +24,6 @@ module.exports = {
 			.setFooter(client.user.username, client.user.displayAvatarURL())
 			.setTimestamp()
 			.addField(`Dice`, `[ ${diceRoll.rolled} ]`)
-		msgObject.channel.send(embed)
+		msgObject.channel.send({ embeds: [embed] })
 	},
 };

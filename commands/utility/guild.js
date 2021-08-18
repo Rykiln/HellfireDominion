@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 module.exports = {
     name: 'guild',						                        // Name of this command. Required for all commands.
     description: 'Displays information about the guild.',		// [Optional] Description of this command for the help command
@@ -12,7 +12,7 @@ module.exports = {
         // let officersJR = msgObject.guild.roles.find(role => role.name === "Raid Lead").members.map(m => m.user);
         // let membercount = msgObject.guild.roles.find(role => role.name === "Guildmate").members.map(m => m.user).length;
         // let guestcount = msgObject.guild.members.filter(member => !member.user.bot).size - membercount;
-        let embed = new Discord.MessageEmbed()
+        let embed = new MessageEmbed()
             .setTitle(msgObject.guild.name)
             .setDescription(`.`)
             .setColor(process.env.HD_COLOR_YELLOW)
@@ -24,6 +24,6 @@ module.exports = {
             // .addField("Officers (Guild Admins)", officersSR.sort(), false)
             // .addField("Raid Leads (Event Leaders)", officersJR.sort(), false)
             .addField("Created On", msgObject.guild.createdAt, true);
-        msgObject.channel.send(embed)
+        msgObject.channel.send({ embeds: [embed] })
     }
 };

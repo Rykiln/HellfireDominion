@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 module.exports = {
 	name: 'color',																			// Name of this command. Required for all commands.
 	description: `Displays a random color with it's Hexidecimal and RGB values.`,			// [Optional] Description of this command for the help command
@@ -16,14 +16,14 @@ module.exports = {
 			];
 			return aRgb;
 		}
-		let embed = new Discord.MessageEmbed()
+		let embed = new MessageEmbed()
 			.setColor(`#` + hex)
 			.setTitle(`Random Color`)
 			.addFields(
 				{ name: `RGB`, value: `[ ${hex.convertToRGB()} ]`, inline: true },
 				{ name: `Hexidecimal`, value: `#` + hex, inline: true }
 			)
-		msgObject.channel.send(embed)
+		msgObject.channel.send({ embeds: [embed] })
 			.catch(console.error);
 
 	},

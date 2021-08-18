@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 module.exports = {
 	name: 'tag',													// Name of this command. Required for all commands.
 	description: 'Allow players to apply to open cores.',			// [Optional] Description of this command for the help command
@@ -17,7 +17,7 @@ module.exports = {
 		const requestCharacterRole = values[1] || displayEmptyMessage;
 		const requestCharacterLog = values[2] || displayEmptyMessage;
 		const requestComments = values[3] || displayEmptyMessage;
-		const embed = new Discord.MessageEmbed()
+		const embed = new MessageEmbed()
 			.setTitle(`Trial Tag Request`)
 			.setAuthor(msgObject.author.tag, msgObject.author.displayAvatarURL())
 			.setColor(process.env.HD_COLOR_YELLOW)
@@ -31,8 +31,8 @@ module.exports = {
 				{ name: `Trial Logs`, value: requestCharacterLog },
 				{ name: `Comments`, value: requestComments }
 			)
-		msgObject.reply(`Thank you ${msgObject.author}! Your request has been submitted for review!`);
-		channelLogs.send(embed)
+		msgObject.reply({ content: `Thank you ${msgObject.author}! Your request has been submitted for review!` });
+		channelLogs.send({ embeds: [embed] })
 			.then(e => e.react(`✅`))
 			.then(e => e.message.react(`❌`))
 	},

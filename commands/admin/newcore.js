@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 
 module.exports = {
   name: 'newcore',																												// Name of this command. Required for all commands.
@@ -55,15 +55,15 @@ module.exports = {
           const createdApplyChannel = applyChannel;
 
           // Send Confirmation Message
-          const embed = new Discord.MessageEmbed()
+          const embed = new MessageEmbed()
             .setTitle('New Core Group Created!')
             .setColor(0x7ac8fb)
             .setThumbnail(client.user.displayAvatarURL())
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp()
-            .addField('Core Role', createdCoreRole)
-            .addField('Core Channels', `${createdCoreChannel}\n${createdApplyChannel}`);
-          await msgObject.channel.send(embed);
+            .addField('Core Role', createdCoreRole.toString())
+            .addField('Core Channels', `${createdCoreChannel.toString()}\n${createdApplyChannel.toString()}`);
+          await msgObject.channel.send({ embeds: [embed] });
         });
       });
     });

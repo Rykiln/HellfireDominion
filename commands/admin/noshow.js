@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const fs = require('fs');
 const _ = require('lodash');
 
@@ -62,7 +62,7 @@ module.exports = {
         msgObject.delete();
         console.log(channelNoShow.name)
         console.log(noshowMember.user.username)
-        const embed = new Discord.MessageEmbed()
+        const embed = new MessageEmbed()
           .setTitle('Guild Member Added To No Show List')
           .setColor(0xFF0000)
           .setThumbnail(noshowMember.user.displayAvatarURL())
@@ -72,16 +72,16 @@ module.exports = {
           .addField('Event', eventName)
           .addField('Warned By', warnedBy.username)
 
-        const embedDM = new Discord.MessageEmbed()
+        const embedDM = new MessageEmbed()
           .setTitle('We Missed You Today!')
           .setColor(0xFF9900)
           .setFooter(client.user.username, client.user.displayAvatarURL())
           .setTimestamp()
-          .setDescription(`Hello ${noshowMember}. You missed a guild event that you signed up for in our Discord. We hope that everything is okay. As per our guild rules, this is considered as a no-show, and three (3) no-shows can result in you being excluded from future events, or possibly even removed from the guild. Please see our [About Us](<#796024776119418890>) channel to review the guild rules. With this said, we do understand that life happens. Just let us know when you're not going to make it. Also if you missed this because of an emergency, we're not heartless, message an officer and let one of us know, we don't need the private details, but we can remove this no-show for valid reasons.`)
+          .setDescription(`Hello ${noshowMember.toString()}. You missed a guild event that you signed up for in our Discord. We hope that everything is okay. As per our guild rules, this is considered as a no-show, and three (3) no-shows can result in you being excluded from future events, or possibly even removed from the guild. Please see our [About Us](<#796024776119418890>) channel to review the guild rules. With this said, we do understand that life happens. Just let us know when you're not going to make it. Also if you missed this because of an emergency, we're not heartless, message an officer and let one of us know, we don't need the private details, but we can remove this no-show for valid reasons.`)
           .addField('Event', eventName)
 
-        channelNoShow.send(embed).then(msg => console.log(msg.content));
-        noshowMember.send(embedDM).then(msg => console.log(msg.content));
+        channelNoShow.send({ embeds: [embed] }).then(msg => console.log(msg.content));
+        noshowMember.send({ embeds: [embedDM] }).then(msg => console.log(msg.content));
       });
   },
 };

@@ -1,4 +1,3 @@
-const Discord = require("discord.js");
 module.exports = {
 	name: 'archive',													// Name of this command. Required for all commands.
 	description: 'ADMIN: Moves inactive channels to archive.',			// [Optional] Description of this command for the help command
@@ -11,7 +10,7 @@ module.exports = {
 	execute(msgObject, args, client) {
 		msgObject.channel.setParent(process.env.HD_CATEGORY_ARCHIVE).then(async m=> {
 			await m.lockPermissions();
-			msgObject.reply(`This channel has been archived`);
+			msgObject.reply({content: `This channel has been archived`});
 		})
 	},
 };
