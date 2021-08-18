@@ -4,6 +4,7 @@ const { MessageEmbed } = require(`discord.js`);
 // Connect To Twitch API
 const Twitch = require(`twitch`).ApiClient;
 const TwitchAuth = require(`twitch-auth`).ClientCredentialsAuthProvider;
+
 const twitchClientID = process.env.HD_TWITCH_CLIENTID;
 const twitchClientSecret = process.env.HD_TWITCH_SECRET;
 const twitchAuthProvider = new TwitchAuth(twitchClientID, twitchClientSecret);
@@ -58,7 +59,7 @@ module.exports = (client) => {
                 console.log(`[${tUser.displayName}] Started Streaming [${tGame}]`)
 
                 // Format Data Into An Embed And Send To The Destination Channel
-                let embed = new MessageEmbed()
+                const embed = new MessageEmbed()
                     .setTitle(tStreamTitle)
                     .setAuthor(tUser.displayName, tUser.profilePictureUrl)
                     .setURL(tChannelURL)
@@ -72,7 +73,9 @@ module.exports = (client) => {
                     )
                 dChannel.send({ embeds: [embed] })
                     .catch(console.error());
-            } catch { return };;
+            } catch (e) {
+                return
+            };;
         });
     }, interval);
 };
