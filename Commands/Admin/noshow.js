@@ -83,7 +83,7 @@ module.exports = {
           .setThumbnail(noshowMember.user.displayAvatarURL())
           .setFooter(client.user.username, client.user.displayAvatarURL())
           .setTimestamp()
-          .addField('Guild Member', noshowMember)
+          .addField('Guild Member', noshowMember.toString())
           .addField('Event', eventName)
           .addField('Warned By', warnedBy.username)
 
