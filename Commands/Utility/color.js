@@ -1,9 +1,25 @@
 const { MessageEmbed } = require("discord.js");
 module.exports = {
-	name: 'color',																			// Name of this command. Required for all commands.
-	description: `Displays a random color with it's Hexidecimal and RGB values.`,			// [Optional] Description of this command for the help command
-	aliases: ['colour', `rgb`], 															// [Optional] Permits additional command names to be used for this command 
-	cooldown: 5, 																			// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
+	// Name of this command. Required for all commands.
+	name: 'color',
+	
+	// [Optional] Description of this command for the help command
+	description: `Displays a random color with it's Hexidecimal and RGB values.`,
+	
+	// [Optional] Permits additional command names to be used for this command 
+	aliases: ['colour', `rgb`],
+	
+	// [Optional] Displays how to use this command in the help command.
+    // usage: '[@mention]',
+
+    // [Optional] When True - Requires Arguments Be Provided In Message Object
+    args: false,
+
+    // [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
+    guildOnly: false,
+	
+	// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
+	cooldown: 5,
 	execute(msgObject, args, client) {
 
 		const hex = Math.floor(Math.random() * 16777215).toString(16);

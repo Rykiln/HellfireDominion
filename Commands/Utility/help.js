@@ -1,10 +1,25 @@
 const { MessageEmbed } = require("discord.js");
 const Prefix = process.env.PREFIX_DEFAULT;
 module.exports = {
+    // Name of this command. Required for all commands.
     name: 'help',
+    
+    // [Optional] Description of this command for the help command
     description: 'Displays this help menu.',
+    
+    // [Optional] Permits additional command names to be used for this command 
     aliases: ['commands'],
+    
+    // [Optional] Displays how to use this command in the help command.
     usage: '[command name]',
+
+    // [Optional] When True - Requires Arguments Be Provided In Message Object
+    args: false,
+
+    // [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
+    guildOnly: false,
+    
+    // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
     cooldown: 5,
     execute(msgObject, args, client) {
         const data = [];

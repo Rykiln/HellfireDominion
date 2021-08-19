@@ -1,13 +1,28 @@
 const { MessageEmbed } = require("discord.js");
 module.exports = {
-    name: 'trial',														// Name of this command. Required for all commands.
-    description: 'Displays Information About Specific Trials.',			// [Optional] Description of this command for the help command
-    aliases: ['trials', `raid`, `raids`], 								// [Optional] Permits additional command names to be used for this command 
-    usage: '[trial_abbreviation]',										// [Optional] Displays how to use this command in the help command.
-    // permissions: `MANAGE_ROLES`,										// [Optional] Checks for default discord.js permissions. See https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS
-    // args: true, 														// [Optional] When True - Requires Arguments Be Provided In Message Object
-    guildOnly: true, 													// [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
-    cooldown: 5, 														// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
+    // Name of this command. Required for all commands.
+    name: 'trial',
+    
+    // [Optional] Description of this command for the help command
+    description: 'Displays Information About Specific Trials.',
+    
+    // [Optional] Permits additional command names to be used for this command 
+    aliases: ['trials', `raid`, `raids`],
+    
+    // [Optional] Displays how to use this command in the help command.
+    usage: '[trial_abbreviation]',
+    
+    // [Optional] Checks for default discord.js permissions. See https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS
+    // permissions: `MANAGE_ROLES`,
+    
+    // [Optional] When True - Requires Arguments Be Provided In Message Object
+    args: false,
+    
+    // [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
+    guildOnly: true,
+    
+    // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
+    cooldown: 5,
     execute(msgObject, args, client) {
         const source = (args.join()).toLowerCase() || "";
         const trials = [

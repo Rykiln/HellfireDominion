@@ -1,14 +1,29 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 module.exports = {
-	name: 'config_hd-welcome',						// Name of this command. Required for all commands.
-	description: 'ADMIN: Sends embed for welcome page with guild rules.',			// [Optional] Description of this command for the help command
-	aliases: ['welcome', `w`], 			// [Optional] Permits additional command names to be used for this command 
-	// usage: '<required_args> [optional_args]',		// [Optional] Displays how to use this command in the help command.
-	permissions: `MANAGE_ROLES`,				// [Optional] Checks for default discord.js permissions. See https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS
-	// args: true, 								// [Optional] When True - Requires Arguments Be Provided In Message Object
-	guildOnly: true, 							// [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
-	cooldown: 5, 								// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
-	execute(msgObject, args, client) {
+	// Name of this command. Required for all commands.
+	name: 'updatewelcome',
+
+	// [Optional] Description of this command for the help command
+	description: 'ADMIN: Sends embed for welcome page with guild rules.',
+
+	// [Optional] Permits additional command names to be used for this command 
+	aliases: ['welcome', `w`],
+
+	// [Optional] Displays how to use this command in the help command.
+	// usage: '<required_args> [optional_args]',
+
+	// [Optional] Checks for default discord.js permissions. See https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS
+	permissions: `MANAGE_ROLES`,
+
+	// [Optional] When True - Requires Arguments Be Provided In Message Object
+	args: false,
+
+	// [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
+	guildOnly: true,
+
+	// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
+	cooldown: 5,
+	execute(msgObject, client) {
 		// Define The Fields That Will Be Used In The Message
 		const guildName = client.user.username;
 		const guildIcon = client.user.displayAvatarURL();
@@ -30,7 +45,7 @@ module.exports = {
 		const guildNicknameMessage = `Please [Change Your Nickname](https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames) in Discord to match your in-game UserID.`
 
 		// Format Embeded Message For The Welcome Channel In Discord
-		const embed = new Discord.MessageEmbed()
+		const embed = new MessageEmbed()
 			.setTitle(guildWelcomeMessage)
 			.setDescription(guildDescription)
 			.setColor(process.env.HD_COLOR_ORANGE)
@@ -41,14 +56,14 @@ module.exports = {
 			.addFields(
 				{ name: `Let Us Know Who You Are`, value: guildNicknameMessage, inline: false }
 			)
-		const embed1 = new Discord.MessageEmbed()
+		const embed1 = new MessageEmbed()
 			.setTitle(`Guild Rules`)
 			.setDescription(`>>> ${guildRules.join(`\n\n`)}`)
 			.addFields(
 				{ name: `\u200B`, value: guildRulesConsequences, inline: false }
 			)
 			.setColor(process.env.HD_COLOR_ORANGE)
-		const embed2 = new Discord.MessageEmbed()
+		const embed2 = new MessageEmbed()
 			.setTitle(`Verification System`)
 			.setDescription(guildVerification)
 			.setColor(process.env.HD_COLOR_ORANGE)

@@ -1,13 +1,26 @@
 const { MessageEmbed } = require("discord.js");
 module.exports = {
-  name: 'member',						                        // Name of this command. Required for all commands.
-  description: 'Gets Guild Information Of A Member.',			// [Optional] Description of this command for the help command
-  aliases: ['userinfo', `user`, `memberinfo`],           	    // [Optional] Permits additional command names to be used for this command 
-  usage: '[@mention]',		                                // [Optional] Displays how to use this command in the help command.
-  args: false, 								                // [Optional] When True - Requires Arguments Be Provided In Message Object
-  guildOnly: true, 							                // [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
-  cooldown: 5, 								                // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
-  execute(msgObject, args, client) {
+  // Name of this command. Required for all commands.
+  name: 'member',
+  
+  // [Optional] Description of this command for the help command
+  description: 'Gets Guild Information Of A Member.',
+  
+  // [Optional] Permits additional command names to be used for this command 
+  aliases: ['userinfo', `user`, `memberinfo`],
+  
+  // [Optional] Displays how to use this command in the help command.
+  usage: '[@mention]',
+  
+  // [Optional] When True - Requires Arguments Be Provided In Message Object
+  args: false,
+  
+  // [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
+  guildOnly: true,
+  
+  // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
+  cooldown: 5,
+  execute(msgObject, client) {
     msgObject.guild.members.fetch(msgObject.mentions.users.first() || msgObject.author)
       // msgObject.guild.fetchMember(args.mentions.users.first() || msgObject.author)
       .then(usrMember => {
@@ -46,15 +59,15 @@ module.exports = {
             return events;
           }
           // Store Variables And Format As Text If Blank To Prevent Null Values In MessageEmbed
-          const loggedwarnings = getOccurence(warns, usrMember.id);
-          const loggedevent = getEvents(warns, usrMember.id);
-          const warnedby = getWarnedBy(warns, usrMember.id);
-          const warneddate = getWarnedDate(warns, usrMember.id);
+          let loggedwarnings = getOccurence(warns, usrMember.id);
+          let loggedevent = getEvents(warns, usrMember.id);
+          let warnedby = getWarnedBy(warns, usrMember.id);
+          let warneddate = getWarnedDate(warns, usrMember.id);
           if (loggedwarnings.length == 0) { loggedwarnings = "None" };
           if (loggedevent.length == 0) { loggedevent = "None" };
           if (warnedby.length == 0) { warnedby = "None" };
 
-          let embed = new MessageEmbed()
+          const embed = new MessageEmbed()
             .setColor(usrMember.displayHexColor)
             .setTitle("Member Information")
             .setThumbnail(usrMember.user.displayAvatarURL())
@@ -66,9 +79,11 @@ module.exports = {
               { name: 'Discord ID', value: usrMember.user.tag, inline: true },
             )
             // .addField("Your Guild Rank", usrMember.roles.get(rankId))
-            .addField('Your Guild Rank', usrMember.roles.highest.toString())
-            .addField('You Joined The Guild', usrMember.joinedAt.toString())
-            .addField('Warnings', loggedwarnings.toString());
+            .addFields(
+              {name: 'Your Guild Rank', value: usrMember.roles.highest.toString(), inline: false},
+              {name: 'You Joined The Guild', value: usrMember.joinedAt.toString(), inline: false},
+              {name: 'Warnings', value: loggedwarnings.toString(), inline: false}
+            );
           if (loggedwarnings > 0) {
             embed.addFields(
               { name: 'Events', value: loggedevent.join(`\n`), inline: true },

@@ -1,13 +1,28 @@
 const { MessageEmbed } = require("discord.js");
 module.exports = {
-    name: 'addons',														// Name of this command. Required for all commands.
-    description: 'Displays a list of recommended ESO addons.',			// [Optional] Description of this command for the help command
-    aliases: [`addon`, `minion`, `esoui`], 			                    // [Optional] Permits additional command names to be used for this command 
-    // usage: '<required_args> [optional_args]',		                // [Optional] Displays how to use this command in the help command.
-    // permissions: `MANAGE_ROLES`,				                        // [Optional] Checks for default discord.js permissions. See https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS
-    args: false, 								                        // [Optional] When True - Requires Arguments Be Provided In Message Object
-    guildOnly: false, 							                        // [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
-    cooldown: 5, 								                        // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
+    // Name of this command. Required for all commands.
+    name: 'addons',
+    
+    // [Optional] Description of this command for the help command
+    description: 'Displays a list of recommended ESO addons.',
+    
+    // [Optional] Permits additional command names to be used for this command 
+    aliases: [`addon`, `minion`, `esoui`],
+    
+    // [Optional] Displays how to use this command in the help command.
+    // usage: '<required_args> [optional_args]',
+    
+    // [Optional] Checks for default discord.js permissions. See https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS
+    // permissions: `MANAGE_ROLES`,
+    
+    // [Optional] When True - Requires Arguments Be Provided In Message Object
+    args: false,
+    
+    // [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
+    guildOnly: false,
+    
+    // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
+    cooldown: 5,
     execute(msgObject, args, client) {
         let embed = new MessageEmbed()
             .setTitle(`Recommended Addons`)

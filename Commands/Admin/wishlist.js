@@ -1,13 +1,28 @@
 const { MessageEmbed } = require("discord.js");
 module.exports = {
-	name: 'wishlist',													// Name of this command. Required for all commands.
-	description: 'ADMIN: Create a pool for the content wishlist.',							// [Optional] Description of this command for the help command
-	aliases: [`cw`, `wishlist`],						 			// [Optional] Permits additional command names to be used for this command 
-	usage: '<Start Date (Month / Day)> <Duration (in days)>',		// [Optional] Displays how to use this command in the help command.
-	permissions: `MANAGE_ROLES`,									// [Optional] Checks for default discord.js permissions. See https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS
-	args: true, 													// [Optional] When True - Requires Arguments Be Provided In Message Object
-	guildOnly: true, 												// [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
-	cooldown: 5, 													// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
+	// Name of this command. Required for all commands.
+	name: 'wishlist',
+	
+	// [Optional] Description of this command for the help command
+	description: 'ADMIN: Create a pool for the content wishlist.',
+	
+	// [Optional] Permits additional command names to be used for this command 
+	aliases: [`cw`, `wishlist`],
+	
+	// [Optional] Displays how to use this command in the help command.
+	usage: '<Start Date (Month / Day)> <Duration (in days)>',
+	
+	// [Optional] Checks for default discord.js permissions. See https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS
+	permissions: `MANAGE_ROLES`,
+	
+	// [Optional] When True - Requires Arguments Be Provided In Message Object
+	args: true,
+	
+	// [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
+	guildOnly: true,
+	
+	// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
+	cooldown: 5,
 	execute(msgObject, args, client) {
 		const values = args.join(` `).split(/[,]/);
 
