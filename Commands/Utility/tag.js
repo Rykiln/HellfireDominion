@@ -28,6 +28,18 @@ module.exports = {
 		const roleAnalyzer = `<@&${process.env.HD_ROLE_ANALYZER}>`
 		const values = args.join(` `).split(/[,]/);
 
+		if (!args[3]) {
+			msgObject
+				.reply("You didn't provided enough arguments. Please make sure you are using the following format to submit your logs: \n> `.apply CharacterName, Role, Trial, URLtoLogs, comments (if any)`.")
+				.then(reply => {
+					setTimeout(() => {
+						reply.delete();
+						msgObject.delete();
+					}, 15000);
+			});
+			return;
+		}
+
 		const requestCharacterName = values[0].trim();
 		const requestCharacterRole = values[1].trim();
 		const requestTrial = values[2].trim();
