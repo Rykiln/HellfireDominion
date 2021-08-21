@@ -28,11 +28,11 @@ module.exports = {
 		const roleAnalyzer = `<@&${process.env.HD_ROLE_ANALYZER}>`
 		const values = args.join(` `).split(/[,]/);
 
-		const displayEmptyMessage = "None Provided";
-		const requestCharacterName = values[0].trim() || displayEmptyMessage;
-		const requestCharacterRole = values[1].trim() || displayEmptyMessage;
-		const requestCharacterLog = values[2].trim() || displayEmptyMessage;
-		const requestComments = values[3].trim() || displayEmptyMessage;
+		const requestCharacterName = values[0].trim();
+		const requestCharacterRole = values[1].trim();
+		const requestTrial = values[2].trim();
+		const requestCharacterLog = values[3].trim();
+		const requestComments = values[4] || "None Provided";
 
 		const embed = new MessageEmbed()
 			.setTitle(`Trial Tag Request`)
@@ -44,8 +44,9 @@ module.exports = {
 			.addFields(
 				{ name: `Applicant`, value: msgObject.author.toString(), inline: false },
 				{ name: `Character Name`, value: requestCharacterName, inline: false },
-				{ name: `Trial Role`, value: requestCharacterRole, inline: false },
-				{ name: `Trial Logs`, value: requestCharacterLog, inline: false },
+				{ name: `Role`, value: requestCharacterRole, inline: false },
+				{ name: `Trial`, value: requestTrial, inline: false },
+				{ name: `Logs`, value: requestCharacterLog, inline: false },
 				{ name: `Comments`, value: requestComments, inline: false }
 			)
     
@@ -54,7 +55,7 @@ module.exports = {
 			.then(e => {
 				e.message.react(`❌`);
 				channelLogs.threads.create({
-					name: `Log Review for ${requestCharacterName}`,
+					name: `${requestTrial} as ${requestCharacterRole} | ${requestCharacterName}`,
 					autoArchiveDuration: 'MAX',
 					reason: 'Needed a separate thread for food',
 					startMessage: e.message,
