@@ -26,21 +26,16 @@ module.exports = {
 
   // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
   cooldown: 5,
-  execute(msgObject, client) {
+  execute(msgObject, args, client) {
     msgObject.guild.members.fetch(msgObject.mentions.users.first())
       .then((noshowMember) => {
         const noshowMemberTag = noshowMember.user.tag;
         const noshowMemberID = noshowMember.id;
-
         const eventName = msgObject.channel.name;
         const warnedBy = msgObject.author;
-
         const warningsFileCurrent = process.env.HD_JSON_WARNINGS;
         const warningsFileOLD = process.env.HD_JSON_WARNINGS_OLD;
-
-        const channelNoShow = client.channels.resolve(process.env.HD_CHANNEL_WARNINGS); // Oops I Pulled Warnings Warnings Channel
-        // const channelNoShow = client.channels.resolve(process.env.TEST_CHANNEL_WARNINGS); // Test Server Warnings Warnings Channel
-        // console.log(channelNoShow.name)
+        const channelNoShow = client.channels.resolve(process.env.HD_CHANNEL_WARNINGS);
 
         readFile(warningsFileCurrent, (err, data) => {
           if (err) throw err;

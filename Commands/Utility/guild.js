@@ -20,7 +20,7 @@ module.exports = {
     
     // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
     cooldown: 5,
-    execute(msgObject, client) {
+    execute(msgObject, args, client) {
         let embed = new MessageEmbed()
             .setTitle(msgObject.guild.name)
             .setDescription(`.`)

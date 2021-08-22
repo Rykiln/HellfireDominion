@@ -1,3 +1,5 @@
+const { MessageEmbed } = require('discord.js');
+
 module.exports = {
   // Name of this command. Required for all commands.
   name: 'newcore',											
@@ -23,7 +25,6 @@ module.exports = {
   // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
   cooldown: 5,
   async execute(msgObject, args, client) {
-    const { MessageEmbed } = require('discord.js');
     const raidLeaderID = msgObject.author.id;
     const raidLeader = msgObject.guild.members.resolve(raidLeaderID);
     const coreName = args.join(' ');

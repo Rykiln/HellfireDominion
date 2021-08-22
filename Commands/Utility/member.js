@@ -1,23 +1,25 @@
 const { MessageEmbed } = require("discord.js");
+const { readFile } = require(`fs`);
+
 module.exports = {
   // Name of this command. Required for all commands.
   name: 'member',
-  
+
   // [Optional] Description of this command for the help command
   description: 'Gets Guild Information Of A Member.',
-  
+
   // [Optional] Permits additional command names to be used for this command 
   aliases: ['userinfo', `user`, `memberinfo`],
-  
+
   // [Optional] Displays how to use this command in the help command.
   usage: '[@mention]',
-  
+
   // [Optional] When True - Requires Arguments Be Provided In Message Object
   args: false,
-  
+
   // [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
   guildOnly: true,
-  
+
   // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
   cooldown: 5,
   execute(msgObject, client) {
@@ -30,8 +32,8 @@ module.exports = {
         // let rankId = rolesArray.find(id => usrMember.roles.keyArray().includes(id))
 
         // Retrieve JSON Data For Warning and No-Show Information
-        const fs = require(`fs`);
-        fs.readFile(process.env.HD_JSON_WARNINGS, function (err, data) {
+
+        readFile(process.env.HD_JSON_WARNINGS, function (err, data) {
           if (err) throw err;
 
           const warns = JSON.parse(data);
@@ -80,9 +82,9 @@ module.exports = {
             )
             // .addField("Your Guild Rank", usrMember.roles.get(rankId))
             .addFields(
-              {name: 'Your Guild Rank', value: usrMember.roles.highest.toString(), inline: false},
-              {name: 'You Joined The Guild', value: usrMember.joinedAt.toString(), inline: false},
-              {name: 'Warnings', value: loggedwarnings.toString(), inline: false}
+              { name: 'Your Guild Rank', value: usrMember.roles.highest.toString(), inline: false },
+              { name: 'You Joined The Guild', value: usrMember.joinedAt.toString(), inline: false },
+              { name: 'Warnings', value: loggedwarnings.toString(), inline: false }
             );
           if (loggedwarnings > 0) {
             embed.addFields(

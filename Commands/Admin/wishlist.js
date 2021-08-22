@@ -1,4 +1,6 @@
 const { MessageEmbed } = require("discord.js");
+const {readFile} = require(`fs`);
+
 module.exports = {
 	// Name of this command. Required for all commands.
 	name: 'wishlist',
@@ -44,10 +46,10 @@ module.exports = {
 
 		sendDisclaimerEmbed(msgObject, client, startDate, duration);
 
-		const fs = require(`fs`);
+		
 		const fileRanks = process.env.HD_JSON_CONTENT_WISHLIST;
 
-		fs.readFile(fileRanks, function (err, data) {
+		readFile(fileRanks, function (err, data) {
 			if (err) throw err;
 			const ranksJSON = JSON.parse(data);
 

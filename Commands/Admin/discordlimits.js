@@ -23,7 +23,7 @@ module.exports = {
 	
 	// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	cooldown: 5,
-	execute(msgObject, client) {
+	execute(msgObject, args, client) {
 		// Get Current Discord Server Data
 		const serverBoostStatus = msgObject.guild.premiumTier;
 		const serverMembers = msgObject.guild.memberCount;

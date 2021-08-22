@@ -23,7 +23,7 @@ module.exports = {
 
 	// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	cooldown: 5,
-	execute(msgObject, client) {
+	execute(msgObject, args, client) {
 		// Define The Fields That Will Be Used In The Message
 		const guildName = client.user.username;
 		const guildIcon = client.user.displayAvatarURL();

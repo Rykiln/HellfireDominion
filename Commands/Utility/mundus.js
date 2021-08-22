@@ -23,7 +23,7 @@ module.exports = {
     
     // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
     cooldown: 5,
-    execute(msgObject, client) {
+    execute(msgObject, args, client) {
         const embed = new MessageEmbed()
             .setColor(0x000099)
             .setTitle("Mundus Stones")

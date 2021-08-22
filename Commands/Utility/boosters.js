@@ -20,7 +20,7 @@ module.exports = {
 	
 	// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	cooldown: 5,
-	execute(msgObject, client) {
+	execute(msgObject, args, client) {
 		const boostRoleID = process.env.HD_ROLE_SERVERBOOSTER
 		const boostColor = msgObject.guild.roles.cache.get(boostRoleID).color;
 		const boosters = msgObject.guild.roles.cache.get(boostRoleID).members.map(m => m.user.tag);

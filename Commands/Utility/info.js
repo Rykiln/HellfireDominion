@@ -20,7 +20,7 @@ module.exports = {
 
     // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
     cooldown: 5,
-    execute(msgObject, client) {
+    execute(msgObject, args, client) {
         const BotAuthor = client.users.resolve(`254467802705035264`);
         const Copyright = `Copyright © 2019 @Rykiln | All Rights Reserved`
         const embed = new MessageEmbed()
