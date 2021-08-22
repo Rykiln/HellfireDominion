@@ -1,29 +1,29 @@
 const { MessageEmbed } = require('discord.js');
-const fs = require('fs');
+const { readFile, writeFile } = require('fs');
 const _ = require('lodash');
 
 module.exports = {
   // Name of this command. Required for all commands.
   name: 'noshow',
-  
+
   // [Optional] Description of this command for the help command
   description: 'Notifies A Member That They Missed An Event.',
-  
+
   // [Optional] Permits additional command names to be used for this command
   // aliases: [``, ``],
-  
+
   // [Optional] Displays how to use this command in the help command.
   usage: '<@member>',
-  
+
   // [Optional] Checks for default discord.js permissions. See https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS
   permissions: 'MANAGE_ROLES',
-  
+
   // [Optional] When True - Requires Arguments Be Provided In Message Object
   args: true,
-  
+
   // [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
   guildOnly: true,
-  
+
   // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
   cooldown: 5,
   execute(msgObject, client) {
@@ -35,14 +35,17 @@ module.exports = {
         const eventName = msgObject.channel.name;
         const warnedBy = msgObject.author;
 
-        const channelNoShow = client.channels.resolve(process.env.HD_CHANNEL_WARNINGS); // Hellfire Dominion Warnings Warnings Channel
+        const warningsFileCurrent = process.env.HD_JSON_WARNINGS;
+        const warningsFileOLD = process.env.HD_JSON_WARNINGS_OLD;
+
+        const channelNoShow = client.channels.resolve(process.env.HD_CHANNEL_WARNINGS); // Oops I Pulled Warnings Warnings Channel
         // const channelNoShow = client.channels.resolve(process.env.TEST_CHANNEL_WARNINGS); // Test Server Warnings Warnings Channel
         // console.log(channelNoShow.name)
 
-        fs.readFile(process.env.HD_JSON_WARNINGS, (err, data) => {
+        readFile(warningsFileCurrent, (err, data) => {
           if (err) throw err;
 
-          fs.readFile(process.env.HD_JSON_WARNINGS_OLD, (err2, oldData) => {
+          readFile(warningsFileOLD, (err2, oldData) => {
             if (err2) throw err2;
 
             const currWarns = JSON.parse(data);
@@ -64,19 +67,17 @@ module.exports = {
             const [newWarnings, oldWarnings] = _.partition(warns, (warning) => Date.parse(warning.date) > ninetyDaysAgo);
 
             const writeWarnings = (path, warnings) => {
-              fs.writeFile(path, JSON.stringify(warnings, null, 4), (err3) => {
+              writeFile(path, JSON.stringify(warnings, null, 4), (err3) => {
                 if (err3) throw err3;
               });
             };
 
-            writeWarnings(process.env.HD_JSON_WARNINGS, newWarnings);
-            writeWarnings(process.env.HD_JSON_WARNINGS_OLD, oldWarnings);
+            writeWarnings(warningsFileCurrent, newWarnings);
+            writeWarnings(warningsFileOLD, oldWarnings);
           });
         });
 
         msgObject.delete();
-        console.log(channelNoShow.name)
-        console.log(noshowMember.user.username)
         const embed = new MessageEmbed()
           .setTitle('Guild Member Added To No Show List')
           .setColor(0xFF0000)
@@ -85,18 +86,18 @@ module.exports = {
           .setTimestamp()
           .addField('Guild Member', noshowMember.toString())
           .addField('Event', eventName)
-          .addField('Warned By', warnedBy.username)
+          .addField('Warned By', warnedBy.username);
 
         const embedDM = new MessageEmbed()
           .setTitle('We Missed You Today!')
           .setColor(0xFF9900)
           .setFooter(client.user.username, client.user.displayAvatarURL())
           .setTimestamp()
-          .setDescription(`Hello ${noshowMember.toString()}. You missed a guild event that you signed up for in our Discord. We hope that everything is okay. As per our guild rules, this is considered as a no-show, and three (3) no-shows can result in you being excluded from future events, or possibly even removed from the guild. Please see our [About Us](<#796024776119418890>) channel to review the guild rules. With this said, we do understand that life happens. Just let us know when you're not going to make it. Also if you missed this because of an emergency, we're not heartless, message an officer and let one of us know, we don't need the private details, but we can remove this no-show for valid reasons.`)
-          .addField('Event', eventName)
+          .setDescription(`Hello ${noshowMember.toString()}. You missed a guild event that you signed up for in our Discord. We hope that everything is okay. As per our guild rules, this is considered as a no-show, and three (3) no-shows can result in you being excluded from future events, or possibly even removed from the guild. Please see our [Guild Info](https://discordapp.com/channels/694306288250781699/728692333280886884/728693715794788373) channel to review the guild rules. With this said, we do understand that life happens. Just let us know when you're not going to make it. Also if you missed this because of an emergency, we're not heartless, message an officer and let one of us know, we don't need the private details, but we can remove this no-show for valid reasons.`)
+          .addField('Event', eventName);
 
-        channelNoShow.send({ embeds: [embed] }).then(msg => console.log(msg.content));
-        noshowMember.send({ embeds: [embedDM] }).then(msg => console.log(msg.content));
+        channelNoShow.send({ embeds: [embed] });
+        noshowMember.send({ embeds: [embedDM] });
       });
   },
 };
