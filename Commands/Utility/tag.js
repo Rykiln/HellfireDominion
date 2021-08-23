@@ -10,7 +10,7 @@ module.exports = {
 	aliases: [`farmtag`, `apply`],
 
 	// [Optional] Displays how to use this command in the help command.
-	usage: '<CharacterName> <Trial Role> <URL To ESO Logs>',
+	usage: '<CharacterName> <Role> <Trial> <URL To ESO Logs> <Comments (if any)>',
 
 	// [Optional] Checks for default discord.js permissions. See https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS
 	// permissions: `MANAGE_ROLES`,
@@ -72,9 +72,9 @@ module.exports = {
 					.then(e => {
 						e.message.react(`❌`);
 						channelLogs.threads.create({
-							name: `${requestTrial} as ${requestCharacterRole} | ${requestCharacterName}`,
+							name: `${requestTrial} as ${requestCharacterRole} | ${ msgObject.author.username }`,
 							autoArchiveDuration: 'MAX',
-							reason: 'Needed a separate thread for food',
+							reason: 'New log submission for farm tags.',
 							startMessage: e.message,
 						}).then(threadChannel => {
 							threadChannel.send(`<@&${process.env.HD_ROLE_ANALYZER}>, you have a new log.`);
