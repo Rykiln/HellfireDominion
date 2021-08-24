@@ -31,21 +31,24 @@ module.exports = {
 		const startDate = new Date(values[0]);
 		const duration = values[1];
 
+		// Get Today's Date at 0 Hours 0 Minutes 0 Seconds 0 Miliseconds
 		const now = new Date()
 		now.setHours(0, 0, 0, 0)
+		
+		// Check user input for a valid date in the future
 		startDate.setFullYear(now.getFullYear());
 		if (startDate < now) {
 			msgObject.channel.send(`Invalid Date! Provide a valid date in the format \`month/date\`. Make sure it is not a past date.`);
 			return
 		}
 
+		// Chech user input to ensure duration is at least 1 day long
 		if (duration < 1) {
 			msgObject.channel.send({ content: `Invalid Duration! Duration must be at least 1 (one).` });
 			return
 		}
 
 		sendDisclaimerEmbed(msgObject, client, startDate, duration);
-
 		
 		const fileRanks = process.env.HD_JSON_CONTENT_WISHLIST;
 
@@ -63,10 +66,9 @@ module.exports = {
 };
 
 function createTrainingEmbed(msgObject, client, rank) {
-	let description;
-
+	const trialArray = [];
 	rank.trials.forEach((trial, _) => {
-		description = description.concat(`> ${trial.emoji} **${trial.shortName}**‎‎‎\n`);
+		trialArray.push(`> ${trial.emoji} **${trial.shortName}**‎‎‎`);
 	});
 
 	const lineFiller = `\u200b\n`;
@@ -74,7 +76,7 @@ function createTrainingEmbed(msgObject, client, rank) {
 		.setTitle(rank.name)
 		.setColor(rank.color)
 		.setThumbnail(rank.image)
-		.addField(lineFiller, description);
+		.addField(lineFiller, trialArray.join(`\n`));
 
 
 	msgObject.channel.send({ embeds: [embed] }).then(e => {
@@ -105,5 +107,5 @@ function sendDisclaimerEmbed(msgObject, client, startDate, duration) {
 		.addField(`\u200b`, `${headline}`);
 
 	setTimeout(() => msgObject.delete(), 10000);
-	msgObject.channel.send(embed);
+	msgObject.channel.send({ embeds: [embed]});
 }
