@@ -39,7 +39,7 @@ module.exports = {
 		console.log(`-- [${banAccount.user.tag} (${banAccount.user.id})] was banned from [${msgObject.guild.name}] for [${banReason}]`);
 
 		// Send Embed To Ban Channel To Notify Discord Partners Of The Ban
-		const channelBan = msgObject.guild.channels.resolve(process.env.HD_CHANNELS_BANS);
+		const channelBan = msgObject.guild.channels.resolve(`579451315051167755`);
 		const embed = new MessageEmbed()
 			.setTitle(`Member Account Banned`)
 			.setColor(0xff0000)

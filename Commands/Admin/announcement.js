@@ -24,19 +24,25 @@ module.exports = {
 	// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	cooldown: 5,
 	execute(msgObject, args, client) {
-		const channelAnnounce = client.channels.cache.get(process.env.HD_CHANNEL_ANNOUNCEMENTS);
-		const notifyPing = msgObject.guild.roles.resolve(process.env.HD_ROLE_NOTIFY);
-		const embed = new MessageEmbed()
-			.setTitle(`Important Announcement`)
-			.setColor(0xff9900)
-			.setAuthor(msgObject.author.username, msgObject.author.displayAvatarURL())
-			.setThumbnail(client.user.displayAvatarURL())
-			.setFooter(client.user.username, client.user.displayAvatarURL())
-			.setTimestamp()
-			.setDescription(args.join(` `));
-		setTimeout(() => msgObject.delete(), 3000);
-		channelAnnounce.send({ content: notifyPing, embeds: [embed] })
-			.then(announcement => announcement.pin());
+		// Get Guild Information From JSON File
+		const guildHellfireDominion = `./Data/hd.json`;
+		readFile(guildHellfireDominion, function (err, data) {
+			if (err) throw err;
+			const dataHellfireDominion = JSON.parse(data);
 
+			const channelAnnounce = client.channels.cache.get(`748266587584331806`);
+			const notifyPing = msgObject.guild.roles.resolve(dataHellfireDominion.roles.notify);
+			const embed = new MessageEmbed()
+				.setTitle(`Important Announcement`)
+				.setColor(dataHellfireDominion.colors.yellow)
+				.setAuthor(msgObject.author.username, msgObject.author.displayAvatarURL())
+				.setThumbnail(client.user.displayAvatarURL())
+				.setFooter(client.user.username, client.user.displayAvatarURL())
+				.setTimestamp()
+				.setDescription(args.join(` `));
+			setTimeout(() => msgObject.delete(), 3000);
+			channelAnnounce.send({ content: notifyPing, embeds: [embed] })
+				.then(announcement => announcement.pin());
+		});
 	},
 };

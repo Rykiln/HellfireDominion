@@ -26,15 +26,26 @@ module.exports = {
 	// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	cooldown: 5,
 	execute(msgObject, args, client) {
-		const diceRoll = roll.roll(args[0])
-		const embed = new MessageEmbed()
-			.setAuthor(msgObject.author.tag, msgObject.author.displayAvatarURL())
-			.setColor(process.env.HD_COLOR_YELLOW)
-			.setTitle(`${msgObject.author.username} Rolled ${diceRoll.result}`)
-			.setThumbnail(`https://bestanimations.com/Games/Dice/rolling-dice-gif-3.gif`)
-			.setFooter(client.user.username, client.user.displayAvatarURL())
-			.setTimestamp()
-			.addField(`Dice`, `[ ${diceRoll.rolled} ]`)
-		msgObject.channel.send({ embeds: [embed] })
+		// Get Guild Information From JSON File
+		const guildHellfireDominion = `./Data/hd.json`;
+		readFile(guildHellfireDominion, function (err, data) {
+			if (err) throw err;
+			const dataHellfireDominion = JSON.parse(data);
+			const guildYellow = dataHellfireDominion.colors.yellow;
+
+			// Generate Random Dice Roll
+			const diceRoll = roll.roll(args[0])
+			
+			// Format And Send Embed To Channel
+			const embed = new MessageEmbed()
+				.setAuthor(msgObject.author.tag, msgObject.author.displayAvatarURL())
+				.setColor(guildYellow)
+				.setTitle(`${msgObject.author.username} Rolled ${diceRoll.result}`)
+				.setThumbnail(`https://bestanimations.com/Games/Dice/rolling-dice-gif-3.gif`)
+				.setFooter(client.user.username, client.user.displayAvatarURL())
+				.setTimestamp()
+				.addField(`Dice`, `[ ${diceRoll.rolled} ]`)
+			msgObject.channel.send({ embeds: [embed] })
+		});
 	},
 };

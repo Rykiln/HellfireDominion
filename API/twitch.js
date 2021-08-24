@@ -43,10 +43,10 @@ module.exports = (client) => {
                     case 'the elder scrolls online':
                     case 'the elder scrolls online: collection':
                     case 'the elder scrolls online: blackwood':
-                        dChannel = client.channels.cache.get(process.env.HD_CHANNEL_MEDIA);
+                        dChannel = client.channels.cache.get(`542069450443194382`);
                         break;
                     default:
-                        dChannel = client.channels.cache.get(process.env.HD_CHANNEL_MEDIA_OTHER);
+                        dChannel = client.channels.cache.get(`758813877105590303`);
                         break;
                 }
 

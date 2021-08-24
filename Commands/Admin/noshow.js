@@ -35,7 +35,7 @@ module.exports = {
         const warnedBy = msgObject.author;
         const warningsFileCurrent = `./Data/Warnings/current.json`;
         const warningsFileOLD = `./Data/Warnings/history.json`;
-        const channelNoShow = client.channels.resolve(process.env.HD_CHANNEL_WARNINGS);
+        const channelNoShow = client.channels.resolve(`586340669459660820`);
 
         readFile(warningsFileCurrent, (err, data) => {
           if (err) throw err;

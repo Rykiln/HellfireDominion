@@ -23,7 +23,7 @@ module.exports = {
 	// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	cooldown: 5,
 	execute(msgObject) {
-		msgObject.channel.setParent(process.env.HD_CATEGORY_ARCHIVE).then(async m=> {
+		msgObject.channel.setParent(`716449557642477569`).then(async m=> {
 			await m.lockPermissions();
 			msgObject.reply({content: `This channel has been archived`});
 		})

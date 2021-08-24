@@ -21,14 +21,23 @@ module.exports = {
     // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
     cooldown: 5,
     execute(msgObject, args, client) {
-        let embed = new MessageEmbed()
-            .setTitle(msgObject.guild.name)
-            .setDescription(`.`)
-            .setColor(process.env.HD_COLOR_YELLOW)
-            .setThumbnail(msgObject.guild.iconURL())
-            .setFooter(client.user.username, msgObject.guild.iconURL())
-            .setTimestamp()
-            .addField("Created On", msgObject.guild.createdAt, true);
-        msgObject.channel.send({ embeds: [embed] })
+
+        // Get Guild Information From JSON File
+		const guildHellfireDominion = `./Data/hd.json`;
+		readFile(guildHellfireDominion, function (err, data) {
+			if (err) throw err;
+			const dataHellfireDominion = JSON.parse(data);
+			const guildYellow = dataHellfireDominion.colors.yellow;
+            // Format and Send Embed To Channel
+            const embed = new MessageEmbed()
+                .setTitle(msgObject.guild.name)
+                .setDescription(`.`)
+                .setColor(guildYellow)
+                .setThumbnail(msgObject.guild.iconURL())
+                .setFooter(client.user.username, msgObject.guild.iconURL())
+                .setTimestamp()
+                .addField("Created On", msgObject.guild.createdAt, true);
+            msgObject.channel.send({ embeds: [embed] })
+        });
     }
 };

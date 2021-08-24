@@ -58,44 +58,52 @@ module.exports = {
 			`From **<t:${dateStartEpoch}:D>** until **<t:${dateEndEpoch}:D>**.\n\n` +
 			`If you are interested in farm, score, trifecta, arena or any other type of runs post below.`;
 
-		const embed = new MessageEmbed()
-			.setTitle(`Content Wishlist Pool`)
-			.setDescription(instructions)
-			.setColor(process.env.HD_COLOR_YELLOW)
-			.setThumbnail(client.user.displayAvatarURL())
-			.setFooter(client.user.username, client.user.displayAvatarURL())
-			.setTimestamp()
-
-		setTimeout(() => msgObject.delete(), 10000);
-		msgObject.channel.send({ embeds: [embed] });
-
-		// Get Rank and Trial Info From Data Files
-		const HDRanks = `./Data/Guild/ranks.json`;
-		readFile(HDRanks, function (err, data) {
+		// Get Guild Information From JSON File
+		const guildHellfireDominion = `./Data/hd.json`;
+		readFile(guildHellfireDominion, function (err, data) {
 			if (err) throw err;
-			const HDRanksJSON = JSON.parse(data);
+			const dataHellfireDominion = JSON.parse(data);
+			const guildYellow = dataHellfireDominion.colors.yellow;
 
-			// Loop Through Each Rank And Create An Embed
-			const ranks = Object.keys(HDRanksJSON);
-			ranks.forEach(index => {
-				const rank = HDRanksJSON[index];
-				const trialArray = [];
-				rank.trials.forEach((trial, _) => {
-					trialArray.push(`> ${trial.emoji} **${trial.shortName}**‎‎‎`);
-				});
-				// Format An Send The Message Embed
-				const embed = new MessageEmbed()
-					.setTitle(rank.name)
-					.setColor(rank.color)
-					.setThumbnail(rank.image)
-					.addField(`\u200b`, trialArray.join(`\n`));
-				msgObject.channel.send({ embeds: [embed] })
-					// React With Emojis For Each Trial To be Used As Voting Buttons
-					.then(e => {
-						rank.trials.forEach((trial, _) => {
-							e.react(trial.emoji);
-						});
+			const embed = new MessageEmbed()
+				.setTitle(`Content Wishlist Pool`)
+				.setDescription(instructions)
+				.setColor(guildYellow)
+				.setThumbnail(client.user.displayAvatarURL())
+				.setFooter(client.user.username, client.user.displayAvatarURL())
+				.setTimestamp()
+
+			setTimeout(() => msgObject.delete(), 10000);
+			msgObject.channel.send({ embeds: [embed] });
+
+			// Get Rank and Trial Info From Data Files
+			const HDRanks = `./Data/HellfireDominion/ranks.json`;
+			readFile(HDRanks, function (err, data) {
+				if (err) throw err;
+				const HDRanksJSON = JSON.parse(data);
+
+				// Loop Through Each Rank And Create An Embed
+				const ranks = Object.keys(HDRanksJSON);
+				ranks.forEach(index => {
+					const rank = HDRanksJSON[index];
+					const trialArray = [];
+					rank.trials.forEach((trial, _) => {
+						trialArray.push(`> ${trial.emoji} **${trial.shortName}**‎‎‎`);
 					});
+					// Format An Send The Message Embed
+					const embed = new MessageEmbed()
+						.setTitle(rank.name)
+						.setColor(rank.color)
+						.setThumbnail(rank.image)
+						.addField(`\u200b`, trialArray.join(`\n`));
+					msgObject.channel.send({ embeds: [embed] })
+						// React With Emojis For Each Trial To be Used As Voting Buttons
+						.then(e => {
+							rank.trials.forEach((trial, _) => {
+								e.react(trial.emoji);
+							});
+						});
+				});
 			});
 		});
 	},
