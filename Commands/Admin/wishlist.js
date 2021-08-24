@@ -63,13 +63,13 @@ module.exports = {
 };
 
 function createTrainingEmbed(msgObject, client, rank) {
-	var description = "";
+	let description;
 
 	rank.trials.forEach((trial, _) => {
 		description = description.concat(`> ${trial.emoji} **${trial.shortName}**‎‎‎\n`);
 	});
 
-	const lineFiller = `‎‎‎                                     ‎‎‎    ‎‎‎          ‎‎‎    `;
+	const lineFiller = `\u200b\n`;
 	const embed = new MessageEmbed()
 		.setTitle(rank.name)
 		.setColor(rank.color)
@@ -102,7 +102,7 @@ function sendDisclaimerEmbed(msgObject, client, startDate, duration) {
 		.setThumbnail(client.user.displayAvatarURL())
 		.setFooter(client.user.username, client.user.displayAvatarURL())
 		.setTimestamp()
-		.addField(` ‎ `, `${headline}`);
+		.addField(`\u200b`, `${headline}`);
 
 	setTimeout(() => msgObject.delete(), 10000);
 	msgObject.channel.send(embed);
