@@ -26,86 +26,77 @@ module.exports = {
 	// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	cooldown: 5,
 	execute(msgObject, args, client) {
-		const values = args.join(` `).split(/[,]/);
+		// Get Current Date @ 0 Hours: 0 Minutes: 0 Seconds: 0 Miliseconds
+		const dateNow = new Date();
+		dateNow.setHours(0, 0, 0, 0);
 
-		const startDate = new Date(values[0]);
-		const duration = values[1];
+		// Get Target Start Date From User Date Input
+		const dateStart = new Date(args[0]);
+		dateStart.setFullYear(dateNow.getFullYear());
+		const dateStartEpoch = dateStart.getTime()/1000;
 
-		// Get Today's Date at 0 Hours 0 Minutes 0 Seconds 0 Miliseconds
-		const now = new Date()
-		now.setHours(0, 0, 0, 0)
-		
+		// Get Target End Date From User Duration Input
+		const duration = args[1] - 1;
+		const dateEnd = new Date(dateStart.getTime());
+		dateEnd.setDate(dateEnd.getDate() + duration);
+		const dateEndEpoch = dateEnd.getTime()/1000;
+
 		// Check user input for a valid date in the future
-		startDate.setFullYear(now.getFullYear());
-		if (startDate < now) {
-			msgObject.channel.send(`Invalid Date! Provide a valid date in the format \`month/date\`. Make sure it is not a past date.`);
-			return
+		if (dateStart < dateNow) {
+			msgObject.reply({ content: `Invalid Date! Provide a valid date in the format \`month/date\`. Make sure it is not a past date.` });
+			return;
 		}
 
 		// Chech user input to ensure duration is at least 1 day long
 		if (duration < 1) {
-			msgObject.channel.send({ content: `Invalid Duration! Duration must be at least 1 (one).` });
-			return
+			msgObject.reply({ content: `Invalid Duration! Duration must be at least 1 (one).` });
+			return;
 		}
 
-		sendDisclaimerEmbed(msgObject, client, startDate, duration);
-		
-		const fileRanks = process.env.HD_JSON_CONTENT_WISHLIST;
+		// Create and Format The Instruction Embed
+		const instructions = `Please react in the messages below to vote on which trials you would like to see run the following week:\n` +
+			`From **<t:${dateStartEpoch}:D>** until **<t:${dateEndEpoch}:D>**.\n\n` +
+			`If you are interested in farm, score, trifecta, arena or any other type of runs post below.`;
 
-		readFile(fileRanks, function (err, data) {
+		const embed = new MessageEmbed()
+			.setTitle(`Content Wishlist Pool`)
+			.setDescription(instructions)
+			.setColor(process.env.HD_COLOR_YELLOW)
+			.setThumbnail(client.user.displayAvatarURL())
+			.setFooter(client.user.username, client.user.displayAvatarURL())
+			.setTimestamp()
+
+		setTimeout(() => msgObject.delete(), 10000);
+		msgObject.channel.send({ embeds: [embed] });
+
+		// Get Rank and Trial Info From Data Files
+		const HDRanks = process.env.HD_JSON_CONTENT_WISHLIST;
+		readFile(HDRanks, function (err, data) {
 			if (err) throw err;
-			const ranksJSON = JSON.parse(data);
+			const HDRanksJSON = JSON.parse(data);
 
-			const ranks = Object.keys(ranksJSON);
+			// Loop Through Each Rank And Create An Embed
+			const ranks = Object.keys(HDRanksJSON);
 			ranks.forEach(index => {
-				const rank = ranksJSON[index];
-				createTrainingEmbed(msgObject, client, rank)
+				const rank = HDRanksJSON[index];
+				const trialArray = [];
+				rank.trials.forEach((trial, _) => {
+					trialArray.push(`> ${trial.emoji} **${trial.shortName}**‎‎‎`);
+				});
+				// Format An Send The Message Embed
+				const embed = new MessageEmbed()
+					.setTitle(rank.name)
+					.setColor(rank.color)
+					.setThumbnail(rank.image)
+					.addField(`\u200b`, trialArray.join(`\n`));
+				msgObject.channel.send({ embeds: [embed] })
+					// React With Emojis For Each Trial To be Used As Voting Buttons
+					.then(e => {
+						rank.trials.forEach((trial, _) => {
+							e.react(trial.emoji);
+						});
+					});
 			});
 		});
 	},
 };
-
-function createTrainingEmbed(msgObject, client, rank) {
-	const trialArray = [];
-	rank.trials.forEach((trial, _) => {
-		trialArray.push(`> ${trial.emoji} **${trial.shortName}**‎‎‎`);
-	});
-
-	const lineFiller = `\u200b\n`;
-	const embed = new MessageEmbed()
-		.setTitle(rank.name)
-		.setColor(rank.color)
-		.setThumbnail(rank.image)
-		.addField(lineFiller, trialArray.join(`\n`));
-
-
-	msgObject.channel.send({ embeds: [embed] }).then(e => {
-		rank.trials.forEach((trial, _) => {
-			e.react(trial.emoji);
-		});
-	});
-}
-
-
-function sendDisclaimerEmbed(msgObject, client, startDate, duration) {
-
-	duration = parseInt(duration)
-
-	var endDate = new Date(startDate.getTime());
-	endDate.setDate(endDate.getDate() + duration - 1);
-
-	const headline = `Please react in the messages below to vote on which trials you would like to see run the following week:\n` +
-		`From **${startDate.toDateString()}** until **${endDate.toDateString()}**.\n` +
-		`\nIf you are interested in farm, score, trifecta, arena or any other type of runs post below.`;
-
-	const embed = new MessageEmbed()
-		.setTitle(`Content Wishlist Pool`)
-		.setColor(process.env.HD_COLOR_YELLOW)
-		.setThumbnail(client.user.displayAvatarURL())
-		.setFooter(client.user.username, client.user.displayAvatarURL())
-		.setTimestamp()
-		.addField(`\u200b`, `${headline}`);
-
-	setTimeout(() => msgObject.delete(), 10000);
-	msgObject.channel.send({ embeds: [embed]});
-}
