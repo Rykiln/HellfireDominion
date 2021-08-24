@@ -10,7 +10,7 @@ const twitchClientSecret = process.env.HD_TWITCH_SECRET;
 const twitchAuthProvider = new TwitchAuth(twitchClientID, twitchClientSecret);
 const apiClient = new Twitch({ authProvider: twitchAuthProvider });
 const interval = process.env.HD_TWITCH_REFRESH;
-const streamers = require(process.env.HD_JSON_STREAMERS);
+const streamers = require(`../Data/Twitch/streamers.json`);
 const twitchColor = 0x6441a5; // OFFICIAL HEX COLOR FOR TWITCH.TV
 
 // Function To Get Currently Active Streamers From JSON List of Streamers

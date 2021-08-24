@@ -33,7 +33,7 @@ module.exports = {
 
         // Retrieve JSON Data For Warning and No-Show Information
 
-        readFile(process.env.HD_JSON_WARNINGS, function (err, data) {
+        readFile(`./Data/Warnings/current.json`, function (err, data) {
           if (err) throw err;
 
           const warns = JSON.parse(data);

@@ -26,7 +26,7 @@ module.exports = {
 	cooldown: 5,
 	execute(msgObject, args, client) {
 
-		const warningsFile = process.env.HD_JSON_WARNINGS;
+		const warningsFile = `./Data/Warnings/current.json`;
 
 		readFile(warningsFile, function (err, data) {
 			if (err) throw err;

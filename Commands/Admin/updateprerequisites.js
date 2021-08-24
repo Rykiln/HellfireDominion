@@ -26,7 +26,7 @@ module.exports = {
 	// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	cooldown: 5,
 	execute(msgObject) {
-		const filePrerequisites = process.env.HD_JSON_PREREQUISITES;
+		const filePrerequisites = `./Data/Guild/prerequisites.json`;
 
 		readFile(filePrerequisites, function (err, data) {
 			if (err) throw err;

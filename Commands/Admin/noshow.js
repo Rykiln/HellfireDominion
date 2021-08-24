@@ -33,8 +33,8 @@ module.exports = {
         const noshowMemberID = noshowMember.id;
         const eventName = msgObject.channel.name;
         const warnedBy = msgObject.author;
-        const warningsFileCurrent = process.env.HD_JSON_WARNINGS;
-        const warningsFileOLD = process.env.HD_JSON_WARNINGS_OLD;
+        const warningsFileCurrent = `./Data/Warnings/current.json`;
+        const warningsFileOLD = `./Data/Warnings/history.json`;
         const channelNoShow = client.channels.resolve(process.env.HD_CHANNEL_WARNINGS);
 
         readFile(warningsFileCurrent, (err, data) => {
@@ -88,7 +88,7 @@ module.exports = {
           .setColor(0xFF9900)
           .setFooter(client.user.username, client.user.displayAvatarURL())
           .setTimestamp()
-          .setDescription(`Hello ${noshowMember.toString()}. You missed a guild event that you signed up for in our Discord. We hope that everything is okay. As per our guild rules, this is considered as a no-show, and three (3) no-shows can result in you being excluded from future events, or possibly even removed from the guild. Please see our [Guild Info](https://discordapp.com/channels/694306288250781699/728692333280886884/728693715794788373) channel to review the guild rules. With this said, we do understand that life happens. Just let us know when you're not going to make it. Also if you missed this because of an emergency, we're not heartless, message an officer and let one of us know, we don't need the private details, but we can remove this no-show for valid reasons.`)
+          .setDescription(`Hello ${noshowMember.toString()}. You missed a guild event that you signed up for in our Discord. We hope that everything is okay. As per our guild rules, this is considered as a no-show, and three (3) no-shows can result in you being excluded from future events, or possibly even removed from the guild. Please see our [About Us](https://discord.com/channels/367473969370234901/796024776119418890/859698137140166697) channel to review the guild rules. With this said, we do understand that life happens. Just let us know when you're not going to make it. Also if you missed this because of an emergency, we're not heartless, message an officer and let one of us know, we don't need the private details, but we can remove this no-show for valid reasons.`)
           .addField('Event', eventName);
 
         channelNoShow.send({ embeds: [embed] });

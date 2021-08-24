@@ -70,7 +70,7 @@ module.exports = {
 		msgObject.channel.send({ embeds: [embed] });
 
 		// Get Rank and Trial Info From Data Files
-		const HDRanks = process.env.HD_JSON_CONTENT_WISHLIST;
+		const HDRanks = `./Data/Guild/ranks.json`;
 		readFile(HDRanks, function (err, data) {
 			if (err) throw err;
 			const HDRanksJSON = JSON.parse(data);
