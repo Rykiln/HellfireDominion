@@ -55,8 +55,7 @@ module.exports = {
 					.setTitle(title)
 					.setDescription(description)
 					.setColor(color || guildInfo.colors.orange)
-					.setFooter(client.user.username, client.user.displayAvatarURL())
-					.setTimestamp();
+					.setFooter(client.user.username, client.user.displayAvatarURL());
 
 				if (fields) {
 					embed.setFields(fields);
