@@ -1,4 +1,6 @@
 const { MessageEmbed } = require("discord.js");
+const { readFile } = require(`fs`);
+
 module.exports = {
 	// Name of this command. Required for all commands.
 	name: 'updatewelcome',
@@ -25,7 +27,8 @@ module.exports = {
 	cooldown: 5,
 	execute(msgObject, args, client) {
 		// Get Guild Information From JSON File
-		const guildHellfireDominion = `./Data/hd.json`;
+		const guildHellfireDominion = `./Data/HellfireDominion/guild.json`;
+		
 		readFile(guildHellfireDominion, function (err, data) {
 			if (err) throw err;
 			const dataHellfireDominion = JSON.parse(data);
@@ -43,7 +46,8 @@ module.exports = {
 				`🔹 Commit to your sign-ups. Don't be late and don't ditch half way through an event.`,
 				`🔹 Be willing and open to follow build advice and requirements from raid leads.`,
 				`🔹 Use proper MMO etiquette. Listen to and comply with your raid or event leader. Keep comms clear and don't backseat lead. If you would like to suggest a different way of doing something then talk to the raid lead privately.`,
-				`🔹 ESO is Rated M for Mature (17+) for Blood and Gore, Sexual Themes, Use of Alcohol, and Violence. Online Interactions are Not Rated. As such, similar content will be present in this discord. While we do moderate chat and keep things friendly, we do recommend that you consider this rating when joining, as chat can sometimes get vulgar or inappropriate for children.`
+				`🔹 ESO is Rated M for Mature (17+) for Blood and Gore, Sexual Themes, Use of Alcohol, and Violence. Online Interactions are Not Rated. As such, similar content will be present in this discord. While we do moderate chat and keep things friendly, we do recommend that you consider this rating when joining, as chat can sometimes get vulgar or inappropriate for children.`,
+				`🔹 Avoid any discussion of promoting or encouraging actions against [The Elder Scrolls Online](https://account.elderscrollsonline.com/terms-of-service) or [Steam](https://store.steampowered.com/eula/471710_eula_0) terms of service.`,
 			];
 			const guildRulesConsequences = `➡️ Failing to follow these rules may lead to a ban and removal from this server`;
 			const guildChannelVerification = client.guilds.cache.get(`851164378824704020`)
