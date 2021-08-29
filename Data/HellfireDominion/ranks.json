@@ -1,9 +1,10 @@
 {
   "raider": {
-    "title": "Raider",
+    "title": "Raider Rank",
     "ddID": "724479361725759488",
     "healerID": "724479493313396817",
     "tankID": "724451545407684611",
+    "requirementsDescription": "Must have at least **three (3)** of the following:",
     "requirements": [
       {
         "shortName": "vAA HM",
@@ -20,7 +21,7 @@
     ]
   },
   "veteran": {
-    "title": "Veteran",
+    "title": "Veteran Rank",
     "ddID": "724481950005461002",
     "healerID": "724481894670139462",
     "tankID": "724481832715943936",
@@ -58,7 +59,7 @@
     ]
   },
   "vanguard": {
-    "title": "Vanguard",
+    "title": "Vanguard Rank",
     "ddID": "724482072084873261",
     "healerID": "724482002576867338",
     "tankID": "724481971992002671",
@@ -115,7 +116,7 @@
     ]
   },
   "champion": {
-    "title": "Champion",
+    "title": "Champion Rank",
     "ddID": "724482204306112562",
     "healerID": "724482168553734204",
     "tankID": "724482140032598026",
