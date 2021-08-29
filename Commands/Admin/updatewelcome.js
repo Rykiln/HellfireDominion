@@ -28,7 +28,6 @@ module.exports = {
 	execute(msgObject, args, client) {
 		// Get Guild Information From JSON File
 		const guildHellfireDominion = `./Data/HellfireDominion/guild.json`;
-		
 		readFile(guildHellfireDominion, function (err, data) {
 			if (err) throw err;
 			const dataHellfireDominion = JSON.parse(data);
