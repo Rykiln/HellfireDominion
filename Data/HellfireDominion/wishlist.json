@@ -1,146 +1,178 @@
 {
   "raider": {
-    "title": "Raider",
-    "ddID": "724479361725759488",
+    "name": "Raider Training",
+    "color": "0x2cc50d",
+    "ddID": "724479546887241728",
     "healerID": "724479493313396817",
-    "tankID": "724451545407684611",
-    "requirements": [
+    "tankID": "724479361725759488",
+    "image": "https://images.uesp.net/thumb/f/f6/ON-npc-The_Mage.jpg/200px-ON-npc-The_Mage.jpg",
+    "trials": [
       {
+        "name": "Aetherian Archive",
         "shortName": "vAA HM",
-        "roleID": "848846607206055946"
+        "emoji": "🧙‍♀️"
       },
       {
-        "shortName": "vSO HM",
-        "roleID": "848847357889085440"
-      },
-      {
+        "name": "Hel Ra Citadel",
         "shortName": "vHRC HM",
-        "roleID": "848847442496454708"
+        "emoji": "⚔️"
+      },
+      {
+        "name": "Sanctum ophidia",
+        "shortName": "vSO HM",
+        "emoji": "🐍"
       }
     ]
   },
   "veteran": {
-    "title": "Veteran",
+    "name": "Veteran Training",
+    "color": "0x3991ff",
     "ddID": "724481950005461002",
     "healerID": "724481894670139462",
     "tankID": "724481832715943936",
-    "requirements": [
+    "image": "https://images.uesp.net/thumb/d/d7/ON-creature-Assembly_General.jpg/200px-ON-creature-Assembly_General.jpg",
+    "trials": [
       {
+        "name": "Maw Of Lorkhaj",
         "shortName": "vMOL",
-        "roleID": "724485435681931336"
+        "emoji": "🐱"
       },
       {
+        "name": "Halls Of Fabrication",
         "shortName": "vHOF",
-        "roleID": "724485492153778176"
+        "emoji": "🤖"
       },
       {
-        "shortName": "vAS+0",
-        "roleID": "724485546445111307"
+        "name": "Asylum Sanctorium",
+        "shortName": "vAS",
+        "emoji": "⚙️"
       },
       {
-        "shortName": "vCR+0",
-        "roleID": "724485698433974313"
+        "name": "Cloudrest",
+        "shortName": "vCR",
+        "emoji": "🦅"
       },
       {
+        "name": "Sunspire",
         "shortName": "vSS",
-        "roleID": "724485795460939827"
+        "emoji": "🐲"
       },
       {
+        "name": "Kyne's Aegis",
         "shortName": "vKA",
-        "roleID": "724485889283326013"
-      }
-    ],
-    "optional": [
+        "emoji": "🧛"
+      },
       {
+        "name": "Rockgrove",
         "shortName": "vRG",
-        "roleID": "848848593351475210"
+        "emoji": "🦎"
       }
     ]
   },
   "vanguard": {
-    "title": "Vanguard",
+    "name": "Vanguard Training",
+    "color": "0x9f2df7",
     "ddID": "724482072084873261",
     "healerID": "724482002576867338",
     "tankID": "724481971992002671",
-    "requirements": [
+    "image": "https://images.uesp.net/thumb/e/e0/ON-creature-Rakkhat.jpg/200px-ON-creature-Rakkhat.jpg",
+    "trials": [
       {
+        "name": "Maw Of Lorkhaj",
         "shortName": "vMOL HM",
-        "roleID": "724485466828832770"
+        "emoji": "🐱"
       },
       {
+        "name": "Halls Of Fabrication",
         "shortName": "vHOF HM",
-        "roleID": "724485528757469274"
+        "emoji": "🤖"
       },
       {
+        "name": "Asylum Sanctorium",
         "shortName": "vAS+1",
-        "roleID": "724485655765450763"
+        "emoji": "⚙️"
       },
       {
+        "name": "Cloudrest",
         "shortName": "vCR+1",
-        "roleID": "724485745099669857"
+        "emoji": "⚡"
       },
       {
+        "name": "Cloudrest",
         "shortName": "vCR+2",
-        "roleID": "724485761088618506"
+        "emoji": "🌡️"
       },
       {
-        "shortName": "vSS Ice HM",
-        "roleID": "724485817128583248"
+        "name": "Sunspire",
+        "shortName": "vSS Fire",
+        "emoji": "🔥"
       },
       {
-        "shortName": "vSS Fire HM",
-        "roleID": "856418118066503681"
+        "name": "Sunspire",
+        "shortName": "vSS Ice",
+        "emoji": "🧊"
       },
       {
+        "name": "Kyne's Aegis",
         "shortName": "vKA Yandir HM",
-        "roleID": "724485907297861683"
+        "emoji": "🔪"
       },
       {
+        "name": "Kyne's Aegis",
         "shortName": "vKA Vrol HM",
-        "roleID": "856418093467172864"
-      }
-    ],
-    "optional": [
-      {
-        "shortName": "vRG Oaxiltso HM",
-        "roleID": "848848627320619038"
+        "emoji": "🏴‍☠️"
       },
       {
-        "shortName": "vRG Bahsei",
-        "roleID": "856418068715405323"
+        "name": "Rockgrove",
+        "shortName": "vRG Oaxiltso HM",
+        "emoji": "🦎"
       }
-    ],
-    "note": [
-
     ]
   },
   "champion": {
-    "title": "Champion",
+    "name": "Champion Training",
+    "color": "0xeec929",
     "ddID": "724482204306112562",
     "healerID": "724482168553734204",
     "tankID": "724482140032598026",
-    "requirements": [
+    "image": "https://images.uesp.net/thumb/b/bf/ON-creature-Nahviintaas_03.jpg/200px-ON-creature-Nahviintaas_03.jpg",
+    "trials": [
       {
+        "name": "Asylum Sanctorium",
         "shortName": "vAS+2",
-        "roleID": "848848375327621130"
+        "emoji": "⚙️"
       },
       {
+        "name": "Cloudrest",
         "shortName": "vCR+3",
-        "roleID": "848848401532977152"
+        "emoji": "🦅"
       },
       {
+        "name": "Sunspire",
         "shortName": "vSS HM",
-        "roleID": "724485868642893944"
+        "emoji": "🐲"
       },
       {
+        "name": "Kyne's Aegis",
         "shortName": "vKA HM",
-        "roleID": "724485998381236234"
+        "emoji": "🧛"
       }
-    ],
-    "optional": [
+    ]
+  },
+  "farm": {
+    "name": "Farm Runs",
+    "color": "0xff6600",
+    "image": "https://images.uesp.net/thumb/c/c4/ON-creature-Z%27Maja.jpg/200px-ON-creature-Z%27Maja.jpg",
+    "trials": [
       {
-        "shortName": "vRG HM",
-        "roleID": "848848679170867221"
+        "name": "Cloudrest",
+        "shortName": "Barlic Boon Hours (vCR+3)",
+        "emoji": "🥩"
+      },
+      {
+        "name": "Throwing for Poly",
+        "shortName": "Throwing for Poly (vAS+2)",
+        "emoji": "🌚"
       }
     ]
   }

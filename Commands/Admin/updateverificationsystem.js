@@ -93,10 +93,6 @@ module.exports = {
 				const healerGear = Object.keys(prerequisite.gearHealer)
 																 .map(setName => `[${prerequisite.gearHealer[setName].setName}](${prerequisite.gearHealer[setName].setURL})`);
 				const tankGear = Object.keys(prerequisite.gearTank).map(setName => `[${prerequisite.gearTank[setName].setName}](${prerequisite.gearTank[setName].setURL})`);
-				const restrictions = [
-					`No Mythic Items`, 
-					`No [Blood for Blood](https://eso-hub.com/en/skills/world/vampire/blood-for-blood)`, 
-					`No [Blood Frenzy](https://eso-hub.com/en/skills/world/vampire/blood-frenzy)`]
 				
 				const previousHealerGear = prerequisite.previousHealerID? `\nAll ${msgObject.guild.roles.resolve(prerequisite.previousHealerID)} sets`: ``;
 				const previousTankGear = prerequisite.previousTankID? `\nAll ${msgObject.guild.roles.resolve(prerequisite.previousTankID)} sets`: ``;
@@ -104,7 +100,7 @@ module.exports = {
 				const spacing = fieldSpace.repeat(50);
 
 				const prerequisiteFields = [
-						{ name: `Damage Dealers`, value: `${ddID}\n${spacing}\n**${dpsMag}**\n**${dpsStam}**\n${restrictions.join(`\n`)}`, inline: true },
+						{ name: `Damage Dealers`, value: `${ddID}\n${spacing}\n**${dpsMag}**\n**${dpsStam}**`, inline: true },
 						{ name: `Healers`, value: `${healerID}\n${spacing}\n${healerGear.join(`\n`)}${previousHealerGear}`, inline: true },
 						{ name: `Tanks`, value: `${tankID}\n${spacing}\n${tankGear.join(`\n`)}${previousTankGear}`, inline: true },
 				];
