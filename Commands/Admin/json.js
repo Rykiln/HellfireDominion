@@ -26,7 +26,7 @@ module.exports = {
 	cooldown: 5,
 
 	execute(msgObject, args, client) {
-		const hdJSON = `./Data/hd.json`;
+		const hdJSON = `./Data/HellfireDominion/guild.json`;
 		if(!hdJSON) {
 			console.log(`file not found`);
 			return;

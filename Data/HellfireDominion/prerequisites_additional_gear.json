@@ -6,7 +6,6 @@
     "fields": [
         {
           "name": "5-Piece Sets",
-          "value": "\b",
           "gearList": {
             "Automated Defense": {
               "setName": "Automated Defense",
@@ -25,7 +24,6 @@
         },
         {
           "name": "Monster Helms and Mythic Items",
-          "value": "\b",
           "gearList": {
             "Bloodlord Embrace": {
               "setName": "Bloodlord Embrace",
@@ -59,7 +57,6 @@
     "fields": [
         {
             "name": "Damage Dealers",
-            "value": "\b",
             "gearList": {
               "Elemental Catalyst": {
                   "setName": "Elemental Catalyst",
@@ -86,7 +83,6 @@
         },
         {
             "name": "Healers",
-            "value": "\b",
             "gearList": {
               "Pearls of Ehlnofey": {
                 "setName": "Pearls of Ehlnofey",
@@ -105,7 +101,6 @@
         },
         {
             "name": "Tanks",
-            "value": "\b",
             "gearList": {
               "Drake's Rush": {
                 "setName": "Drake's Rush",
@@ -118,6 +113,10 @@
               "Saxhleel Champion": {
                 "setName": "Saxhleel Champion",
                 "setURL": "https://eso-hub.com/en/sets/saxhleel-champion"
+              },
+              "Ring of the Wild Hunt": {
+                "setName": "Ring of the Wild Hunt",
+                "setURL": "https://eso-hub.com/en/sets/ring-of-the-wild-hunt"
               },
               "Baron Zaudrus": {
                 "setName": "Baron Zaudrus",
