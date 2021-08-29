@@ -77,7 +77,7 @@ module.exports = {
 			msgObject.channel.send({ embeds: [embed] });
 
 			// Get Rank and Trial Info From Data Files
-			const HDRanks = `./Data/HellfireDominion/ranks.json`;
+			const HDRanks = `./Data/HellfireDominion/wishlist.json`;
 			readFile(HDRanks, function (err, data) {
 				if (err) throw err;
 				const HDRanksJSON = JSON.parse(data);
@@ -95,7 +95,7 @@ module.exports = {
 						.setTitle(rank.name)
 						.setColor(rank.color)
 						.setThumbnail(rank.image)
-						.addField(`\u200b`, trialArray.join(`\n`));
+						.addField(`\b　`.repeat(18), trialArray.join(`\n`));
 					msgObject.channel.send({ embeds: [embed] })
 						// React With Emojis For Each Trial To be Used As Voting Buttons
 						.then(e => {

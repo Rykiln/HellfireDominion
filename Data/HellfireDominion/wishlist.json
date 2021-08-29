@@ -1,0 +1,147 @@
+{
+  "raider": {
+    "title": "Raider",
+    "ddID": "724479361725759488",
+    "healerID": "724479493313396817",
+    "tankID": "724451545407684611",
+    "requirements": [
+      {
+        "shortName": "vAA HM",
+        "roleID": "848846607206055946"
+      },
+      {
+        "shortName": "vSO HM",
+        "roleID": "848847357889085440"
+      },
+      {
+        "shortName": "vHRC HM",
+        "roleID": "848847442496454708"
+      }
+    ]
+  },
+  "veteran": {
+    "title": "Veteran",
+    "ddID": "724481950005461002",
+    "healerID": "724481894670139462",
+    "tankID": "724481832715943936",
+    "requirements": [
+      {
+        "shortName": "vMOL",
+        "roleID": "724485435681931336"
+      },
+      {
+        "shortName": "vHOF",
+        "roleID": "724485492153778176"
+      },
+      {
+        "shortName": "vAS+0",
+        "roleID": "724485546445111307"
+      },
+      {
+        "shortName": "vCR+0",
+        "roleID": "724485698433974313"
+      },
+      {
+        "shortName": "vSS",
+        "roleID": "724485795460939827"
+      },
+      {
+        "shortName": "vKA",
+        "roleID": "724485889283326013"
+      }
+    ],
+    "optional": [
+      {
+        "shortName": "vRG",
+        "roleID": "848848593351475210"
+      }
+    ]
+  },
+  "vanguard": {
+    "title": "Vanguard",
+    "ddID": "724482072084873261",
+    "healerID": "724482002576867338",
+    "tankID": "724481971992002671",
+    "requirements": [
+      {
+        "shortName": "vMOL HM",
+        "roleID": "724485466828832770"
+      },
+      {
+        "shortName": "vHOF HM",
+        "roleID": "724485528757469274"
+      },
+      {
+        "shortName": "vAS+1",
+        "roleID": "724485655765450763"
+      },
+      {
+        "shortName": "vCR+1",
+        "roleID": "724485745099669857"
+      },
+      {
+        "shortName": "vCR+2",
+        "roleID": "724485761088618506"
+      },
+      {
+        "shortName": "vSS Ice HM",
+        "roleID": "724485817128583248"
+      },
+      {
+        "shortName": "vSS Fire HM",
+        "roleID": "856418118066503681"
+      },
+      {
+        "shortName": "vKA Yandir HM",
+        "roleID": "724485907297861683"
+      },
+      {
+        "shortName": "vKA Vrol HM",
+        "roleID": "856418093467172864"
+      }
+    ],
+    "optional": [
+      {
+        "shortName": "vRG Oaxiltso HM",
+        "roleID": "848848627320619038"
+      },
+      {
+        "shortName": "vRG Bahsei",
+        "roleID": "856418068715405323"
+      }
+    ],
+    "note": [
+
+    ]
+  },
+  "champion": {
+    "title": "Champion",
+    "ddID": "724482204306112562",
+    "healerID": "724482168553734204",
+    "tankID": "724482140032598026",
+    "requirements": [
+      {
+        "shortName": "vAS+2",
+        "roleID": "848848375327621130"
+      },
+      {
+        "shortName": "vCR+3",
+        "roleID": "848848401532977152"
+      },
+      {
+        "shortName": "vSS HM",
+        "roleID": "724485868642893944"
+      },
+      {
+        "shortName": "vKA HM",
+        "roleID": "724485998381236234"
+      }
+    ],
+    "optional": [
+      {
+        "shortName": "vRG HM",
+        "roleID": "848848679170867221"
+      }
+    ]
+  }
+}

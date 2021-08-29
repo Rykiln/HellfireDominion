@@ -1,0 +1,57 @@
+{
+  "verificationSystem": {
+    "title": "Verification System",
+    "description": 
+    [
+      "We have two distinct types of tags to help gauge one's abilities.",
+      "  🔹 **Prerequisites**",
+      "    ▫️  Measures a player raw capabilities independently of any clears.",
+      "  🔹 **Ranks**",
+      "    ▫️  A roadmap through all trials in the game based on difficulty level.",
+      "",
+      "Each prerequisite and rank tag have a symbol indicating in-game roles:",
+      "  ⚔️  **Damage Dealers**",
+      "  🔆  **Healer**",
+      "  💎  **Tank**",
+      "",
+      "All screenshots and achievements **must be your own**. If you are found using someone else's screenshots or have bought a trial carry without disclosing, your roles will be removed and you will not be rostered."
+    ]
+  },
+  "prerequisites": {
+    "title": "Prerequisites",
+    "description": 
+    [
+      "Measures a player raw capabilities independently of any clears.",
+      "‎‎‎",
+      "Go to <#716449967149023242> or <#750677985996308520> to post parses (Damage Dealers) and gears (Tanks and Healers) screenshots to get prerequisite tags. ",
+      "",
+      "Keep in mind the following rules: ",
+      "",
+      "  🔹  **Damage Dealers**",
+      "    ▫️  Must be done on a 21m trial dummy.",
+      "    ▫️  Mythic Items **ARE NOT** allowed.",
+      "    ▫️  Blood for Blood  **IS NOT** allowed. ",
+      "    ▫️  Blood Frenzy (and its morphs) **ARE NOT** allowed.",
+      "    ▫️  Make sure to post your CMX information tab along with your parse.",
+      "  🔹  **Healers and Tanks** ",
+      "    ▫️  Must have specific sets outlined in the prerequisites sections below.",
+      "    ▫️  Perfected versions of sets *are not* required."
+    ]
+  },
+  "ranks": {
+    "title": "Ranks",
+    "description":
+    [
+      "A roadmap based on the difficulty of trials available in game.                           ‎‎‎    ‎‎‎          ‎‎‎‎                       ‎‎‎    ‎‎‎          ‎‎‎",
+      "Go to <#750676400716906557> to post clears in order to get ranked."
+    ]
+  },
+  "mythic": {
+    "title": "Mythic",
+    "description": 
+    [
+      "Beyond prerequisites and ranks, these players have completed the hardest content available.\n                   ‎‎‎    ‎‎‎          ‎‎‎‎                       ‎‎‎    ‎‎‎          ",
+      "Go to <#750676400716906557> to post clears in order to get ranked."
+    ]
+  }
+}
