@@ -1,0 +1,72 @@
+{
+  "selfishTank": {
+    "title": "Acceptable Selfish Sets",
+    "description": "These are the most common selfish sets used by tanks.",
+    "roleID": "729372084190576663",
+    "fields": [
+        {
+            "name": "asas",
+            "value": "Additional Info",
+            "gearList": {
+              "Worm's Raiment": {
+                "setName": "Worm's Raiment",
+                "setURL": "https://eso-sets.com/set/the-worms-raiment"
+              }
+            },
+            "inline": true
+        },
+        {
+            "name": "b",
+            "value": "b",
+            "gearList": {
+              "Something Else": {
+                "setName": "EC",
+                "setURL": "https://eso-sets.com/set/the-worms-raiment"
+              }
+            },
+            "inline": true
+        }
+    ]
+  },
+  "recommended": {
+    "title": "Recommended Sets",
+    "description": "These are the most common selfish sets used by tanks.",
+    "roleID": "729371837733273723",
+    "fields": [
+        {
+            "name": "Damage Dealers",
+            "value": "Additional Info",
+            "gearList": {
+              "Worm's Raiment": {
+                "setName": "Worm's Raiment",
+                "setURL": "https://eso-sets.com/set/the-worms-raiment"
+              }
+            },
+            "inline": true
+        },
+        {
+            "name": "Healers",
+            "value": "b",
+            "gearList": {
+              "Worm's Raiment": {
+                "setName": "Worm's Raiment",
+                "setURL": "https://eso-sets.com/set/the-worms-raiment"
+              }
+            },
+            "inline": true
+        },
+        {
+            "name": "Tanks",
+            "value": "b",
+            "gearList": {
+              "Worm's Raiment": {
+                "setName": "Worm's Raiment",
+                "setURL": "https://eso-sets.com/set/the-worms-raiment"
+              }
+            },
+            "inline": true
+        }
+    ]
+  }
+}
+

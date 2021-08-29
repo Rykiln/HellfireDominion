@@ -6,6 +6,7 @@
         "tankID": "724451545407684611",
         "dpsMag": "55",
         "dpsStam": "60",
+        "description": "",
         "gearHealer": {
             "Spell Power Cure": {
                 "setName": "Spell Power Cure",
@@ -50,13 +51,14 @@
                 "setURL": "https://eso-hub.com/en/sets/lord-warden"
             },
             "selfSet": {
-                "setName":"One Selfish Set*"
+                "setName":"One (1) Selfish Set*"
             },
             "selfSet2": {
-                "setName": "One Selfish Monster Helm or Mythic Item*"
+                "setName": "One (1) Selfish Monster Helm or Mythic Item*"
             }
         },
-        "note": "*Acceptable selfish sets, monster helms and mythic items are listed below."
+        "note": "*Acceptable selfish sets, monster helms and mythic items are listed below.",
+        "appendix": "selfishTank"
     },
     "superior": {
         "roleID": "729372014204158012",
@@ -65,6 +67,7 @@
         "tankID": "724452988713828352",
         "dpsMag": "65",
         "dpsStam": "70",
+        "description": "",
         "gearHealer": {
             "Vestiment of Olorime": {
                 "setName": "Vestiment of Olorime",
@@ -100,7 +103,9 @@
                 "setName": "Encratis's Bohemoth",
                 "setURL": "https://eso-hub.com/en/sets/encratiss-behemoth"
             }
-        }
+        },
+        "previousHealerID": "724452582151553025",
+        "previousTankID": "724451545407684611"
     },
     "epic": {
         "roleID": "729371972965761045",
@@ -109,6 +114,7 @@
         "tankID": "724453256360755250",
         "dpsMag": "75",
         "dpsStam": "80",
+        "description": "",
         "gearHealer": {
             "Martial Knowledge": {
                 "setName": "Martial Knowledge",
@@ -136,7 +142,9 @@
                 "setName": "Frozen Watcher",
                 "setURL": "https://eso-hub.com/en/sets/frozen-watcher"
             }
-        }
+        },
+        "previousHealerID": "724453043785171004",
+        "previousTankID": "724452988713828352"
     },
     "legendary": {
         "roleID": "729371904171049021",
@@ -145,6 +153,7 @@
         "tankID": "724453684905377823",
         "dpsMag": "85",
         "dpsStam": "90",
+        "description": "",
         "gearHealer": {
             "Master Architect": {
                 "setName": "Master Architect",
@@ -156,6 +165,9 @@
                 "setName": "War Machine",
                 "setURL": "https://eso-hub.com/en/sets/war-machine"
             }
-        }
+        },
+        "previousHealerID": "724453296227483650",
+        "previousTankID": "724453256360755250",
+        "appendix": "recommended"
     }
 }

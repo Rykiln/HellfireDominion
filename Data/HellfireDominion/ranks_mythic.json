@@ -1,0 +1,38 @@
+{
+  "title": "Mythic",
+  "roleID": "729371837733273723",
+  "ddID": "724477077029388459",
+  "healerID": "724477037896532079",
+  "tankID": "724476994741338204",
+  "requirementsDescription": "Must have at least **five (5)** of the following:",
+  "requirements": [
+    {
+      "shortName": "TTT",
+      "roleID": "755062953656713226"
+    },
+    {
+      "shortName": "IR",
+      "roleID": "755063001987547216"
+    },
+    {
+      "shortName": "GH",
+      "roleID": "755062979602546698"
+    },
+    {
+      "shortName": "UC",
+      "roleID": "755063033008488548"
+    },
+    {
+      "shortName": "GS",
+      "roleID": "755062918143410346"
+    },
+    {
+      "shortName": "DB",
+      "roleID": "755062887067680878"
+    },
+    {
+      "shortName": "PB",
+      "roleID": "848849515708678146"
+    }
+  ]
+}
