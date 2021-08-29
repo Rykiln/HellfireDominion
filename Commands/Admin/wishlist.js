@@ -94,8 +94,8 @@ module.exports = {
 					const embed = new MessageEmbed()
 						.setTitle(rank.name)
 						.setColor(rank.color)
-						.setThumbnail(rank.image)
-						.addField(`\b　`.repeat(18), trialArray.join(`\n`));
+						.setDescription(`${`\u200b `.repeat(125)}\n${trialArray.join(`\n`)}`)
+						.setThumbnail(rank.image);
 					msgObject.channel.send({ embeds: [embed] })
 						// React With Emojis For Each Trial To be Used As Voting Buttons
 						.then(e => {
