@@ -59,7 +59,7 @@ module.exports = {
 			`If you are interested in farm, score, trifecta, arena or any other type of runs post below.`;
 
 		// Get Guild Information From JSON File
-		const guildHellfireDominion = `./Data/hd.json`;
+		const guildHellfireDominion = `./Data/HellfireDominion/guild.json`;
 		readFile(guildHellfireDominion, function (err, data) {
 			if (err) throw err;
 			const dataHellfireDominion = JSON.parse(data);
