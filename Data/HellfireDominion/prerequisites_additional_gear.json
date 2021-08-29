@@ -1,30 +1,54 @@
 {
   "selfishTank": {
     "title": "Acceptable Selfish Sets",
-    "description": "These are the most common selfish sets used by tanks.",
+    "description": "These are commonly used selfish sets for tanks.",
     "roleID": "729372084190576663",
     "fields": [
         {
-            "name": "asas",
-            "value": "Additional Info",
-            "gearList": {
-              "Worm's Raiment": {
-                "setName": "Worm's Raiment",
-                "setURL": "https://eso-sets.com/set/the-worms-raiment"
-              }
+          "name": "5-Piece Sets",
+          "value": "\b",
+          "gearList": {
+            "Livewire": {
+              "setName": "Livewire",
+              "setURL": "https://eso-hub.com/en/sets/livewire"
             },
-            "inline": true
+            "Automated Defense": {
+              "setName": "Automated Defense",
+              "setURL": "https://eso-hub.com/en/sets/automated-defense"
+            },
+            "Bani's Torment": {
+              "setName": "Bani's Torment",
+              "setURL": "https://eso-hub.com/en/sets/banis-torment"
+            }
+          },
+          "inline": true
         },
         {
-            "name": "b",
-            "value": "b",
-            "gearList": {
-              "Something Else": {
-                "setName": "EC",
-                "setURL": "https://eso-sets.com/set/the-worms-raiment"
-              }
+          "name": "Monster Helms and Mythic Items",
+          "value": "\b",
+          "gearList": {
+            "Bloodlord Embrace": {
+              "setName": "Bloodlord Embrace",
+              "setURL": "https://eso-hub.com/en/sets/bloodlords-embrace"
             },
-            "inline": true
+            "Torc of Tonal Constancy": {
+              "setName": "Torc of Tonal Constancy",
+              "setURL": "https://eso-hub.com/en/sets/torc-of-tonal-constancy"
+            },
+            "Death Dealer's Fete": {
+              "setName": "Death Dealer's Fete",
+              "setURL": "https://eso-hub.com/en/sets/death-dealers-fete"
+            },
+            "Scourge Harvester": {
+              "setName": "Scourge Harvester",
+              "setURL": "https://eso-hub.com/en/sets/scourge-harvester"
+            },
+            "Puncturing Remedy": {
+              "setName": "Puncturing Remedy",
+              "setURL": "https://eso-hub.com/en/sets/puncturing-remedy"
+            }
+          },
+          "inline": true
         }
     ]
   },

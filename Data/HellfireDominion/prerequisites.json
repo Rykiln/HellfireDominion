@@ -6,7 +6,7 @@
         "tankID": "724451545407684611",
         "dpsMag": "55",
         "dpsStam": "60",
-        "description": "",
+        "description": "**Goal**: Minimum requirements for our training runs and a list of support sets widely used in trials.",
         "gearHealer": {
             "Spell Power Cure": {
                 "setName": "Spell Power Cure",
@@ -16,13 +16,13 @@
                 "setName": "Worm's Raiment",
                 "setURL": "https://eso-sets.com/set/the-worms-raiment"
             },
-            "Roaring Opportunist": {
-                "setName": "Roaring Opportunist",
-                "setURL": "https://eso-hub.com/en/sets/roaring-opportunist"
+            "Vestiment of Olorime": {
+                "setName": "Vestiment of Olorime",
+                "setURL": "https://eso-hub.com/en/sets/vestment-of-olorime"
             },
-            "Jorvuld's Guidance": {
-                "setName": "Jorvuld's Guidance",
-                "setURL": "https://eso-hub.com/en/sets/jorvulds-guidance"
+            "Hollowfang Thirst": {
+                "setName": "Hollowfang Thirst*",
+                "setURL": "https://eso-hub.com/en/sets/hollowfang-thirst"
             },
             "Sentinel of Rkugamz": {
                 "setName": "Sentinel of Rkugamz",
@@ -38,26 +38,26 @@
                 "setName": "Claw of Yolnahkriin",
                 "setURL": "https://eso-hub.com/en/sets/claw-of-yolnahkriin"
             },
-            "Aegis of Galenwe": {
-                "setName": "Aegis of Galenwe",
-                "setURL": "https://eso-hub.com/en/sets/aegis-of-galenwe"
+            "Encratis Behemoth": {
+                "setName": "Encratis Behemoth",
+                "setURL": "https://eso-hub.com/en/sets/encratiss-behemoth"
             },
-            "Ebon Armory": {
-                "setName": "Ebon Armory",
-                "setURL": "https://eso-hub.com/en/sets/ebon-armory"
+            "Powerful Assault": {
+                "setName": "Powerful Assault",
+                "setURL": "https://eso-hub.com/en/sets/powerful-assault"
             },
-            "Lord Warden": {
-                "setName": "Lord Warden",
-                "setURL": "https://eso-hub.com/en/sets/lord-warden"
+            "Worm's Raiment": {
+                "setName": "Worm's Raiment",
+                "setURL": "https://eso-hub.com/en/sets/the-worms-raiment"
             },
             "selfSet": {
-                "setName":"One (1) Selfish Set*"
+                "setName":"One (1) Selfish Set**"
             },
             "selfSet2": {
-                "setName": "One (1) Selfish Monster Helm or Mythic Item*"
+                "setName": "One (1) Selfish Monster Helm or Mythic Item**"
             }
         },
-        "note": "*Acceptable selfish sets, monster helms and mythic items are listed below.",
+        "note": "*Or [Stone-Talker's Oath](https://eso-hub.com/en/sets/stone-talkers-oath)\n**Acceptable selfish sets, monster helms and mythic items are listed below.",
         "appendix": "selfishTank"
     },
     "superior": {
@@ -69,9 +69,13 @@
         "dpsStam": "70",
         "description": "",
         "gearHealer": {
-            "Vestiment of Olorime": {
-                "setName": "Vestiment of Olorime",
-                "setURL": "https://eso-hub.com/en/sets/vestment-of-olorime"
+            "Roaring Opportunist": {
+                "setName": "Roaring Opportunist",
+                "setURL": "https://eso-hub.com/en/sets/roaring-opportunist"
+            },
+            "Jorvuld's Guidance": {
+                "setName": "Jorvuld's Guidance",
+                "setURL": "https://eso-hub.com/en/sets/jorvulds-guidance"
             },
             "Master's Restoration Staff": {
                 "setName": "Master's Restoration Staff",
@@ -87,10 +91,6 @@
             }
         },
         "gearTank" : {
-            "Powerful Assault": {
-                "setName": "Powerful Assault",
-                "setURL": "https://eso-hub.com/en/sets/powerful-assault"
-            },
             "Dragon's Defilement": {
                 "setName": "Dragon's Defilement",
                 "setURL": "https://eso-hub.com/en/sets/dragons-defilement"
@@ -130,10 +130,6 @@
             }
         },
         "gearTank" : {
-            "Worm's Raiment": {
-                "setName": "Worm's Raiment",
-                "setURL": "https://eso-hub.com/en/sets/the-worms-raiment"
-            },
             "Roar of Alkosh": {
                 "setName": "Roar of Alkosh",
                 "setURL": "https://eso-hub.com/en/sets/roar-of-alkosh"
@@ -164,6 +160,10 @@
             "War Machine": {
                 "setName": "War Machine",
                 "setURL": "https://eso-hub.com/en/sets/war-machine"
+            },
+            "Aegis of Galenwe": {
+                "setName": "Aegis of Galenwe",
+                "setURL": "https://eso-hub.com/en/sets/aegis-of-galenwe"
             }
         },
         "previousHealerID": "724453296227483650",
