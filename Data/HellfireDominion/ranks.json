@@ -1,10 +1,11 @@
 {
   "raider": {
     "title": "Raider Rank",
+    "roleID": "881582921771810867",
     "ddID": "724479361725759488",
     "healerID": "724479493313396817",
     "tankID": "724451545407684611",
-    "requirementsDescription": "Must have at least **three (3)** of the following:",
+    "description": "",
     "requirements": [
       {
         "shortName": "vAA HM",
@@ -18,13 +19,16 @@
         "shortName": "vHRC HM",
         "roleID": "848847442496454708"
       }
-    ]
+    ],
+    "note": ""
   },
   "veteran": {
     "title": "Veteran Rank",
+    "roleID": "881582947612897370",
     "ddID": "724481950005461002",
     "healerID": "724481894670139462",
     "tankID": "724481832715943936",
+    "description": "",
     "requirements": [
       {
         "shortName": "vMOL",
@@ -60,9 +64,11 @@
   },
   "vanguard": {
     "title": "Vanguard Rank",
+    "roleID": "881582965421916200",
     "ddID": "724482072084873261",
     "healerID": "724482002576867338",
     "tankID": "724481971992002671",
+    "description": "",
     "requirements": [
       {
         "shortName": "vMOL HM",
@@ -117,9 +123,11 @@
   },
   "champion": {
     "title": "Champion Rank",
+    "roleID": "881582985260986489",
     "ddID": "724482204306112562",
     "healerID": "724482168553734204",
     "tankID": "724482140032598026",
+    "description": "",
     "requirements": [
       {
         "shortName": "vAS+2",
