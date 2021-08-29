@@ -86,47 +86,49 @@ module.exports = {
 			const prerequisiteAdditionalJSONObject = JSON.parse(prerequisitesAdditionalData);
 			
 			prerequisiteKeys.forEach(key => {
-				const subkeys = prerequisitesJSONObject[key];
-				const role = msgObject.guild.roles.resolve(subkeys.roleID);
-				const ddID = msgObject.guild.roles.resolve(subkeys.ddID);
-				const healerID = msgObject.guild.roles.resolve(subkeys.healerID);
-				const tankID = msgObject.guild.roles.resolve(subkeys.tankID);
-				const dpsMag = `${subkeys.dpsMag}K for Magicka`;
-				const dpsStam = `${subkeys.dpsStam}K for Stamina`;
-				const healerGear = Object.keys(subkeys.gearHealer)
-																 .map(setName => `[${subkeys.gearHealer[setName].setName}](${subkeys.gearHealer[setName].setURL})`);
-				const tankGear = Object.keys(subkeys.gearTank).map(setName => `[${subkeys.gearTank[setName].setName}](${subkeys.gearTank[setName].setURL})`);
+				const prerequisite = prerequisitesJSONObject[key];
+				const role = msgObject.guild.roles.resolve(prerequisite.roleID);
+				const ddID = msgObject.guild.roles.resolve(prerequisite.ddID);
+				const healerID = msgObject.guild.roles.resolve(prerequisite.healerID);
+				const tankID = msgObject.guild.roles.resolve(prerequisite.tankID);
+				const dpsMag = `${prerequisite.dpsMag}K for Magicka`;
+				const dpsStam = `${prerequisite.dpsStam}K for Stamina`;
+				const healerGear = Object.keys(prerequisite.gearHealer)
+																 .map(setName => `[${prerequisite.gearHealer[setName].setName}](${prerequisite.gearHealer[setName].setURL})`);
+				const tankGear = Object.keys(prerequisite.gearTank).map(setName => `[${prerequisite.gearTank[setName].setName}](${prerequisite.gearTank[setName].setURL})`);
 				const restrictions = [
 					`No Mythic Items`, 
 					`No [Blood for Blood](https://eso-hub.com/en/skills/world/vampire/blood-for-blood)`, 
 					`No [Blood Frenzy](https://eso-hub.com/en/skills/world/vampire/blood-frenzy)`]
 				
-				const previousHealerGear = subkeys.previousHealerID? `\nAll ${msgObject.guild.roles.resolve(subkeys.previousHealerID)} sets`: ``;
-				const previousTankGear = subkeys.previousTankID? `\nAll ${msgObject.guild.roles.resolve(subkeys.previousTankID)} sets`: ``;
-
+				const previousHealerGear = prerequisite.previousHealerID? `\nAll ${msgObject.guild.roles.resolve(prerequisite.previousHealerID)} sets`: ``;
+				const previousTankGear = prerequisite.previousTankID? `\nAll ${msgObject.guild.roles.resolve(prerequisite.previousTankID)} sets`: ``;
+			
 				const fieldSpace = spacing.repeat( embedWidth / 3 );
-
+			
 				const prerequisiteFields = [
 						{ name: `Damage Dealers`, value: `${ddID}\n${fieldSpace}\n**${dpsMag}**\n**${dpsStam}**\n${restrictions.join(`\n`)}`, inline: true },
 						{ name: `Healers`, value: `${healerID}\n${fieldSpace}\n${healerGear.join(`\n`)}${previousHealerGear}`, inline: true },
 						{ name: `Tanks`, value: `${tankID}\n${fieldSpace}\n${tankGear.join(`\n`)}${previousTankGear}`, inline: true }	
 				];
-
+			
 				// Get Note
-				if(subkeys.note) {
+				if(prerequisite.note) {
 					prerequisiteFields.push(
-						{name: "Note:", value: subkeys.note, inline: false}
+						{name: "Note:", value: prerequisite.note, inline: false}
 					)
 				}
-
-				sendEmbed(`${role.name} Prerequisite`, "", role.color, prerequisiteFields);
-
+			
+				const description = prerequisite.description? prerequisite.description : ""; 
+			
+				sendEmbed(`${role.name} Prerequisite`, description, role.color, prerequisiteFields);
+			
 				// Get Additional and Recommended Gear
-				if(subkeys.appendix) {
-					const appendix = prerequisiteAdditionalJSONObject[subkeys.appendix];
-
+				if(prerequisite.appendix) {
+					const appendix = prerequisiteAdditionalJSONObject[prerequisite.appendix];
+			
 					const fieldSpace = spacing.repeat( embedWidth / appendix.fields.length );
-
+			
 					let appendixFields = Object.keys(appendix.fields).map(index => {
 						const gearList = appendix.fields[index].gearList;
 						gearListArray = Object.keys(gearList).map(setName => `[${gearList[setName].setName}](${gearList[setName].setURL})`);
