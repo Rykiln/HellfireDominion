@@ -1,178 +1,155 @@
 {
   "raider": {
-    "name": "Raider Training",
-    "color": "0x2cc50d",
-    "ddID": "724479546887241728",
+    "title": "Raider Rank",
+    "roleID": "881582921771810867",
+    "ddID": "724479361725759488",
     "healerID": "724479493313396817",
-    "tankID": "724479361725759488",
-    "image": "https://images.uesp.net/thumb/f/f6/ON-npc-The_Mage.jpg/200px-ON-npc-The_Mage.jpg",
-    "trials": [
+    "tankID": "724451545407684611",
+    "description": "<@&881582921771810867> are beginner level trials.",
+    "requirements": [
       {
-        "name": "Aetherian Archive",
         "shortName": "vAA HM",
-        "emoji": "🧙‍♀️"
+        "roleID": "848846607206055946"
       },
       {
-        "name": "Hel Ra Citadel",
-        "shortName": "vHRC HM",
-        "emoji": "⚔️"
-      },
-      {
-        "name": "Sanctum ophidia",
         "shortName": "vSO HM",
-        "emoji": "🐍"
+        "roleID": "848847357889085440"
+      },
+      {
+        "shortName": "vHRC HM",
+        "roleID": "848847442496454708"
       }
-    ]
+    ],
+    "note": ""
   },
   "veteran": {
-    "name": "Veteran Training",
-    "color": "0x3991ff",
+    "title": "Veteran Rank",
+    "roleID": "881582947612897370",
     "ddID": "724481950005461002",
     "healerID": "724481894670139462",
     "tankID": "724481832715943936",
-    "image": "https://images.uesp.net/thumb/d/d7/ON-creature-Assembly_General.jpg/200px-ON-creature-Assembly_General.jpg",
-    "trials": [
+    "description": "<@&881582947612897370> are all veteran DLC trials.",
+    "requirements": [
       {
-        "name": "Maw Of Lorkhaj",
         "shortName": "vMOL",
-        "emoji": "🐱"
+        "roleID": "724485435681931336"
       },
       {
-        "name": "Halls Of Fabrication",
         "shortName": "vHOF",
-        "emoji": "🤖"
+        "roleID": "724485492153778176"
       },
       {
-        "name": "Asylum Sanctorium",
-        "shortName": "vAS",
-        "emoji": "⚙️"
+        "shortName": "vAS+0",
+        "roleID": "724485546445111307"
       },
       {
-        "name": "Cloudrest",
-        "shortName": "vCR",
-        "emoji": "🦅"
+        "shortName": "vCR+0",
+        "roleID": "724485698433974313"
       },
       {
-        "name": "Sunspire",
         "shortName": "vSS",
-        "emoji": "🐲"
+        "roleID": "724485795460939827"
       },
       {
-        "name": "Kyne's Aegis",
         "shortName": "vKA",
-        "emoji": "🧛"
-      },
+        "roleID": "724485889283326013"
+      }
+    ],
+    "optional": [
       {
-        "name": "Rockgrove",
         "shortName": "vRG",
-        "emoji": "🦎"
+        "roleID": "848848593351475210"
       }
     ]
   },
   "vanguard": {
-    "name": "Vanguard Training",
-    "color": "0x9f2df7",
+    "title": "Vanguard Rank",
+    "roleID": "881582965421916200",
     "ddID": "724482072084873261",
     "healerID": "724482002576867338",
     "tankID": "724481971992002671",
-    "image": "https://images.uesp.net/thumb/e/e0/ON-creature-Rakkhat.jpg/200px-ON-creature-Rakkhat.jpg",
-    "trials": [
+    "description": "<@&881582965421916200> are harder version of are all veteran DLC trials.",
+    "requirements": [
       {
-        "name": "Maw Of Lorkhaj",
         "shortName": "vMOL HM",
-        "emoji": "🐱"
+        "roleID": "724485466828832770"
       },
       {
-        "name": "Halls Of Fabrication",
         "shortName": "vHOF HM",
-        "emoji": "🤖"
+        "roleID": "724485528757469274"
       },
       {
-        "name": "Asylum Sanctorium",
         "shortName": "vAS+1",
-        "emoji": "⚙️"
+        "roleID": "724485655765450763"
       },
       {
-        "name": "Cloudrest",
         "shortName": "vCR+1",
-        "emoji": "⚡"
+        "roleID": "724485745099669857"
       },
       {
-        "name": "Cloudrest",
         "shortName": "vCR+2",
-        "emoji": "🌡️"
+        "roleID": "724485761088618506"
       },
       {
-        "name": "Sunspire",
-        "shortName": "vSS Fire",
-        "emoji": "🔥"
+        "shortName": "vSS Ice HM",
+        "roleID": "724485817128583248"
       },
       {
-        "name": "Sunspire",
-        "shortName": "vSS Ice",
-        "emoji": "🧊"
+        "shortName": "vSS Fire HM",
+        "roleID": "856418118066503681"
       },
       {
-        "name": "Kyne's Aegis",
         "shortName": "vKA Yandir HM",
-        "emoji": "🔪"
+        "roleID": "724485907297861683"
       },
       {
-        "name": "Kyne's Aegis",
         "shortName": "vKA Vrol HM",
-        "emoji": "🏴‍☠️"
+        "roleID": "856418093467172864"
+      }
+    ],
+    "optional": [
+      {
+        "shortName": "vRG Oaxiltso HM",
+        "roleID": "848848627320619038"
       },
       {
-        "name": "Rockgrove",
-        "shortName": "vRG Oaxiltso HM",
-        "emoji": "🦎"
+        "shortName": "vRG Bahsei",
+        "roleID": "856418068715405323"
       }
+    ],
+    "note": [
+
     ]
   },
   "champion": {
-    "name": "Champion Training",
-    "color": "0xeec929",
+    "title": "Champion Rank",
+    "roleID": "881582985260986489",
     "ddID": "724482204306112562",
     "healerID": "724482168553734204",
     "tankID": "724482140032598026",
-    "image": "https://images.uesp.net/thumb/b/bf/ON-creature-Nahviintaas_03.jpg/200px-ON-creature-Nahviintaas_03.jpg",
-    "trials": [
+    "description": "<@&881582985260986489> are the hard mode of the most difficult trials in-game.",
+    "requirements": [
       {
-        "name": "Asylum Sanctorium",
         "shortName": "vAS+2",
-        "emoji": "⚙️"
+        "roleID": "848848375327621130"
       },
       {
-        "name": "Cloudrest",
         "shortName": "vCR+3",
-        "emoji": "🦅"
+        "roleID": "848848401532977152"
       },
       {
-        "name": "Sunspire",
         "shortName": "vSS HM",
-        "emoji": "🐲"
+        "roleID": "724485868642893944"
       },
       {
-        "name": "Kyne's Aegis",
         "shortName": "vKA HM",
-        "emoji": "🧛"
+        "roleID": "724485998381236234"
       }
-    ]
-  },
-  "farm": {
-    "name": "Farm Runs",
-    "color": "0xff6600",
-    "image": "https://images.uesp.net/thumb/c/c4/ON-creature-Z%27Maja.jpg/200px-ON-creature-Z%27Maja.jpg",
-    "trials": [
+    ],
+    "optional": [
       {
-        "name": "Cloudrest",
-        "shortName": "Barlic Boon Hours (vCR+3)",
-        "emoji": "🥩"
-      },
-      {
-        "name": "Throwing for Poly",
-        "shortName": "Throwing for Poly (vAS+2)",
-        "emoji": "🌚"
+        "shortName": "vRG HM",
+        "roleID": "848848679170867221"
       }
     ]
   }

@@ -1,0 +1,135 @@
+{
+  "selfishTank": {
+    "title": "Acceptable Selfish Sets",
+    "description": "These are commonly used selfish sets for tanks.",
+    "roleID": "729372084190576663",
+    "fields": [
+        {
+          "name": "5-Piece Sets",
+          "gearList": {
+            "Automated Defense": {
+              "setName": "Automated Defense",
+              "setURL": "https://eso-hub.com/en/sets/automated-defense"
+            },
+            "Bani's Torment": {
+              "setName": "Bani's Torment",
+              "setURL": "https://eso-hub.com/en/sets/banis-torment"
+            },
+            "Livewire": {
+              "setName": "Livewire",
+              "setURL": "https://eso-hub.com/en/sets/livewire"
+            }
+          },
+          "inline": true
+        },
+        {
+          "name": "Monster Helms and Mythic Items",
+          "gearList": {
+            "Bloodlord Embrace": {
+              "setName": "Bloodlord Embrace",
+              "setURL": "https://eso-hub.com/en/sets/bloodlords-embrace"
+            },
+            "Death Dealer's Fete": {
+              "setName": "Death Dealer's Fete",
+              "setURL": "https://eso-hub.com/en/sets/death-dealers-fete"
+            },
+            "Puncturing Remedy": {
+              "setName": "Puncturing Remedy",
+              "setURL": "https://eso-hub.com/en/sets/puncturing-remedy"
+            },
+            "Scourge Harvester": {
+              "setName": "Scourge Harvester",
+              "setURL": "https://eso-hub.com/en/sets/scourge-harvester"
+            },
+            "Torc of Tonal Constancy": {
+              "setName": "Torc of Tonal Constancy",
+              "setURL": "https://eso-hub.com/en/sets/torc-of-tonal-constancy"
+            }
+          },
+          "inline": true
+        }
+    ]
+  },
+  "recommended": {
+    "title": "Recommended Sets",
+    "description": "These are sets commonly used in farm and core runs.",
+    "roleID": "729371837733273723",
+    "fields": [
+        {
+            "name": "Damage Dealers",
+            "gearList": {
+              "Elemental Catalyst": {
+                  "setName": "Elemental Catalyst",
+                  "setURL": "https://eso-hub.com/en/sets/elemental-catalyst"
+              },
+              "Master Architect": {
+                  "setName": "Master Architect",
+                  "setURL": "https://eso-hub.com/en/sets/master-architect"
+              },
+              "Martial Knowledge": {
+                  "setName": "Martial Knowledge",
+                  "setURL": "https://eso-hub.com/en/sets/way-of-martial-knowledge"
+              },
+              "War Machine": {
+                  "setName": "War Machine",
+                  "setURL": "https://eso-hub.com/en/sets/war-machine"
+              },
+              "Z'en's Redress": {
+                  "setName": "Z'en's Redress",
+                  "setURL": "https://eso-hub.com/en/sets/zens-redress"
+              }
+            },
+            "inline": true
+        },
+        {
+            "name": "Healers",
+            "gearList": {
+              "Pearls of Ehlnofey": {
+                "setName": "Pearls of Ehlnofey",
+                "setURL": "https://eso-hub.com/en/sets/pearls-of-ehlnofey"
+              },
+              "Saxhleel Champion": {
+                "setName": "Saxhleel Champion",
+                "setURL": "https://eso-hub.com/en/sets/saxhleel-champion"
+              },
+              "Stone-Talker's Oath": {
+                "setName": "Stone-Talker's Oath",
+                "setURL": "https://eso-hub.com/en/sets/stone-talkers-oath"
+              }
+            },
+            "inline": true
+        },
+        {
+            "name": "Tanks",
+            "gearList": {
+              "Drake's Rush": {
+                "setName": "Drake's Rush",
+                "setURL": "https://eso-hub.com/en/sets/drakes-rush"
+              },
+              "Pearls of Ehlnofey": {
+                "setName": "Pearls of Ehlnofey",
+                "setURL": "https://eso-hub.com/en/sets/pearls-of-ehlnofey"
+              },
+              "Saxhleel Champion": {
+                "setName": "Saxhleel Champion",
+                "setURL": "https://eso-hub.com/en/sets/saxhleel-champion"
+              },
+              "Ring of the Wild Hunt": {
+                "setName": "Ring of the Wild Hunt",
+                "setURL": "https://eso-hub.com/en/sets/ring-of-the-wild-hunt"
+              },
+              "Baron Zaudrus": {
+                "setName": "Baron Zaudrus",
+                "setURL": "https://eso-hub.com/en/sets/baron-zaudrus"
+              },
+              "Lady Thorn": {
+                "setName": "Lady Thorn",
+                "setURL": "https://eso-hub.com/en/sets/lady-thorn"
+              }
+            },
+            "inline": true
+        }
+    ]
+  }
+}
+

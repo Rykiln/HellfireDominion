@@ -6,22 +6,23 @@
         "tankID": "724451545407684611",
         "dpsMag": "55",
         "dpsStam": "60",
+        "description": "<@&729372084190576663> states the minimum requirements to join trials at <@&881582921771810867> rank. All supports sets listed are widely used in all trials.",
         "gearHealer": {
+            "Hollowfang Thirst": {
+                "setName": "Hollowfang Thirst*",
+                "setURL": "https://eso-hub.com/en/sets/hollowfang-thirst"
+            },
             "Spell Power Cure": {
                 "setName": "Spell Power Cure",
                 "setURL": "https://eso-sets.com/set/spell-power-cure"
             },
+            "Vestiment of Olorime": {
+                "setName": "Vestiment of Olorime",
+                "setURL": "https://eso-hub.com/en/sets/vestment-of-olorime"
+            },
             "Worm's Raiment": {
                 "setName": "Worm's Raiment",
                 "setURL": "https://eso-sets.com/set/the-worms-raiment"
-            },
-            "Roaring Opportunist": {
-                "setName": "Roaring Opportunist",
-                "setURL": "https://eso-hub.com/en/sets/roaring-opportunist"
-            },
-            "Jorvuld's Guidance": {
-                "setName": "Jorvuld's Guidance",
-                "setURL": "https://eso-hub.com/en/sets/jorvulds-guidance"
             },
             "Sentinel of Rkugamz": {
                 "setName": "Sentinel of Rkugamz",
@@ -37,26 +38,27 @@
                 "setName": "Claw of Yolnahkriin",
                 "setURL": "https://eso-hub.com/en/sets/claw-of-yolnahkriin"
             },
-            "Aegis of Galenwe": {
-                "setName": "Aegis of Galenwe",
-                "setURL": "https://eso-hub.com/en/sets/aegis-of-galenwe"
+            "Powerful Assault": {
+                "setName": "Powerful Assault",
+                "setURL": "https://eso-hub.com/en/sets/powerful-assault"
             },
-            "Ebon Armory": {
-                "setName": "Ebon Armory",
-                "setURL": "https://eso-hub.com/en/sets/ebon-armory"
+            "Worm's Raiment": {
+                "setName": "Worm's Raiment",
+                "setURL": "https://eso-hub.com/en/sets/the-worms-raiment"
             },
-            "Lord Warden": {
-                "setName": "Lord Warden",
-                "setURL": "https://eso-hub.com/en/sets/lord-warden"
+            "Encratis Behemoth": {
+                "setName": "Encratis Behemoth",
+                "setURL": "https://eso-hub.com/en/sets/encratiss-behemoth"
             },
             "selfSet": {
-                "setName":"One Selfish Set*"
+                "setName":"**One (1)** Selfish Set**"
             },
             "selfSet2": {
-                "setName": "One Selfish Monster Helm or Mythic Item*"
+                "setName": "**One (1)** Selfish Monster Helm or Mythic Item**"
             }
         },
-        "note": "*Acceptable selfish sets, monster helms and mythic items are listed below."
+        "note": "*Or [Stone-Talker's Oath](https://eso-hub.com/en/sets/stone-talkers-oath)\n**Acceptable selfish sets, monster helms and mythic items are listed below.",
+        "appendix": "selfishTank"
     },
     "superior": {
         "roleID": "729372014204158012",
@@ -65,10 +67,15 @@
         "tankID": "724452988713828352",
         "dpsMag": "65",
         "dpsStam": "70",
+        "description": "<@&729372014204158012> states the minimum requirements to join trials at <@&881582947612897370> rank. All supports sets listed are also commonly utilized in all trials. However they might require some know-how to use them properly.",
         "gearHealer": {
-            "Vestiment of Olorime": {
-                "setName": "Vestiment of Olorime",
-                "setURL": "https://eso-hub.com/en/sets/vestment-of-olorime"
+            "Jorvuld's Guidance": {
+                "setName": "Jorvuld's Guidance",
+                "setURL": "https://eso-hub.com/en/sets/jorvulds-guidance"
+            },
+            "Roaring Opportunist": {
+                "setName": "Roaring Opportunist",
+                "setURL": "https://eso-hub.com/en/sets/roaring-opportunist"
             },
             "Master's Restoration Staff": {
                 "setName": "Master's Restoration Staff",
@@ -77,30 +84,24 @@
             "Troll King": {
                 "setName": "Troll King",
                 "setURL": "https://eso-hub.com/en/sets/the-troll-king"
-            },
-            "Encratis Behemoth": {
-                "setName": "Encratis Behemoth",
-                "setURL": "https://eso-hub.com/en/sets/encratiss-behemoth"
             }
         },
         "gearTank" : {
-            "Powerful Assault": {
-                "setName": "Powerful Assault",
-                "setURL": "https://eso-hub.com/en/sets/powerful-assault"
+            "Elemental Catalyst": {
+                "setName": "Elemental Catalyst",
+                "setURL": "https://eso-hub.com/en/sets/elemental-catalyst"
             },
-            "Dragon's Defilement": {
-                "setName": "Dragon's Defilement",
-                "setURL": "https://eso-hub.com/en/sets/dragons-defilement"
+            "Roar of Alkosh": {
+                "setName": "Roar of Alkosh",
+                "setURL": "https://eso-hub.com/en/sets/roar-of-alkosh"
             },
-            "Thurvokun": {
-                "setName": "Thurvokun",
-                "setURL": "https://eso-hub.com/en/sets/thurvokun"
-            },
-            "Encratis's Bohemoth": {
-                "setName": "Encratis's Bohemoth",
-                "setURL": "https://eso-hub.com/en/sets/encratiss-behemoth"
+            "Vykosa": {
+                "setName": "Vykosa",
+                "setURL": "https://eso-hub.com/en/sets/vykosa"
             }
-        }
+        },
+        "previousHealerID": "724452582151553025",
+        "previousTankID": "724451545407684611"
     },
     "epic": {
         "roleID": "729371972965761045",
@@ -109,7 +110,51 @@
         "tankID": "724453256360755250",
         "dpsMag": "75",
         "dpsStam": "80",
+        "description": "<@&729371972965761045> states the minimum requirements to join trials at <@&881582965421916200> rank. All supports sets listed are commonly used in trash setups.",
         "gearHealer": {
+            "Master Architect": {
+                "setName": "Master Architect",
+                "setURL": "https://eso-hub.com/en/sets/master-architect"
+            },
+            "Powerful Assault": {
+                "setName": "Powerful Assault",
+                "setURL": "https://eso-hub.com/en/sets/powerful-assault"
+            },
+            "Encratis Behemoth": {
+                "setName": "Encratis Behemoth",
+                "setURL": "https://eso-hub.com/en/sets/encratiss-behemoth"
+            }
+        },
+        "gearTank" : {
+            "Dragon's Defilement": {
+                "setName": "Dragon's Defilement",
+                "setURL": "https://eso-hub.com/en/sets/dragons-defilement"
+            },
+            "Frozen Watcher": {
+                "setName": "Frozen Watcher",
+                "setURL": "https://eso-hub.com/en/sets/frozen-watcher"
+            },
+            "War Machine": {
+                "setName": "War Machine",
+                "setURL": "https://eso-hub.com/en/sets/war-machine"
+            }
+        },
+        "previousHealerID": "724453043785171004",
+        "previousTankID": "724452988713828352"
+    },
+    "legendary": {
+        "roleID": "729371904171049021",
+        "ddID": "724453787292401706",
+        "healerID": "724453723866267658",
+        "tankID": "724453684905377823",
+        "dpsMag": "85",
+        "dpsStam": "90",
+        "description": "<@&729371904171049021> states the minimum requirements to join trials at <@&881582985260986489> rank. All supports sets listed are mostly used in niche scenarios.",
+        "gearHealer": {
+            "Elemental Catalyst": {
+                "setName": "Elemental Catalyst",
+                "setURL": "https://eso-hub.com/en/sets/elemental-catalyst"
+            },
             "Martial Knowledge": {
                 "setName": "Martial Knowledge",
                 "setURL": "https://eso-hub.com/en/sets/way-of-martial-knowledge"
@@ -124,38 +169,17 @@
             }
         },
         "gearTank" : {
-            "Worm's Raiment": {
-                "setName": "Worm's Raiment",
-                "setURL": "https://eso-hub.com/en/sets/the-worms-raiment"
+            "Aegis of Galenwe": {
+                "setName": "Aegis of Galenwe",
+                "setURL": "https://eso-hub.com/en/sets/aegis-of-galenwe"
             },
-            "Roar of Alkosh": {
-                "setName": "Roar of Alkosh",
-                "setURL": "https://eso-hub.com/en/sets/roar-of-alkosh"
-            },
-            "Frozen Watcher": {
-                "setName": "Frozen Watcher",
-                "setURL": "https://eso-hub.com/en/sets/frozen-watcher"
-            }
-        }
-    },
-    "legendary": {
-        "roleID": "729371904171049021",
-        "ddID": "724453787292401706",
-        "healerID": "724453723866267658",
-        "tankID": "724453684905377823",
-        "dpsMag": "85",
-        "dpsStam": "90",
-        "gearHealer": {
-            "Master Architect": {
-                "setName": "Master Architect",
-                "setURL": "https://eso-hub.com/en/sets/master-architect"
+            "Martial Knowledge": {
+                "setName": "Martial Knowledge",
+                "setURL": "https://eso-hub.com/en/sets/way-of-martial-knowledge"
             }
         },
-        "gearTank" : {
-            "War Machine": {
-                "setName": "War Machine",
-                "setURL": "https://eso-hub.com/en/sets/war-machine"
-            }
-        }
+        "previousHealerID": "724453296227483650",
+        "previousTankID": "724453256360755250",
+        "appendix": "recommended"
     }
 }

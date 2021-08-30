@@ -1,0 +1,179 @@
+{
+  "raider": {
+    "name": "Raider Training",
+    "color": "0x2cc50d",
+    "ddID": "724479546887241728",
+    "healerID": "724479493313396817",
+    "tankID": "724479361725759488",
+    "image": "https://images.uesp.net/thumb/f/f6/ON-npc-The_Mage.jpg/200px-ON-npc-The_Mage.jpg",
+    "trials": [
+      {
+        "name": "Aetherian Archive",
+        "shortName": "vAA HM",
+        "emoji": "🧙‍♀️"
+      },
+      {
+        "name": "Hel Ra Citadel",
+        "shortName": "vHRC HM",
+        "emoji": "⚔️"
+      },
+      {
+        "name": "Sanctum ophidia",
+        "shortName": "vSO HM",
+        "emoji": "🐍"
+      }
+    ]
+  },
+  "veteran": {
+    "name": "Veteran Training",
+    "color": "0x3991ff",
+    "ddID": "724481950005461002",
+    "healerID": "724481894670139462",
+    "tankID": "724481832715943936",
+    "image": "https://images.uesp.net/thumb/d/d7/ON-creature-Assembly_General.jpg/200px-ON-creature-Assembly_General.jpg",
+    "trials": [
+      {
+        "name": "Maw Of Lorkhaj",
+        "shortName": "vMOL",
+        "emoji": "🐱"
+      },
+      {
+        "name": "Halls Of Fabrication",
+        "shortName": "vHOF",
+        "emoji": "🤖"
+      },
+      {
+        "name": "Asylum Sanctorium",
+        "shortName": "vAS",
+        "emoji": "⚙️"
+      },
+      {
+        "name": "Cloudrest",
+        "shortName": "vCR",
+        "emoji": "🦅"
+      },
+      {
+        "name": "Sunspire",
+        "shortName": "vSS",
+        "emoji": "🐲"
+      },
+      {
+        "name": "Kyne's Aegis",
+        "shortName": "vKA",
+        "emoji": "🧛"
+      },
+      {
+        "name": "Rockgrove",
+        "shortName": "vRG",
+        "emoji": "🦎"
+      }
+    ]
+  },
+  "vanguard": {
+    "name": "Vanguard Training",
+    "color": "0x9f2df7",
+    "ddID": "724482072084873261",
+    "healerID": "724482002576867338",
+    "tankID": "724481971992002671",
+    "image": "https://images.uesp.net/thumb/e/e0/ON-creature-Rakkhat.jpg/200px-ON-creature-Rakkhat.jpg",
+    "trials": [
+      {
+        "name": "Maw Of Lorkhaj",
+        "shortName": "vMOL HM",
+        "emoji": "🐱"
+      },
+      {
+        "name": "Halls Of Fabrication",
+        "shortName": "vHOF HM",
+        "emoji": "🤖"
+      },
+      {
+        "name": "Asylum Sanctorium",
+        "shortName": "vAS+1",
+        "emoji": "⚙️"
+      },
+      {
+        "name": "Cloudrest",
+        "shortName": "vCR+1",
+        "emoji": "⚡"
+      },
+      {
+        "name": "Cloudrest",
+        "shortName": "vCR+2",
+        "emoji": "🌡️"
+      },
+      {
+        "name": "Sunspire",
+        "shortName": "vSS Fire",
+        "emoji": "🔥"
+      },
+      {
+        "name": "Sunspire",
+        "shortName": "vSS Ice",
+        "emoji": "🧊"
+      },
+      {
+        "name": "Kyne's Aegis",
+        "shortName": "vKA Yandir HM",
+        "emoji": "🔪"
+      },
+      {
+        "name": "Kyne's Aegis",
+        "shortName": "vKA Vrol HM",
+        "emoji": "🏴‍☠️"
+      },
+      {
+        "name": "Rockgrove",
+        "shortName": "vRG Oaxiltso HM",
+        "emoji": "🦎"
+      }
+    ]
+  },
+  "champion": {
+    "name": "Champion Training",
+    "color": "0xeec929",
+    "ddID": "724482204306112562",
+    "healerID": "724482168553734204",
+    "tankID": "724482140032598026",
+    "image": "https://images.uesp.net/thumb/b/bf/ON-creature-Nahviintaas_03.jpg/200px-ON-creature-Nahviintaas_03.jpg",
+    "trials": [
+      {
+        "name": "Asylum Sanctorium",
+        "shortName": "vAS+2",
+        "emoji": "⚙️"
+      },
+      {
+        "name": "Cloudrest",
+        "shortName": "vCR+3",
+        "emoji": "🦅"
+      },
+      {
+        "name": "Sunspire",
+        "shortName": "vSS HM",
+        "emoji": "🐲"
+      },
+      {
+        "name": "Kyne's Aegis",
+        "shortName": "vKA HM",
+        "emoji": "🧛"
+      }
+    ]
+  },
+  "farm": {
+    "name": "Farm Runs",
+    "color": "0xff6600",
+    "image": "https://images.uesp.net/thumb/c/c4/ON-creature-Z%27Maja.jpg/200px-ON-creature-Z%27Maja.jpg",
+    "trials": [
+      {
+        "name": "Cloudrest",
+        "shortName": "Barlic Boon Hours (vCR+3)",
+        "emoji": "🥩"
+      },
+      {
+        "name": "Throwing for Poly",
+        "shortName": "Throwing for Poly (vAS+2)",
+        "emoji": "🌚"
+      }
+    ]
+  }
+}
