@@ -14,7 +14,7 @@ module.exports = {
             || client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
 
         if (!command) return;
-        console.log(`[${msgObject.author.username}] used Command [${commandName}] in Channel [${msgObject.channel.name}]`);
+        console.log(`[${msgObject.guild.name}] :: [${msgObject.author.username}] used Command [${commandName}] in Channel [${msgObject.channel.name}]`);
         console.log(`With Args : [${args}]`);
         console.log();
 
