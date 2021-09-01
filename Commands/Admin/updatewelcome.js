@@ -49,8 +49,7 @@ module.exports = {
 				`🔹 Avoid any discussion of promoting or encouraging actions against [The Elder Scrolls Online](https://account.elderscrollsonline.com/terms-of-service) or [Steam](https://store.steampowered.com/eula/471710_eula_0) terms of service.`,
 			];
 			const guildRulesConsequences = `➡️ Failing to follow these rules may lead to a ban and removal from this server`;
-			const guildChannelVerification = client.guilds.cache.get(`851164378824704020`)
-			const guildVerification = `🔹 Check <#${guildChannelVerification}> to learn our requirements and obtain roles tags related to in-game information.‎ Those tags will be required in order to participate in our trials.`;
+			const guildVerification = `🔹 Check <#${dataHellfireDominion.channels.verificationSystem}> to learn our requirements and obtain roles tags related to in-game information.‎ Those tags will be required in order to participate in our trials.`;
 			const guildNicknameMessage = `Please [Change Your Nickname](https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames) in Discord to match your in-game UserID.`
 
 			// Format Embeded Message For The Welcome Channel In Discord
