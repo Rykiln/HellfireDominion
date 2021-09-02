@@ -33,10 +33,12 @@ module.exports = {
 
 			const channelLogs = msgObject.guild.channels.cache.get(`725576296351924244`) // #open-cores-application-feedback channel
 			const roleAnalyzer = `<@&${dataHellfireDominion.roles.analyzer}>`
-			const values = args.join(` `).split(/[,]/);
+			const commandNameLength = args.shift().length;
+			const values = msgObject.content.slice(2 + commandNameLength).trim().split(",");
+			// args.join(` `).split(/[,]/);
 
 			// Check that enough arguments were provided by the user. Return error if missing.
-			if (!args[3]) {
+			if (!values[3]) {
 				msgObject
 					.reply({ content: "You are missing a required field. Please type the command again, and make sure you are using the following format to submit your logs: \n> `.apply CharacterName, Role, Trial, URLtoLogs, comments (if any)`.\n" })
 					.then(reply => {
@@ -48,7 +50,7 @@ module.exports = {
 				return;
 			} else {
 				// Check that the URL to EsoLogs.com was the 4th argument and was sent as a hyperlink. Return error if not a hyperlink or out of order.
-				if (!args[3].trim().startsWith(`http`)) {
+				if (!values[3].trim().startsWith(`http`)) {
 					msgObject.reply({ content: `Please check your command again. The URL to your logs must be a hyperlink. If you did provide a link for your logs, then you are either missing your character name, role, or the trial abbreviation.` })
 				} else {
 					// Collect and Convert arguments into string values, remove excess blank spaces, and replace empty strings for embed output.
