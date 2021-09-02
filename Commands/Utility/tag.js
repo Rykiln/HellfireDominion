@@ -1,4 +1,5 @@
-const { MessageEmbed } = require("discord.js");
+const { MessageEmbed } = require(`discord.js`);
+const { readFile } = require(`fs`);
 module.exports = {
 	// Name of this command. Required for all commands.
 	name: 'tag',

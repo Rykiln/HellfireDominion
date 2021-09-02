@@ -1,28 +1,28 @@
 const { MessageEmbed } = require("discord.js");
-const {readFile} = require(`fs`);
+const { readFile } = require(`fs`);
 
 module.exports = {
 	// Name of this command. Required for all commands.
 	name: 'wishlist',
-	
+
 	// [Optional] Description of this command for the help command
 	description: 'ADMIN: Create a pool for the content wishlist.',
-	
+
 	// [Optional] Permits additional command names to be used for this command 
 	aliases: [`cw`, `wishlist`],
-	
+
 	// [Optional] Displays how to use this command in the help command.
 	usage: '<Start Date (Month / Day)> <Duration (in days)>',
-	
+
 	// [Optional] Checks for default discord.js permissions. See https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS
 	permissions: `MANAGE_ROLES`,
-	
+
 	// [Optional] When True - Requires Arguments Be Provided In Message Object
 	args: true,
-	
+
 	// [Optional] When True - Prevents Command from being used in a Direct Message With The Bot Account
 	guildOnly: true,
-	
+
 	// [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
 	cooldown: 5,
 	execute(msgObject, args, client) {
@@ -33,13 +33,13 @@ module.exports = {
 		// Get Target Start Date From User Date Input
 		const dateStart = new Date(args[0]);
 		dateStart.setFullYear(dateNow.getFullYear());
-		const dateStartEpoch = dateStart.getTime()/1000;
+		const dateStartEpoch = dateStart.getTime() / 1000;
 
 		// Get Target End Date From User Duration Input
 		const duration = args[1] - 1;
 		const dateEnd = new Date(dateStart.getTime());
 		dateEnd.setDate(dateEnd.getDate() + duration);
-		const dateEndEpoch = dateEnd.getTime()/1000;
+		const dateEndEpoch = dateEnd.getTime() / 1000;
 
 		// Check user input for a valid date in the future
 		if (dateStart < dateNow) {
