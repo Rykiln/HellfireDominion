@@ -1,4 +1,5 @@
 const { MessageEmbed } = require('discord.js');
+const { readFile } = require(`fs`);
 
 module.exports = {
   // Name of this command. Required for all commands.
@@ -25,61 +26,82 @@ module.exports = {
   // [Optional] See https://discordjs.guide/command-handling/adding-features.html#cooldowns
   cooldown: 5,
   async execute(msgObject, args, client) {
-    const raidLeaderID = msgObject.author.id;
-    const raidLeader = msgObject.guild.members.resolve(raidLeaderID);
-    const coreName = args.join(' ');
-    const coreRoleName = `${coreName}`;
-    const coreNameFormatted = coreName.replace(' ', '-').toLowerCase();
-    const coreChannelName = `💢｜${coreNameFormatted}`;
-    const coreApplyChannel = `apply｜${coreNameFormatted}`;
-    const createdRolePosition = msgObject.guild.roles.cache.get('820503111545782282').position + 1;
+		// Get Guild Information From JSON File
+		const guildHellfireDominion = `./Data/HellfireDominion/guild.json`;
 
-    // Create Core Role And Assign The Message Author As The First Member
-    await msgObject.guild.roles.create({
-      name: coreRoleName,
-      hoist: false,
-      mentionable: true,
-      position: createdRolePosition,
-    }).then(async (role) => {
-      raidLeader.roles.add(role);
+    readFile(guildHellfireDominion, async function (err, data) {
+      if (err) throw err;
+      
+      const dataHellfireDominion = JSON.parse(data);
 
-      // Retrive Created Role Information
-      const createdCoreRole = role;
+      const raidLeaderID = msgObject.author.id;
+      const raidLeader = msgObject.guild.members.resolve(raidLeaderID);
+      const coreName = args.join(' ');
+      const coreRoleName = `${coreName}`;
+      const coreNameFormatted = coreName.replace(' ', '-').toLowerCase();
+      const coreStratsChannelName = `📣｜${coreNameFormatted}`;
+      const coreChatChannelName = `💬｜${coreNameFormatted}`;
+      const coreApplyChannel = `apply｜${coreNameFormatted}`;
+      const createdRolePosition = msgObject.guild.roles.cache.get(dataHellfireDominion.roles.separator.interests).position + 1;
 
-      // Create Core Channel And Set Parent Permissions As Default And Then Add The New Role With Permission Overwrites
-      await msgObject.guild.channels.create(coreChannelName, 'text').then(async (coreChannel) => {
-        await coreChannel.setParent('797478951693058098');
-        await coreChannel.lockPermissions();
-        await coreChannel.permissionOverwrites.edit(createdCoreRole, {
-          VIEW_CHANNEL: true,
-          SEND_MESSAGES: true,
-          EMBED_LINKS: true,
-          ATTACH_FILES: true,
-          ADD_REACTIONS: true,
-          READ_MESSAGE_HISTORY: true,
-        });
-
-        // Create Core Application Channel And Set Parent Permissions As Default
-        await msgObject.guild.channels.create(coreApplyChannel, 'text').then(async (applyChannel) => {
-          await applyChannel.setParent('797935776049659924');
-          await applyChannel.lockPermissions();
-
-          // Retrieve Created Channel Names
-          const createdCoreChannel = coreChannel;
-          const createdApplyChannel = applyChannel;
-
-          // Send Confirmation Message
-          const embed = new MessageEmbed()
-            .setTitle('New Core Group Created!')
-            .setColor(process.env.GLOBAL_COLOR_UPDATE)
-            .setThumbnail(client.user.displayAvatarURL())
-            .setFooter(client.user.username, client.user.displayAvatarURL())
-            .setTimestamp()
-            .addField('Core Role', createdCoreRole.toString())
-            .addField('Core Channels', `${createdCoreChannel.toString()}\n${createdApplyChannel.toString()}`);
-          await msgObject.channel.send({ embeds: [embed] });
-        });
+      // Create Core Role
+      const coreRole = await msgObject.guild.roles.create({
+        name: coreRoleName,
+        hoist: false,
+        mentionable: true,
+        position: createdRolePosition,
       });
-    });
+
+      // Assign tag to message author
+      raidLeader.roles.add(coreRole);
+      
+      // Create Core Role Fill
+      const coreRoleFill = await msgObject.guild.roles.create({
+        name: `${coreRoleName} Fill`,
+        hoist: false,
+        mentionable: true,
+        position: createdRolePosition,
+      });
+
+      // Create Core Strat Channel And Set Parent Permissions As Default And Then Add The New Role With Permission Overwrites
+      const coreStratChannel = await msgObject.guild.channels.create(coreStratsChannelName, 'text');
+      await coreStratChannel.setParent(dataHellfireDominion.categories.cores);
+      await coreStratChannel.lockPermissions();
+      const coreStratChannelPermissions = {
+        VIEW_CHANNEL: true,
+        SEND_MESSAGES: false,
+        ADD_REACTIONS: false,
+      }
+      await coreStratChannel.permissionOverwrites.edit(coreRole, coreStratChannelPermissions);
+      await coreStratChannel.permissionOverwrites.edit(coreRoleFill, coreStratChannelPermissions);
+
+      // Create Core Chat Channel And Set Parent Permissions As Default And Then Add The New Role With Permission Overwrites
+      const coreChatChannel = await msgObject.guild.channels.create(coreChatChannelName, 'text');
+      await coreChatChannel.setParent(dataHellfireDominion.categories.cores);
+      await coreChatChannel.lockPermissions();
+      const coreChatChannelPermissions = {
+        VIEW_CHANNEL: true,
+      }
+      await coreChatChannel.permissionOverwrites.edit(coreRole, coreChatChannelPermissions);
+      await coreChatChannel.permissionOverwrites.edit(coreRoleFill, coreChatChannelPermissions);
+
+
+      const applyChannel = await msgObject.guild.channels.create(coreApplyChannel, 'text');
+      await applyChannel.setParent(dataHellfireDominion.categories.coresApply);
+      await applyChannel.lockPermissions();
+
+      // Send Confirmation Message
+      const embed = new MessageEmbed()
+        .setTitle('New Core Group Created!')
+        .setColor(process.env.GLOBAL_COLOR_UPDATE)
+        .setThumbnail(client.user.displayAvatarURL())
+        .setFooter(client.user.username, client.user.displayAvatarURL())
+        .setTimestamp()
+        .addField('Core Role', coreRole.toString())
+        .addField('Core Fill Role', coreRoleFill.toString())
+        .addField('Core Channels', `${coreStratChannel.toString()}\n${coreChatChannel.toString()}\n${applyChannel.toString()}`);
+
+      await msgObject.channel.send({ embeds: [embed] });
+      });
   },
 };
