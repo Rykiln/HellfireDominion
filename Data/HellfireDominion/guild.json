@@ -5,6 +5,10 @@
         "red": "0x990000",
         "yellow": "0xf1df04"
     },
+    "categories": {
+        "cores": "797478951693058098",
+        "coresApply": "797935776049659924"
+    },
     "channels": 
         {"categories": {
             "archive": "716449557642477569",
