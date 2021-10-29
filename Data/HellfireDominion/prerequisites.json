@@ -6,6 +6,7 @@
         "tankID": "724451545407684611",
         "dpsMag": "55",
         "dpsStam": "60",
+        "dps": "60",
         "description": "<@&729372084190576663> states the minimum requirements to join trials at <@&881582921771810867> rank. All supports sets listed are widely used in all trials.",
         "gearHealer": {
             "Hollowfang Thirst": {
@@ -67,6 +68,7 @@
         "tankID": "724452988713828352",
         "dpsMag": "65",
         "dpsStam": "70",
+        "dps": "70",
         "description": "<@&729372014204158012> states the minimum requirements to join trials at <@&881582947612897370> rank. All supports sets listed are also commonly utilized in all trials. However they might require some know-how to use them properly.",
         "gearHealer": {
             "Jorvuld's Guidance": {
@@ -110,6 +112,7 @@
         "tankID": "724453256360755250",
         "dpsMag": "75",
         "dpsStam": "80",
+        "dps": "80",
         "description": "<@&729371972965761045> states the minimum requirements to join trials at <@&881582965421916200> rank. All supports sets listed are commonly used in trash setups.",
         "gearHealer": {
             "Master Architect": {
@@ -149,6 +152,7 @@
         "tankID": "724453684905377823",
         "dpsMag": "85",
         "dpsStam": "90",
+        "dps": "90",
         "description": "<@&729371904171049021> states the minimum requirements to join trials at <@&881582985260986489> rank. All supports sets listed are mostly used in niche scenarios.",
         "gearHealer": {
             "Elemental Catalyst": {

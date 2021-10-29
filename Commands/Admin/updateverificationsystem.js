@@ -87,8 +87,9 @@ module.exports = {
 				const ddID = msgObject.guild.roles.resolve(prerequisite.ddID);
 				const healerID = msgObject.guild.roles.resolve(prerequisite.healerID);
 				const tankID = msgObject.guild.roles.resolve(prerequisite.tankID);
-				const dpsMag = `${prerequisite.dpsMag}K for Magicka`;
-				const dpsStam = `${prerequisite.dpsStam}K for Stamina`;
+				// const dpsMag = `${prerequisite.dpsMag}K for Magicka`;
+				// const dpsStam = `${prerequisite.dpsStam}K for Stamina`;
+				const dps = `${prerequisite.dps}K`;
 				const healerGear = Object.keys(prerequisite.gearHealer)
 																 .map(setName => `[${prerequisite.gearHealer[setName].setName}](${prerequisite.gearHealer[setName].setURL})`);
 				const tankGear = Object.keys(prerequisite.gearTank).map(setName => `[${prerequisite.gearTank[setName].setName}](${prerequisite.gearTank[setName].setURL})`);
@@ -99,7 +100,7 @@ module.exports = {
 				const spacing = fieldSpace.repeat(50);
 
 				const prerequisiteFields = [
-						{ name: `Damage Dealers`, value: `${ddID}\n${spacing}\n**${dpsMag}**\n**${dpsStam}**`, inline: true },
+						{ name: `Damage Dealers`, value: `${ddID}\n${spacing}\n**${dps}**`, inline: true },
 						{ name: `Healers`, value: `${healerID}\n${spacing}\n${healerGear.join(`\n`)}${previousHealerGear}`, inline: true },
 						{ name: `Tanks`, value: `${tankID}\n${spacing}\n${tankGear.join(`\n`)}${previousTankGear}`, inline: true },
 				];

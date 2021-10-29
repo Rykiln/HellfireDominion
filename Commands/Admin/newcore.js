@@ -39,8 +39,8 @@ module.exports = {
       const coreName = args.join(' ');
       const coreRoleName = `${coreName}`;
       const coreNameFormatted = coreName.replace(' ', '-').toLowerCase();
-      const coreStratsChannelName = `📣｜${coreNameFormatted}`;
-      const coreChatChannelName = `💬｜${coreNameFormatted}`;
+      const coreStratsChannelName = `${coreNameFormatted}-📢`;
+      const coreChatChannelName = `${coreNameFormatted}-💬`;
       const coreApplyChannel = `apply｜${coreNameFormatted}`;
       const createdRolePosition = msgObject.guild.roles.cache.get(dataHellfireDominion.roles.separator.interests).position + 1;
 
